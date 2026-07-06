@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TECH_BOUTIQUE - Premium Over-Ear Headphones</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#303030",
+                        "inverse-primary": "#005bc1",
+                        "outline-variant": "#414755",
+                        "secondary-container": "#474746",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-bright": "#393939",
+                        "on-tertiary-fixed-variant": "#7c2e00",
+                        "on-tertiary-fixed": "#351000",
+                        "on-primary-fixed": "#001a41",
+                        "on-error": "#690005",
+                        "tertiary": "#ffb595",
+                        "on-secondary-fixed-variant": "#474746",
+                        "inverse-on-surface": "#313030",
+                        "on-surface": "#e5e2e1",
+                        "background": "#131313",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-fixed": "#1b1b1c",
+                        "primary-container": "#4b8eff",
+                        "on-secondary-container": "#b7b5b4",
+                        "tertiary-container": "#ef6719",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-variant": "#353534",
+                        "on-primary-fixed-variant": "#004493",
+                        "primary": "#adc6ff",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f1f",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary-container": "#00285c",
+                        "outline": "#8b90a0",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-dim": "#131313",
+                        "surface-container-highest": "#353534",
+                        "on-primary": "#002e69",
+                        "on-tertiary-container": "#4c1a00",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#d8e2ff",
+                        "on-surface-variant": "#c1c6d7",
+                        "surface-tint": "#adc6ff",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary": "#571e00",
+                        "error-container": "#93000a",
+                        "secondary": "#c8c6c5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface": "#131313",
+                        "tertiary-fixed-dim": "#ffb595",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed-dim": "#adc6ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "label-sm": ["Inter", "sans-serif"],
+                        "display-lg": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "display-lg-mobile": ["Inter", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Component -->
+<header class="fixed top-0 w-full bg-background/80 backdrop-blur-xl border-b border-outline-variant shadow-sm z-50">
+<div class="flex justify-between items-center h-20 px-margin-desktop w-full z-50 max-w-container-max-width mx-auto">
+<!-- Brand -->
+<a class="font-headline-md text-headline-md font-bold tracking-tight text-on-background hover:text-primary transition-colors" href="#">
+                TECH_BOUTIQUE
+            </a>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md active:scale-95 duration-200" href="#">Shop</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-primary transition-all duration-300 font-label-md text-label-md active:scale-95 duration-200" href="#">Innovation</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-primary transition-all duration-300 font-label-md text-label-md active:scale-95 duration-200" href="#">Support</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-primary transition-all duration-300 font-label-md text-label-md active:scale-95 duration-200" href="#">Account</a>
+</nav>
+<!-- Trailing Icons -->
+<div class="flex gap-4 items-center">
+<button class="text-on-background hover:text-primary transition-all duration-300 active:scale-95 duration-200">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-on-background hover:text-primary transition-all duration-300 active:scale-95 duration-200 relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-primary text-on-primary text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">2</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-16 px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto w-full">
+<!-- Breadcrumbs -->
+<nav class="flex text-on-surface-variant font-label-sm text-label-sm mb-8 gap-2 items-center">
+<a class="hover:text-primary transition-colors" href="#">Shop</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Audio</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-background">Quantum Sphere Headphones</span>
+</nav>
+<!-- Product Hero Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-24">
+<!-- Image Gallery (Left, 7 cols) -->
+<div class="md:col-span-7 flex flex-col gap-4">
+<!-- Main Image -->
+<div class="w-full aspect-square bg-surface-container rounded-xl overflow-hidden relative group cursor-crosshair">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A highly detailed, ultra-realistic product shot of premium over-ear headphones floating against a deep, pure black background. The headphones feature brushed gunmetal aluminum accents and plush, matte black leather ear cushions. Dramatic, cinematic studio lighting highlights the sleek curves and metallic textures, creating a striking contrast and a sense of modern, high-end luxury. The overall aesthetic is dark mode, minimalist, and technologically advanced, with sharp focus and shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0XD0d8TKKDtpJn5hxzubdiuTsR7o2AomzNvh4XKjSKjOW787xHdv57T7PPqWCjPrXoDXNvlOHLErV-Q4yUI-dGPIK-d8E5-_ZKs0zHVZsvkfc3vGDSRHAdWxSvdUhHRAU_b-plfP7zLROCTarmzxbhY8gwYk94sy4rQfUS7R5nGtEfZMEewJozv52tIhTS2v3xlV8t8vlERHPDj4JQwK2C3xA8G2dZRnvFlkHVRYOPKLpC6ricjlgFbqeCxjf_ZrtBRrSoUEG8rw"/>
+<!-- Badges -->
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary/10 text-primary border border-primary/20 px-3 py-1 rounded-full font-label-sm text-label-sm backdrop-blur-md">New Arrival</span>
+<span class="bg-surface-container-highest/80 text-on-background px-3 py-1 rounded-full font-label-sm text-label-sm backdrop-blur-md border border-outline-variant/30">Hi-Res Audio</span>
+</div>
+</div>
+<!-- Thumbnails -->
+<div class="grid grid-cols-4 gap-4">
+<button class="aspect-square bg-surface-container rounded-lg overflow-hidden border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of the plush ear cup of a premium headphone, focusing on the fine texture of the black leather and the precise stitching. Soft side lighting reveals the high-quality materials and ergonomic design, set against a dark, moody background to emphasize the luxurious feel of the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDhvDxPfVqKTfAF4N1x4mrDk77bDY7R3EPI78B3b0e88L86bSPYJSlI4xaDMxKRml6RNP1Z6Gh7Veuv84LZ5jkBbqZBFxAMBgqVthVYeitP_OFVdKDdn3IdDZtLu5wRn7z2Ss4ax92YgTJke2wb-Ka9OdZWh0EdhwjuRVBOKHWHEp70J_JdycpljTUJjv5GL8cpD8tG3k4OTA0RSHfdILlfVBx_cIy6HqTftEVg_OZrPQ9vO_NPGD5Zbwopz3LpueJrnHzzYuipeY"/>
+</button>
+<button class="aspect-square bg-surface-container rounded-lg overflow-hidden border-2 border-transparent hover:border-outline-variant transition-colors opacity-70 hover:opacity-100">
+<img class="w-full h-full object-cover" data-alt="A dramatic profile angle of modern over-ear headphones, highlighting the sleek metal headband extension mechanism. The metallic parts catch a cool, blue-tinted studio light, contrasting with the dark silhouette. The composition is sharp and technical, emphasizing precision engineering in a minimalist dark setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIBDgeu8i281xBd57ZPbDuSoZT0ffVF5zLDS9YbaWvGQT5n9WLeNTWrhKVdjK5GQZY9UOcxC8ybIGiGaPlVBoLizaGc33zP8b-YTfhvaR5vxWVK0pcJW-SROxtkmd89WEKYmSNLkfswWr8B4dTvr6LnVL8_C7kyTA0KOx42GmWqrdWz_fPPA83Kqm_5WbvwxOVb2L4n0bIu5i2afSvMiMamXA4-8DamrOiLcJt3c5gtcL6NGQlnJ3K3BmSZJbPXnJ0DYPWkUlbVuQ"/>
+</button>
+<button class="aspect-square bg-surface-container rounded-lg overflow-hidden border-2 border-transparent hover:border-outline-variant transition-colors opacity-70 hover:opacity-100">
+<img class="w-full h-full object-cover" data-alt="A lifestyle product shot showing the premium headphones resting elegantly on an abstract geometric pedestal made of dark grey slate. Minimalist background with subtle, diffused lighting creating soft shadows, conveying a sense of sophisticated quiet luxury and high-end audio performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIVwaMnfhTWsBFNvmqZGbDz6UE99aDA2heDToHGfjxcoEvV1XIHoVMi87MPjjvimyC5fliW8HrwWRARzrr4AxeXXmqkAGwfOq8uOLpt4RA9yAVwCXDPhSOcc2WqV2Q1YpiI_marNC0GcxjrF709FwnMT6ZoJWN34SCy2sRZ0VfT34WckOWhb0rccbQRrW437E4nbBQ7P4E_nTEe5X3TNgxCyDtkNmGUjO3mPndSckBh_IGBnQkzXx4L3luUU66gaYvUJSL90jr8CU"/>
+</button>
+<button class="aspect-square bg-surface-container rounded-lg overflow-hidden flex items-center justify-center bg-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">play_circle</span>
+</button>
+</div>
+</div>
+<!-- Product Details (Right, 5 cols) -->
+<div class="md:col-span-5 flex flex-col pt-4">
+<div class="flex justify-between items-start mb-2">
+<h1 class="font-headline-lg text-headline-lg text-on-background max-w-[80%]">Quantum Sphere Active Noise Cancelling</h1>
+<button class="text-on-surface-variant hover:text-error transition-colors p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<span class="font-headline-md text-headline-md text-primary">$499.00</span>
+<div class="flex items-center gap-1 text-tertiary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div></div></div></section></main></body></html>

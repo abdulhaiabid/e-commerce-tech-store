@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Tech - Sustainability</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-tertiary-container": "#4c1a00",
+                      "secondary-container": "#474746",
+                      "inverse-on-surface": "#313030",
+                      "surface-container": "#201f1f",
+                      "on-background": "#e5e2e1",
+                      "error-container": "#93000a",
+                      "on-primary-fixed-variant": "#004493",
+                      "primary-fixed-dim": "#adc6ff",
+                      "on-secondary-fixed-variant": "#474746",
+                      "on-surface": "#e5e2e1",
+                      "on-error": "#690005",
+                      "surface-container-highest": "#353534",
+                      "surface-dim": "#131313",
+                      "secondary": "#c8c6c5",
+                      "on-tertiary": "#571e00",
+                      "on-primary-container": "#00285c",
+                      "tertiary-container": "#ef6719",
+                      "background": "#131313",
+                      "surface-tint": "#adc6ff",
+                      "on-secondary": "#303030",
+                      "surface-variant": "#353534",
+                      "tertiary-fixed-dim": "#ffb595",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "surface-container-high": "#2a2a2a",
+                      "error": "#ffb4ab",
+                      "primary-container": "#4b8eff",
+                      "surface-container-low": "#1c1b1b",
+                      "primary": "#adc6ff",
+                      "on-tertiary-fixed-variant": "#7c2e00",
+                      "inverse-surface": "#e5e2e1",
+                      "inverse-primary": "#005bc1",
+                      "tertiary": "#ffb595",
+                      "secondary-fixed": "#e5e2e1",
+                      "on-primary-fixed": "#001a41",
+                      "tertiary-fixed": "#ffdbcc",
+                      "on-primary": "#002e69",
+                      "surface": "#131313",
+                      "on-error-container": "#ffdad6",
+                      "primary-fixed": "#d8e2ff",
+                      "on-tertiary-fixed": "#351000",
+                      "on-secondary-fixed": "#1b1b1c",
+                      "outline": "#8b90a0",
+                      "on-surface-variant": "#c1c6d7",
+                      "surface-bright": "#393939",
+                      "outline-variant": "#414755",
+                      "on-secondary-container": "#b7b5b4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "container-max-width": "1280px",
+                      "base": "8px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #121212;
+            color: #e5e2e1;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .bento-item {
+            background-color: #1E1E1E;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+        .glass-panel {
+            background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased flex flex-col min-h-screen font-body-md text-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-screen-2xl mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-primary dark:text-inverse-primary">
+                Lumina Tech
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary dark:text-inverse-primary font-semibold border-b-2 border-primary dark:border-inverse-primary pb-1" href="#">Sustainability</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-surface-variant/20 rounded-lg px-3 py-2 transition-all" href="#">Shop</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-surface-variant/20 rounded-lg px-3 py-2 transition-all" href="#">Innovations</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-surface-variant/20 rounded-lg px-3 py-2 transition-all" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4 text-primary dark:text-inverse-primary">
+<button aria-label="security" class="hover:bg-surface-container-high/50 dark:hover:bg-surface-variant/20 rounded-lg p-2 transition-all active:scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</button>
+<button aria-label="shopping_bag" class="hover:bg-surface-container-high/50 dark:hover:bg-surface-variant/20 rounded-lg p-2 transition-all active:scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<img alt="User Account" class="w-8 h-8 rounded-full border border-surface-container-high" data-alt="A small, circular avatar image of a user profile in a dark theme UI. Minimalist styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5DCtJB7SBYg49Hn7GRK9a7-SDjFFL3E4XYOTrwf3OfVmAyOCFrDp2tDol8f8jBOhjZ0c_n7D0-QknIfNS6GLpbh2mFukJNquHjFTkUhevYlhfPrUU-dBttlSgulfMCeUI_d0dIFBw1zCm6Y4XtwnMYfOLyZZaNtnvjUa75JHT5TfnLxojAWxTCXGLi5w0w1AmjID_aIiJv29Gm-T-XM_iF_RjPWyJiLQT9nfcZgNoUOPMMNQLnDsFqilk0K8L_X4BXqp6GZMD7DE"/>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto w-full">
+<!-- Hero Section -->
+<section class="mb-24 flex flex-col items-center text-center">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6 max-w-4xl">Engineering a <span class="text-primary">Sustainable</span> Future</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">At Lumina Tech, we believe premium performance shouldn't cost the earth. Our commitment to sustainable innovation drives every product we design, build, and recycle.</p>
+<div class="w-full h-96 md:h-[500px] rounded-2xl overflow-hidden relative shadow-lg">
+<div class="w-full h-full bg-cover bg-center absolute inset-0" data-alt="A sweeping, cinematic landscape showing a hyper-modern, eco-friendly tech manufacturing facility integrated seamlessly into a lush, dark green forest. The scene is set at twilight with glowing blue accents illuminating the sleek, metallic architecture. Dark theme, high contrast, premium aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOnjqlPE_sCCzggXVq3V0Wo7VLnkqQGDIl11w4yI43HS3PzFsPc0bHMe7gt2mybTVWgposG8snaaQCOUWa6OGFpk3ArislyqAMVeWSYYHE6HbdakFnRJgwKTdQYVCy1TT_OgOzlPVmiKSf6j09kBMS7HtOU1J9YBHP0k9BtlpXwiYchxn7qKnLjiVbyp8ttkL3bNe5EpZ2Kk6rylE4jZ7sf-welgmAFYxG7tQxmIRh8Fx9hbSgKiiz9YIcLZVTBTAUaHCRVCcLwp8')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+</div>
+</section>
+<!-- Bento Grid Sections -->
+<section class="bento-grid mb-24">
+<!-- Carbon Neutral Goals (Large, Data-driven) -->
+<div class="bento-item col-span-12 md:col-span-8 flex flex-col justify-between group">
+<div class="mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Carbon Neutral by 2030</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">We are aggressively reducing our carbon footprint across our entire supply chain. Our data-driven approach ensures transparent, measurable progress towards absolute zero emissions.</p>
+</div>
+<div class="relative h-64 w-full rounded-xl overflow-hidden glass-panel flex items-end p-6">
+<!-- Abstract Data Viz Placeholder -->
+<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-screen group-hover:scale-105 transition-transform duration-700" data-alt="An abstract, high-tech data visualization graphic showing a downward trend line representing carbon emissions over time. The chart uses glowing electric blue neon lines on a deep black grid background. Futuristic, clean, minimalist design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcUMMeqABoy79GDBZ4bSnwvQHNu2R-jwfT7HDlpyrPn7S_4OkzsxYYnVtl8B9JgB5HV60LrkN_-7eFIF1NsjzRzsry1CAZQerfXfwgpQMDwrwTTGIDVo7GpnXZATV6y9fNkEh4q-bG5y1pht_r3AHds_WEQEmBIXaKGpFRFzxf2Ip8-M9C-iMVLW-OaAfvFuA_TEjhViYJhxwV3UAPKS4u4H5zU-IyVQsw_ym0WAewE7w8fwDo-1xLoXC-AC7rnXKhmgRhXaaJ-OQ')"></div>
+<div class="relative z-10 w-full flex justify-between items-end border-t border-outline/30 pt-4">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider block mb-1">Current Reduction</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">42%</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-1">Target</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">100%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sustainable Packaging (Small, Visual) -->
+<div class="bento-item col-span-12 md:col-span-4 flex flex-col">
+<div class="flex-grow flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-5xl text-primary mb-6" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">100% Recycled Packaging</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We've eliminated single-use plastics from all new product boxes, using molded fiber and vegetable-based inks.</p>
+</div>
+</div>
+<!-- Circular Economy (Medium, Actionable) -->
+<div class="bento-item col-span-12 md:col-span-6 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center opacity-40" data-alt="A close-up, highly detailed shot of intricate electronic components being carefully disassembled by robotic arms. The lighting is dramatic, dark, and industrial, highlighting metallic textures and glowing blue circuitry. High-end tech photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8qBn0a8tZ5K6g3bj7R8lqInigCqVH_mRqaYq2BaoN3_0ErSAzo9Xl5wiGwPhJQBkVlp9rZR16b67Rlb1jUK_ZuPrGGczksfHFSX0oZEUcsA2Jk_EUCRJzEctQvQd1Oonp3072dWYZ9AJvBfpCFsbnpboxeQVvnK6em1LzW7NONK28oGJj2JbxT3NrPqAMB-5v7onUNqVsUWNgc9oiC0x53Xz_4NeP5GYNcXpTlZPPmJd-SXKNL5bMcUjYmI7SH9xZCY6nOhVYsXw')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container via-surface-container/80 to-transparent"></div>
+<div class="relative z-10 p-4 h-full flex flex-col justify-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="autorenew">autorenew</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">The Circular Economy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-sm">Trade in your old devices for credit. We harvest rare earth metals and reuse viable components to manufacture our next generation of hardware.</p>
+<button class="bg-[#007AFF] text-white font-label-md text-label-md font-bold py-3 px-6 rounded-[12px] w-fit hover:bg-opacity-90 transition-opacity flex items-center gap-2">
+                        Join the Program
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Renewable Energy (Medium, Info) -->
+<div class="bento-item col-span-12 md:col-span-6 glass-panel border-none bg-surface-container-low">
+<div class="h-full flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="solar_power">solar_power</span>
+                        Powered by Renewables
+                    </h3>
+<div class="flex-grow space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="font-label-md text-label-md text-primary font-bold">1</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Manufacturing Facilities</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Running on 100% wind and solar energy globally.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="font-label-md text-label-md text-primary font-bold">2</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Data Centers</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Carbon negative operations through active offsets.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-inverse-surface w-full py-xl px-margin-desktop flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-screen-2xl mx-auto mb-12">
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface dark:text-inverse-on-surface">Lumina Tech</span>
+<p class="font-body-md text-body-md text-secondary dark:text-outline-variant max-w-xs">Precision-engineered for a sustainable future.</p>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap gap-x-8 gap-y-4 justify-start md:justify-end items-start mt-8 md:mt-0">
+<a class="font-label-sm text-label-sm text-secondary dark:text-outline-variant hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors hover:opacity-80 Transition-opacity duration-300" href="#">Ethics</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-outline-variant hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors hover:opacity-80 Transition-opacity duration-300" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-primary dark:text-inverse-primary underline underline-offset-4 hover:opacity-80 Transition-opacity duration-300" href="#">Sustainability Report</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-outline-variant hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors hover:opacity-80 Transition-opacity duration-300" href="#">Device Security</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-outline-variant hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors hover:opacity-80 Transition-opacity duration-300" href="#">Recycling Program</a>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto pt-8 border-t border-outline/20">
+<p class="font-body-md text-body-md text-secondary dark:text-outline-variant text-sm">© 2024 Lumina Tech. All rights reserved. Precision-engineered for a sustainable future.</p>
+</div>
+</footer>
+</body></html>

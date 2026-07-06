@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUXE TECH - Premium Headphones Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#5b5c60",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary-fixed-variant": "#004493",
+                    "surface-variant": "#e2e2e4",
+                    "inverse-primary": "#adc6ff",
+                    "surface-dim": "#d9dadc",
+                    "on-secondary-container": "#656464",
+                    "on-tertiary-container": "#fefcff",
+                    "tertiary-container": "#747479",
+                    "background": "#f9f9fb",
+                    "error": "#ba1a1a",
+                    "on-background": "#1a1c1d",
+                    "on-surface-variant": "#414755",
+                    "on-tertiary-fixed": "#1a1b1f",
+                    "on-secondary-fixed-variant": "#474646",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f0f0f2",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f3f3f5",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-container-highest": "#e2e2e4",
+                    "surface-container": "#eeeef0",
+                    "secondary-container": "#e5e2e1",
+                    "tertiary-fixed": "#e3e2e7",
+                    "outline-variant": "#c1c6d7",
+                    "primary-container": "#0070eb",
+                    "outline": "#717786",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#d8e2ff",
+                    "tertiary-fixed-dim": "#c7c6cb",
+                    "on-primary-fixed": "#001a41",
+                    "surface-tint": "#005bc1",
+                    "surface-container-high": "#e8e8ea",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#1a1c1d",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#fefcff",
+                    "secondary": "#5f5e5e",
+                    "primary": "#0058bc",
+                    "on-tertiary-fixed-variant": "#46464b",
+                    "surface": "#f9f9fb",
+                    "inverse-surface": "#2f3132",
+                    "surface-bright": "#f9f9fb",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#c8c6c5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "margin-desktop": "64px",
+                    "lg": "48px",
+                    "sm": "12px",
+                    "margin-mobile": "16px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "xl": "80px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-primary {
+            background-color: #007AFF; /* Electric Blue override per spec */
+            color: #ffffff;
+        }
+
+        .btn-secondary {
+            background-color: #F5F5F7; /* Neutral fill override */
+            color: #1c1b1b; /* Charcoal text */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-24"> <!-- pt-24 to account for fixed header -->
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-on-background/80 backdrop-blur-xl shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-screen-2xl mx-auto">
+<!-- Brand Logo -->
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-on-background dark:text-on-surface-variant" href="#">LUXE TECH</a>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex space-x-8 items-center">
+<!-- Shop is Active for a product detail page -->
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1" href="#">Shop</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:opacity-70 transition-opacity" href="#">Innovation</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:opacity-70 transition-opacity" href="#">Support</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:opacity-70 transition-opacity" href="#">Account</a>
+</div>
+<!-- Trailing Icons -->
+<div class="flex space-x-4 items-center">
+<button class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-70 transition-opacity" data-icon="search">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-70 transition-opacity" data-icon="shopping_bag">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface-variant hover:text-primary transition-colors hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow max-w-screen-2xl mx-auto w-full px-margin-mobile md:px-margin-desktop pb-xl">
+<!-- Breadcrumbs -->
+<div class="py-md flex items-center space-x-2 text-label-md font-label-md text-outline">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Audio</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-background">Aura Pro Noise Cancelling Headphones</span>
+</div>
+<!-- Hero Product Section (Asymmetric Split) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-xl items-start">
+<!-- Left: Image Gallery (8 columns on desktop) -->
+<div class="md:col-span-8 flex flex-col-reverse md:flex-row gap-4 h-[600px]">
+<!-- Thumbnails (Vertical on desktop, horizontal on mobile) -->
+<div class="flex md:flex-col gap-4 overflow-x-auto md:overflow-y-auto no-scrollbar py-2 md:py-0 w-full md:w-24 shrink-0">
+<button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-primary shrink-0 relative">
+<img class="object-cover w-full h-full" data-alt="A sleek pair of silver high-end noise-cancelling headphones resting on a pristine white minimalist surface. Soft, high-key lighting creates a luminous precision aesthetic, highlighting the metallic textures and premium build quality. Studio shot, light mode aesthetic, clean and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXpb9Es2DM9JlRbt9odtcGbqlg7qwUJKQZYNsAoGaoEeup5lpMctx6paJ-F7bGprFYUJiP2or3OwZkIxC2TQFQg_Kn4W4MhsbFu3MHsty2ikyr7im0HBIFUMm9zm1PHmSzxjIrrDzALEDU1cHLW2fHSNw2rv989moVqDIVdYIcd8ASh-JNS1K77Wb98bwCHoL40A53jf3LF8ssND5bpwny05F5iFgG_fQDqVrkLnC1Dd5yUmDl-fZ8esvEvAPc_jrDsm0YXpc-0Bw"/>
+</button>
+<button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-outline-variant transition-colors shrink-0 relative bg-surface-container-low">
+<img class="object-cover w-full h-full mix-blend-multiply" data-alt="Detail shot of the ear cup of premium silver headphones, showing the plush memory foam padding and brushed metal casing. Luminous precision aesthetic, high key lighting, white background, emphasizing technical mastery and luxury comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWXVJbXGAf5LmAdvrVhxCTEI7Q9CgqJURUpFHn1HmYtHm7NZYKA5UCKUmLjleJPrUDBmG83X-clyeB2lVYpRiMGa0GqVwXNBaf2Euk0LVSNxrvpvCyIrH9wpeiKI75iIng0QSyKMQByAjXvErVyQvd47647riqbacDk56G4rn7zeonlV8Q_15LkhaXVNHT9aKiLtWSmI1UfTlTqCpOKIH8OootLIE2BaCEsqCntUbmq6Nh0CfBdD2BvR2XP-NF_TvRtncKe9xV3Jw"/>
+</button>
+<button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-outline-variant transition-colors shrink-0 relative bg-surface-container-low">
+<img class="object-cover w-full h-full mix-blend-multiply" data-alt="Close up of the touch controls on the side of a modern silver premium headphone. Minimalist design, clean lines, high key studio lighting on a pure white background. Luminous, sophisticated tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf2HAuDK4xDoEYfuGgkaWjHRDaLFlIilVyWRt6zl0piLxhcZhYl6of-0AC0jjbvY4LfpKt4m3oIHprCoRoB-Nxav1qAfTki6aoC1teSEkVSBEnfdIiELiyrKg_yjVWbd4ya1D3dQhG1G121FfjmQ-Z1SKwOBcyBCP5qNrVavjTYKq-y_HoJxretcci1qt07BL-DFgoIHXyWAZhCTUJfg5QIQGMy-AxTgXwh7mHhILOv3taR1_qSngjGA86YnHcc4bH6M4WK8kXt1s"/>
+</button>
+<button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-outline-variant transition-colors shrink-0 relative bg-surface-container-low">
+<img class="object-cover w-full h-full mix-blend-multiply" data-alt="Premium silver headphones folded neatly in their minimalist grey hard-shell carrying case. Shot from a top-down angle on a clean white surface with soft ambient shadows. Luminous precision, high-end travel tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBViwqpRlDiJu2mTl2or6zvSloQQDVXT6NACcPkIttA6zWApDcAxVCg55-9dYUPTv6IbsjLvg2CV1cn7afI3aicmaND8th0tozvirQ4Hxic4zc2EN4FV8pByAq5xfnPnY8_83OZgXj9L65048zpmiRyXgOKxom9EvvqA5QuwvhSHc2MAHYT5W2tZpVq8jxWmZExVAniH8TA3-YtW5aUyWMAUgw0Y2Z6uKEeLFLwBdBKBoI17mACAXFTG_ppT552bMB0UAcirR9HT3Q"/>
+</button>
+</div>
+<!-- Main Hero Image -->
+<div class="flex-grow rounded-xl overflow-hidden glass-card relative bg-surface-container-low h-full flex items-center justify-center p-md">
+<!-- Subtle backdrop gradient -->
+<div class="absolute inset-0 bg-gradient-to-tr from-white to-surface-container-low opacity-50"></div>
+<img class="w-full h-full object-contain relative z-10 drop-shadow-2xl" data-alt="A striking front-facing studio shot of the Aura Pro premium silver headphones floating slightly above a pristine white background. The image features soft, ambient shadows and luminous high-key lighting that emphasizes the sleek, minimalist design and high-end materials. Luminous precision aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkekpyeZ_wPaS68CdFej5ExD1-GP1zR_L8hEvY9yuMDGkmMsYG65wbcn75WKOuqrBB2saUQ0gV-grxGinEQz2Fr2iAsQHiDi_S2ZiD5lTJi8R3XMp7JHU9x4EwRkRKnJ2VrSVdvbYZr4mz8r1nOvg44c-De2wZXPylXUKz-36gpT5OG2RFB3bm0fzSytl8RVbbgRKD-828pgHcbLXJQ1y--MXmbm2TnQNHTV-J3PvJ8VcQZO_yGU_ROYSWH081wVs93wR6wqwYW20"/>
+<!-- Floating Badge -->
+<div class="absolute top-md left-md z-20">
+<span class="bg-[#007AFF]/10 text-[#007AFF] px-4 py-2 rounded-full font-label-sm text-label-sm uppercase tracking-wider backdrop-blur-sm border border-[#007AFF]/20">New Arrival</span>
+</div>
+</div>
+</div>
+<!-- Right: Product Details (4 columns on desktop) -->
+<div class="md:col-span-4 flex flex-col pt-md md:pt-0 sticky top-32">
+<h1 class="font-headline-xl text-headline-xl md:text-[40px] md:leading-[48px] text-on-background mb-2">Aura Pro</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Spatial Audio &amp; Active Noise Cancellation</p>
+<div class="flex items-center space-x-4 mb-8">
+<span class="font-headline-lg text-headline-lg text-on-background">$549.00</span>
+<div class="flex items-center text-label-md font-label-md text-tertiary">
+<span class="material-symbols-outlined text-[#007AFF] text-lg mr-1" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9 (128 Reviews)</span>
+</div>
+</div>
+<div class="space-y-6">
+<!-- Color Selection -->
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-3">Color: <span class="text-on-background font-semibold">Lunar Silver</span></p>
+<div class="flex space-x-3">
+<button aria-label="Lunar Silver" class="w-10 h-10 rounded-full bg-[#E5E5E7] border-2 border-[#007AFF] ring-2 ring-white shadow-sm"></button>
+<button aria-label="Obsidian Black" class="w-10 h-10 rounded-full bg-[#2F3132] border-2 border-transparent hover:border-outline-variant transition-colors shadow-sm"></button>
+<button aria-label="Starlight" class="w-10 h-10 rounded-full bg-[#F5F1EB] border-2 border-transparent hover:border-outline-variant transition-colors shadow-sm"></button>
+</div>
+</div>
+<!-- Key Features Chips -->
+<div class="flex flex-wrap gap-2 pt-4 border-t border-surface-variant">
+<span class="px-3 py-1.5 bg-surface-container-low rounded-full font-label-sm text-label-sm text-on-surface-variant flex items-center">
+<span class="material-symbols-outlined text-[16px] mr-1">graphic_eq</span> Spatial Audio
+                        </span>
+<span class="px-3 py-1.5 bg-surface-container-low rounded-full font-label-sm text-label-sm text-on-surface-variant flex items-center">
+<span class="material-symbols-outlined text-[16px] mr-1">noise_aware</span> 40dB ANC
+                        </span>
+<span class="px-3 py-1.5 bg-surface-container-low rounded-full font-label-sm text-label-sm text-on-surface-variant flex items-center">
+<span class="material-symbols-outlined text-[16px] mr-1">battery_charging_full</span> 40h Battery
+                        </span>
+</div>
+<!-- Actions -->
+<div class="pt-6 space-y-4">
+<button class="w-full btn-primary font-label-md text-label-md py-4 rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined mr-2">shopping_bag</span> Add to Cart
+                        </button>
+<button class="w-full btn-secondary font-label-md text-label-md py-4 rounded-lg flex items-center justify-center hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined mr-2">favorite</span> Save to Wishlist
+                        </button>
+</div>
+<div class="flex items-center justify-center text-label-sm font-label-sm text-outline pt-2 space-x-2">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+<span>Free priority shipping on all orders</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Specs & Details -->
+<section class="mt-xl pt-xl border-t border-surface-variant">
+<div class="flex flex-col items-center text-center mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Precision Engineered</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Every curve, material, and acoustic chamber has been designed to deliver an unparalleled auditory experience wrapped in minimalist elegance.</p>
+</div>
+<!-- Bento Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+<!-- Acoustic Chamber (Spans 2 columns on desktop) -->
+<div class="glass-card rounded-xl p-8 flex flex-col justify-between relative overflow-hidden md:col-span-2 group">
+<div class="relative z-10 max-w-sm">
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Beryllium Drivers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Custom 40mm drivers deliver crystalline highs and deep, resonant bass without distortion.</p>
+</div>
+<div class="absolute right-0 bottom-0 w-2/3 h-full mix-blend-multiply opacity-50 group-hover:opacity-80 transition-opacity duration-500">
+<img class="object-cover w-full h-full" data-alt="Abstract 3D rendering of internal headphone speaker drivers, floating in a clean white studio space. High-end technical illustration style, luminous lighting, silver and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAepdZ5vXg0Nmxy7u7JPHtxoTckZ6NAYDbJERRYIRuny4lBAvLV65CX-JVU6wcsNduRFr-vcyZC6p3J_N352d6ISlEtB5_7cQ_97lro6hsnxreUren-m8HlxRcOm5Php1Lvj4r8_aeCZ3qdtx2Bc6VNUilZdzt57Cu6DsIsCWSSf7NJdTfA3vy_Rh-62ffAYwKgx6i_VFs7jDhkMUI38OJJSg4YW594_TY6HfvA3gSIxssFo53AgVtjwVfpLODKK2YMYPlGKl7bc4Q"/>
+</div>
+</div>
+<!-- ANC Feature -->
+<div class="glass-card rounded-xl p-8 flex flex-col justify-center items-center text-center">
+<div class="w-16 h-16 rounded-full bg-[#007AFF]/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl text-[#007AFF]">waves</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Adaptive ANC</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time environmental adaptation blocks out the noise, keeping your focus pure.</p>
+</div>
+<!-- Comfort -->
+<div class="glass-card rounded-xl p-8 flex flex-col justify-center items-center text-center bg-surface-container-low border-none">
+<div class="w-16 h-16 rounded-full bg-surface flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-3xl text-on-background">air</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Cloud Comfort</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Memory foam wrapped in breathable vegan leather for all-day listening.</p>
+</div>
+<!-- Connectivity (Spans 2 columns) -->
+<div class="glass-card rounded-xl p-8 flex flex-col md:flex-row items-center justify-between relative overflow-hidden md:col-span-2 bg-gradient-to-r from-surface to-surface-container-low border-none">
+<div class="w-full md:w-1/2 mb-6 md:mb-0 relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Seamless Multipoint</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Connect to your laptop and phone simultaneously. Effortless switching via Bluetooth 5.3.</p>
+</div>
+<div class="w-full md:w-1/2 flex justify-end">
+<!-- Abstract connectivity visual using tailwind styling instead of image for clean layout -->
+<div class="relative w-48 h-32 flex items-center justify-center">
+<div class="absolute w-full h-1 bg-gradient-to-r from-transparent via-[#007AFF] to-transparent opacity-30"></div>
+<div class="w-12 h-12 rounded-full bg-surface shadow-sm border border-outline-variant flex items-center justify-center z-10 mr-12 animate-pulse">
+<span class="material-symbols-outlined text-outline">smartphone</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface shadow-sm border border-outline-variant flex items-center justify-center z-10 ml-12">
+<span class="material-symbols-outlined text-outline">laptop_mac</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-xl bg-surface-container-highest dark:bg-on-background border-t border-outline-variant dark:border-on-secondary-fixed-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-lg max-w-screen-2xl mx-auto">
+<!-- Brand Logo -->
+<div class="mb-6 md:mb-0 text-center md:text-left">
+<h4 class="font-headline-lg text-headline-lg font-black text-on-background">LUXE TECH</h4>
+</div>
+<!-- Links -->
+<div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-4 mb-6 md:mb-0">
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-all opacity-100 hover:opacity-80" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-all opacity-100 hover:opacity-80" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-all opacity-100 hover:opacity-80" href="#">Cookie Settings</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-all opacity-100 hover:opacity-80" href="#">Global Distribution</a>
+</div>
+<!-- Copyright -->
+<div class="text-center md:text-right w-full md:w-auto mt-4 md:mt-0">
+<p class="font-label-sm text-label-sm text-on-surface dark:text-on-surface-variant">© 2024 LUXE TECH BOUTIQUE. ALL RIGHTS RESERVED.</p>
+</div>
+</div>
+</footer>
+</body></html>

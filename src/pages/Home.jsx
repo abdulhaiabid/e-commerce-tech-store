@@ -1,10 +1,12 @@
+import { useState } from "react";
 import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
 
 function Home() {
   return (
     <>
       <Navbar />
-      <h1 className="text-2xl text-center font-bold">Home Page</h1>
+      <Hero />
     </>
   );
 }
