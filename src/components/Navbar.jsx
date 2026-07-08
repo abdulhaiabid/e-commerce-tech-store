@@ -4,6 +4,27 @@ function Navbar() {
   const [searchInputOpen, setSearchInputOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // const [activeId, setActiveId] = useState("home");
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     entries => {
+  //       entries.forEach(entry => {
+  //         if (entry.isIntersecting) {
+  //           setActiveId(entry.target.id);
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.6 } // section is considered active when 60% visible
+  //   );
+
+  //   navLinks.forEach(link => {
+  //     const section = document.querySelector(link.href);
+  //     if (section) observer.observe(section);
+  //   });
+  //   return () => observer.disconnect();
+  // }, []);
+
   const navLinks = [
     { id: 1, title: "Shop", href: "/", isActive: true },
     { id: 2, title: "Innovation", href: "/", isActive: false },
@@ -47,11 +68,11 @@ function Navbar() {
           <div className="flex items-center gap-6">
 
             <div className="flex items-stretch">
-              <div className={`${searchInputOpen ? `scale-y-100` : `scale-y-0 lg:scale-y-100 pointer-events-none`} w-full lg:w-auto lg:m-0 lg:static absolute top-full right-0 flex justify-stretch text-sm text-black bg-white shadow-xl lg:shadow-none rounded-l transition-transform duration-300 origin-top lg:pointer-events-auto`} >
-                <input className="size-full p-4 lg:p-0 lg:px-2" type="text" placeholder="Search"/>
+              <div className={`${searchInputOpen ? `scale-y-100` : `scale-y-0 lg:scale-y-100 pointer-events-none`} w-full lg:w-auto lg:m-0 lg:static absolute top-full right-0 flex justify-stretch text-sm text-black bg-[#0e0e0e] shadow-xl lg:shadow-none rounded-l transition-transform duration-300 origin-top lg:pointer-events-auto`} >
+                <input className="size-full p-4 lg:p-0 lg:px-2 placeholder:text-[#393939]" type="text" placeholder="Search"/>
               </div>
               <button className="flex items-center" onClick={handleNavSearchButton}>
-                <span className="material-symbols-outlined px-1 text-2xl! lg:text-black lg:bg-white rounded-r cursor-pointer hover:text-[#adc6ff] lg:hover:text-black lg:hover:bg-neutral-200">search</span>
+                <span className="material-symbols-outlined px-1 text-2xl! lg:text-[#0e0e0e] lg:bg-[#292929] rounded-r cursor-pointer hover:text-[#adc6ff] lg:hover:text-black lg:hover:bg-[#292929]/3">search</span>
               </button>
             </div>
 
