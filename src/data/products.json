@@ -1,0 +1,363 @@
+[
+  {
+    "id": "1001",
+    "sku": "MT-PRO-1001",
+    "title": "Matias Tactile Pro Keyboard",
+    "brand": "Matias",
+    "category": "Keyboards",
+    "shortDescription": "A premium mechanical keyboard for Mac users with tactile, clicky switches.",
+    "detailedDescription": "The Matias Tactile Pro Keyboard is a premium mechanical keyboard engineered for Mac users. It features Alps-inspired clicky switches that deliver a highly tactile typing experience, a low-profile layout for desk comfort, durable aluminum-reinforced construction, and Mac-specific key legends and shortcuts for seamless macOS integration. Ideal for typists and developers who prefer a pronounced tactile response and long-term reliability.",
+    "listPrice": 3500,
+    "salePrice": 3000,
+    "discountPercent": 14,
+    "stock": 42,
+    "isAvailable": true,
+    "featured": true,
+    "popularity": 87,
+    "colors": [
+      { "name": "Space Gray", "hex": "#2b2b2b", "isSelected": true },
+      { "name": "Silver", "hex": "#cfcfcf", "isSelected": false },
+      { "name": "Matte Black", "hex": "#111111", "isSelected": false }
+    ],
+    "variants": [
+      { "variantId": "1001-01", "layout": "US", "price": 3000 },
+      { "variantId": "1001-02", "layout": "ISO", "price": 3200 }
+    ],
+    "dimensions": { "width_mm": 430, "depth_mm": 140, "height_mm": 25 },
+    "weight_g": 900,
+    "shipping": { "weight_g": 1200, "dimensions_mm": "460x180x60", "shipsFrom": "PK" },
+    "imageURL": [
+      "/public/product-1/product-1-image-1.jpeg",
+      "/public/product-1/product-1-image-2.jpeg",
+      "/public/product-1/product-1-image-3.jpeg",
+      "/public/product-1/product-1-image-4.jpeg"
+    ],
+    "tag": ["New Arrival", "Mechanical"],
+    "wishlist": false,
+    "averageRating": 4.7,
+    "numReviews": 128,
+    "reviews": [
+      { "id": "r1001-1", "author": "Lina", "rating": 5, "title": "Fantastic typing feel", "comment": "The tactile switches are addictive — great for long typing sessions.", "date": "2026-06-12" },
+      { "id": "r1001-2", "author": "Omar", "rating": 4, "title": "Solid build", "comment": "Sturdy and comfortable; wish it had more color options.", "date": "2026-05-03" }
+    ],
+    "relatedProducts": ["1005", "1003"],
+    "searchKeywords": ["mechanical keyboard", "Mac keyboard", "tactile switches", "Matias"],
+    "createdAt": "2026-07-10T08:00:00Z",
+    "updatedAt": "2026-07-10T16:00:00Z"
+  },
+  {
+    "id": "1002",
+    "sku": "AERO-G2-1002",
+    "title": "Aero Buds Gen 2",
+    "brand": "Aero",
+    "category": "Audio / Earbuds",
+    "shortDescription": "True wireless earbuds with spatial audio and long battery life.",
+    "detailedDescription": "Aero Buds Gen 2 are true wireless earbuds offering spatial audio with dynamic head tracking, low-latency Bluetooth for gaming and video, adaptive noise reduction, and extended battery life with a compact charging case. They deliver clear mids, punchy bass, and a comfortable fit for extended listening sessions, making them suitable for commuting, workouts, and media consumption.",
+    "listPrice": 3999,
+    "salePrice": 1999,
+    "discountPercent": 50,
+    "stock": 230,
+    "isAvailable": true,
+    "featured": false,
+    "popularity": 94,
+    "colors": [
+      { "name": "Dark Blue", "hex": "#3333bb", "isSelected": true },
+      { "name": "Black", "hex": "#343434", "isSelected": false },
+      { "name": "Brown", "hex": "#654321", "isSelected": false },
+      { "name": "Pearl White", "hex": "#f6f6f6", "isSelected": false }
+    ],
+    "variants": [
+      { "variantId": "1002-01", "connectivity": "Bluetooth 5.3", "price": 1999 },
+      { "variantId": "1002-02", "connectivity": "Bluetooth 5.3 + ANC", "price": 2499 }
+    ],
+    "dimensions": { "width_mm": 60, "depth_mm": 40, "height_mm": 30 },
+    "weight_g": 45,
+    "shipping": { "weight_g": 120, "dimensions_mm": "120x80x40", "shipsFrom": "PK" },
+    "imageURL": [
+      "/public/product-2/product-2-image-1.jpeg",
+      "/public/product-2/product-2-image-2.jpeg",
+      "/public/product-2/product-2-image-3.jpeg",
+      "/public/product-2/product-2-image-4.jpeg"
+    ],
+    "tag": [],
+    "wishlist": false,
+    "averageRating": 4.5,
+    "numReviews": 542,
+    "reviews": [
+      { "id": "r1002-1", "author": "Ayesha", "rating": 5, "title": "Great for commuting", "comment": "Battery life lasts all day and the soundstage is impressive.", "date": "2026-06-20" },
+      { "id": "r1002-2", "author": "Bilal", "rating": 4, "title": "Excellent value", "comment": "Good ANC and low latency for gaming.", "date": "2026-04-11" }
+    ],
+    "relatedProducts": ["1005", "1003"],
+    "searchKeywords": ["true wireless", "earbuds", "spatial audio", "Aero Buds"],
+    "createdAt": "2026-06-01T09:30:00Z",
+    "updatedAt": "2026-07-09T12:15:00Z"
+  },
+  {
+    "id": "1004",
+    "sku": "HZ-34UW-1004",
+    "title": "Horizon 34-inch Ultrawide Monitor",
+    "brand": "Horizon",
+    "category": "Monitors",
+    "shortDescription": "Immersive 34\" curved ultrawide with high color accuracy.",
+    "detailedDescription": "The Horizon 34\" Ultrawide Monitor delivers an immersive curved display with professional-grade color accuracy, wide color gamut support, and a high refresh rate. It is designed for creative professionals and gamers who need expansive screen real estate, precise visuals, and smooth motion handling. The monitor includes ergonomic adjustments and multiple connectivity options for studio and desktop setups.",
+    "listPrice": 120000,
+    "salePrice": 110000,
+    "discountPercent": 8,
+    "stock": 18,
+    "isAvailable": true,
+    "featured": true,
+    "popularity": 78,
+    "colors": [
+      { "name": "Matte Black", "hex": "#0f0f0f", "isSelected": true }
+    ],
+    "variants": [
+      { "variantId": "1004-01", "panel": "IPS", "refreshRate": "144Hz", "price": 110000 },
+      { "variantId": "1004-02", "panel": "IPS", "refreshRate": "240Hz", "price": 130000 }
+    ],
+    "dimensions": { "width_mm": 820, "depth_mm": 220, "height_mm": 380 },
+    "weight_g": 7800,
+    "shipping": { "weight_g": 9800, "dimensions_mm": "950x300x520", "shipsFrom": "PK" },
+    "imageURL": [
+      "/public/product-4/product-4-image-1.jpeg",
+      "/public/product-4/product-4-image-2.jpeg",
+      "/public/product-4/product-4-image-3.jpeg",
+      "/public/product-4/product-4-image-4.jpeg"
+    ],
+    "tag": ["Sale"],
+    "wishlist": false,
+    "averageRating": 4.6,
+    "numReviews": 64,
+    "reviews": [
+      { "id": "r1004-1", "author": "Sara", "rating": 5, "title": "Color accuracy is superb", "comment": "Perfect for photo and video editing.", "date": "2026-03-18" },
+      { "id": "r1004-2", "author": "Hamid", "rating": 4, "title": "Great immersion", "comment": "Curvature and refresh rate make gaming smooth.", "date": "2026-02-05" }
+    ],
+    "relatedProducts": ["1007"],
+    "searchKeywords": ["34 inch monitor", "ultrawide", "curved monitor", "Horizon"],
+    "createdAt": "2026-05-10T11:00:00Z",
+    "updatedAt": "2026-07-08T10:45:00Z"
+  },
+  {
+    "id": "1003",
+    "sku": "OMNI-CORE-1003",
+    "title": "Omni Core Wireless Speaker",
+    "brand": "Omni",
+    "category": "Speakers",
+    "shortDescription": "Room-filling wireless speaker with deep bass and multi-room support.",
+    "detailedDescription": "Omni Core Wireless Speaker produces room-filling sound with deep, controlled bass and clear mids. It supports multi-room playback, Bluetooth and Wi‑Fi streaming, and includes smart features for voice control and seamless integration into modern living spaces. The sculptural design and durable build make it a stylish and practical choice for home audio setups.",
+    "listPrice": 6999,
+    "salePrice": 5999,
+    "discountPercent": 14,
+    "stock": 76,
+    "isAvailable": true,
+    "featured": false,
+    "popularity": 81,
+    "colors": [
+      { "name": "Charcoal", "hex": "#2e2e2e", "isSelected": true },
+      { "name": "Ivory", "hex": "#f2efe9", "isSelected": false }
+    ],
+    "variants": [
+      { "variantId": "1003-01", "connectivity": "Wi-Fi + Bluetooth", "price": 5999 },
+      { "variantId": "1003-02", "connectivity": "Bluetooth only", "price": 4999 }
+    ],
+    "dimensions": { "width_mm": 220, "depth_mm": 220, "height_mm": 360 },
+    "weight_g": 4200,
+    "shipping": { "weight_g": 5200, "dimensions_mm": "300x300x450", "shipsFrom": "PK" },
+    "imageURL": [
+      "/public/product-3/product-3-image-1.jpeg",
+      "/public/product-3/product-3-image-2.jpeg",
+      "/public/product-3/product-3-image-3.jpeg",
+      "/public/product-3/product-3-image-4.jpeg"
+    ],
+    "tag": ["Discounted"],
+    "wishlist": false,
+    "averageRating": 4.4,
+    "numReviews": 210,
+    "reviews": [
+      { "id": "r1003-1", "author": "Zara", "rating": 5, "title": "Powerful bass", "comment": "Fills my living room with rich sound.", "date": "2026-01-22" },
+      { "id": "r1003-2", "author": "Faisal", "rating": 4, "title": "Great multi-room", "comment": "Easy to set up and sync across rooms.", "date": "2026-04-02" }
+    ],
+    "relatedProducts": ["1005"],
+    "searchKeywords": ["wireless speaker", "multi-room", "Omni Core", "home audio"],
+    "createdAt": "2026-04-15T07:20:00Z",
+    "updatedAt": "2026-07-07T09:05:00Z"
+  },
+  {
+    "id": "1005",
+    "sku": "AURALIS-PRO-1005",
+    "title": "Auralis Pro Studio Headphones",
+    "brand": "Auralis",
+    "category": "Headphones",
+    "shortDescription": "Premium over-ear headphones with studio-grade sound.",
+    "detailedDescription": "Auralis Pro Studio Headphones deliver exceptional audio fidelity with deep bass, clear mids, and crisp highs. Designed for both audiophiles and professionals, they feature a sleek matte black finish, ergonomic cushioning for long sessions, and durable metallic accents for reliability. Ideal for music production, critical listening, or immersive entertainment, these headphones combine comfort with uncompromising sound quality.",
+    "listPrice": 14999,
+    "salePrice": 12999,
+    "discountPercent": 13,
+    "stock": 64,
+    "isAvailable": true,
+    "featured": true,
+    "popularity": 90,
+    "colors": [
+      { "name": "Matte Black", "hex": "#0b0b0b", "isSelected": true },
+      { "name": "Gunmetal", "hex": "#4b4b4b", "isSelected": false }
+    ],
+    "variants": [
+      { "variantId": "1005-01", "connection": "Wired", "price": 12999 },
+      { "variantId": "1005-02", "connection": "Wireless", "price": 15999 }
+    ],
+    "dimensions": { "width_mm": 180, "depth_mm": 85, "height_mm": 200 },
+    "weight_g": 320,
+    "shipping": { "weight_g": 700, "dimensions_mm": "220x200x120", "shipsFrom": "PK" },
+    "imageURL": [
+      "/public/product-5/product-5-image-1.jpeg",
+      "/public/product-5/product-5-image-2.jpeg",
+      "/public/product-5/product-5-image-3.jpeg",
+      "/public/product-5/product-5-image-4.jpeg"
+    ],
+    "tag": ["New Arrival", "Studio"],
+    "wishlist": false,
+    "averageRating": 4.8,
+    "numReviews": 312,
+    "reviews": [
+      { "id": "r1005-1", "author": "Nadia", "rating": 5, "title": "Studio clarity", "comment": "Transparent mids and tight bass — perfect for mixing.", "date": "2026-06-01" },
+      { "id": "r1005-2", "author": "Rizwan", "rating": 4, "title": "Very comfortable", "comment": "Comfortable for long sessions; a bit heavy.", "date": "2026-05-12" }
+    ],
+    "relatedProducts": ["1003", "1002"],
+    "searchKeywords": ["studio headphones", "over-ear", "Auralis Pro", "professional audio"],
+    "createdAt": "2026-06-18T10:00:00Z",
+    "updatedAt": "2026-07-09T14:30:00Z"
+  },
+  {
+    "id": "1006",
+    "sku": "BB-B1-1006",
+    "title": "Blue Birds B1 Condenser Microphone",
+    "brand": "Blue Birds",
+    "category": "Microphones",
+    "shortDescription": "Professional condenser mic with shock mount isolation.",
+    "detailedDescription": "The Blue Birds B1 Condenser Microphone is engineered for studio-quality recording with a wide frequency response and high sensitivity. Its metallic body and precision capsule deliver clear vocals and instrument capture, while the included shock mount minimizes vibrations for pristine audio. Perfect for podcasters, musicians, and broadcasters, this microphone combines sleek design with professional-grade performance.",
+    "listPrice": 24999,
+    "salePrice": 21999,
+    "discountPercent": 12,
+    "stock": 35,
+    "isAvailable": true,
+    "featured": false,
+    "popularity": 69,
+    "colors": [
+      { "name": "Silver", "hex": "#c7c9cc", "isSelected": true }
+    ],
+    "variants": [
+      { "variantId": "1006-01", "pattern": "Cardioid", "price": 21999 },
+      { "variantId": "1006-02", "pattern": "Multi-pattern", "price": 27999 }
+    ],
+    "dimensions": { "width_mm": 60, "depth_mm": 60, "height_mm": 180 },
+    "weight_g": 520,
+    "shipping": { "weight_g": 900, "dimensions_mm": "220x120x120", "shipsFrom": "PK" },
+    "imageURL": [
+      "/public/product-6/product-6-image-1.jpeg",
+      "/public/product-6/product-6-image-2.jpeg",
+      "/public/product-6/product-6-image-3.jpeg",
+      "/public/product-6/product-6-image-4.jpeg"
+    ],
+    "tag": ["Professional", "Recording"],
+    "wishlist": false,
+    "averageRating": 4.6,
+    "numReviews": 89,
+    "reviews": [
+      { "id": "r1006-1", "author": "Mariam", "rating": 5, "title": "Crystal clear vocals", "comment": "Great for podcasting and vocals; very low noise floor.", "date": "2026-05-28" },
+      { "id": "r1006-2", "author": "Khalid", "rating": 4, "title": "Solid mic", "comment": "Excellent build and sound; shock mount is a plus.", "date": "2026-03-14" }
+    ],
+    "relatedProducts": ["1005"],
+    "searchKeywords": ["condenser microphone", "studio mic", "Blue Birds B1", "podcast mic"],
+    "createdAt": "2026-06-05T13:40:00Z",
+    "updatedAt": "2026-07-06T11:10:00Z"
+  },
+  {
+    "id": "1007",
+    "sku": "DF-VISION-1007",
+    "title": "DeFi Vision Laptop",
+    "brand": "DeFi Vision",
+    "category": "Laptops",
+    "shortDescription": "High-performance laptop optimized for blockchain and finance.",
+    "detailedDescription": "The DeFi Vision Laptop is built for modern innovators exploring decentralized finance and blockchain applications. Featuring a futuristic design with glowing teal visuals, it offers powerful processing, secure connectivity, and optimized performance for crypto trading, smart contract development, and financial modeling. With a sleek interface and community-driven ethos, it’s the ultimate tool for those embracing digital finance.",
+    "listPrice": 185000,
+    "salePrice": 175000,
+    "discountPercent": 5,
+    "stock": 12,
+    "isAvailable": true,
+    "featured": true,
+    "popularity": 72,
+    "colors": [
+      { "name": "Teal Accent", "hex": "#00b3a6", "isSelected": true },
+      { "name": "Graphite", "hex": "#2a2a2a", "isSelected": false }
+    ],
+    "variants": [
+      { "variantId": "1007-01", "cpu": "i7", "ram_gb": 16, "price": 175000 },
+      { "variantId": "1007-02", "cpu": "i9", "ram_gb": 32, "price": 210000 }
+    ],
+    "dimensions": { "width_mm": 320, "depth_mm": 220, "height_mm": 18 },
+    "weight_g": 1400,
+    "shipping": { "weight_g": 2000, "dimensions_mm": "420x300x80", "shipsFrom": "PK" },
+    "imageURL": [
+      "/public/product-7/product-7-image-1.jpeg",
+      "/public/product-7/product-7-image-2.jpeg",
+      "/public/product-7/product-7-image-3.jpeg",
+      "/public/product-7/product-7-image-4.jpeg"
+    ],
+    "tag": ["Blockchain", "Innovation"],
+    "wishlist": false,
+    "averageRating": 4.3,
+    "numReviews": 47,
+    "reviews": [
+      { "id": "r1007-1", "author": "Imran", "rating": 5, "title": "Built for DeFi", "comment": "Fast and secure — ideal for trading and development.", "date": "2026-06-30" },
+      { "id": "r1007-2", "author": "Sana", "rating": 4, "title": "Powerful machine", "comment": "Great performance; battery life could be better.", "date": "2026-05-21" }
+    ],
+    "relatedProducts": ["1004"],
+    "searchKeywords": ["DeFi laptop", "blockchain laptop", "developer laptop", "DeFi Vision"],
+    "createdAt": "2026-06-25T15:00:00Z",
+    "updatedAt": "2026-07-09T08:50:00Z"
+  },
+  {
+    "id": "1008",
+    "sku": "SAT-X-1008",
+    "title": "Satoshi Smartwatch X",
+    "brand": "Satoshi",
+    "category": "Wearables",
+    "shortDescription": "Advanced smartwatch with health and fitness tracking.",
+    "detailedDescription": "Satoshi Smartwatch X combines elegant design with powerful health monitoring features. It tracks steps, calories, distance, RPM, and heart rate with precision, while offering seamless smartphone integration and long battery life. The metallic band and sleek black finish make it stylish enough for everyday wear, while its advanced metrics support athletes and professionals seeking detailed performance insights.",
+    "listPrice": 45999,
+    "salePrice": 42999,
+    "discountPercent": 7,
+    "stock": 95,
+    "isAvailable": true,
+    "featured": false,
+    "popularity": 88,
+    "colors": [
+      { "name": "Black", "hex": "#0a0a0a", "isSelected": true },
+      { "name": "Silver", "hex": "#d9d9d9", "isSelected": false }
+    ],
+    "variants": [
+      { "variantId": "1008-01", "band": "Metal", "price": 42999 },
+      { "variantId": "1008-02", "band": "Sport", "price": 39999 }
+    ],
+    "dimensions": { "width_mm": 44, "depth_mm": 10, "height_mm": 44 },
+    "weight_g": 48,
+    "shipping": { "weight_g": 150, "dimensions_mm": "120x90x40", "shipsFrom": "PK" },
+    "imageURL": [
+      "/public/product-8/product-8-image-1.jpeg",
+      "/public/product-8/product-8-image-2.jpeg",
+      "/public/product-8/product-8-image-3.jpeg",
+      "/public/product-8/product-8-image-4.jpeg"
+    ],
+    "tag": ["Fitness", "Smart"],
+    "wishlist": false,
+    "averageRating": 4.5,
+    "numReviews": 176,
+    "reviews": [
+      { "id": "r1008-1", "author": "Amina", "rating": 5, "title": "Accurate tracking", "comment": "Tracks workouts and sleep reliably; looks premium.", "date": "2026-06-08" },
+      { "id": "r1008-2", "author": "Tariq", "rating": 4, "title": "Great features", "comment": "Excellent metrics; UI could be snappier.", "date": "2026-04-29" }
+    ],
+    "relatedProducts": ["1002"],
+    "searchKeywords": ["smartwatch", "fitness tracker", "Satoshi X", "wearable"],
+    "createdAt": "2026-06-28T12:10:00Z",
+    "updatedAt": "2026-07-10T09:55:00Z"
+  }
+]

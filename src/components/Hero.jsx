@@ -1,11 +1,113 @@
+import { useState, useEffect, useRef } from "react";
+
 function Hero() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [translateXValue, setTranslateXValue] = useState(0);
+  const [variable, setVariable] = useState(0);
+  const slideRef = useRef(null);
+
+  useEffect(() => {
+    function calcResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener("resize", calcResize);
+
+    return () => {
+      window.removeEventListener("resize", calcResize);
+    }
+  }, []);
+
+useEffect(() => {
+  const slideWidth = slideRef.current?.offsetWidth || window.innerWidth;
+
+  const interval = setInterval(() => {
+    setVariable(prev => {
+      const next = prev === 15 ? 0 : prev + 1;
+      setTranslateXValue(slideWidth * next); // number, not string
+      return next;
+    });
+  }, 7000);
+
+  return () => clearInterval(interval);
+}, []);
+
+
+  // useEffect(() => {
+  //   const newInterval = setInterval(() => {
+  //     if (variable === 15) {
+  //       setVariable(0);
+  //     } else {
+  //       setVariable(current => current + 1);
+  //     }
+
+  //     console.log(variable);
+
+  //   }, 3000);
+
+  //   return () => {
+  //     clearInterval(newInterval);
+  //   }
+  // }, [variable]);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+
+  //     setTranslateXValue(`${((windowWidth - 7) * variable)}px`);
+  //     console.log(translateXValue);
+
+  //   }, 3000);
+
+  //   return () => {
+  //     clearInterval(interval);
+  //   }
+  // }, [windowWidth, translateXValue]);
+
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setVariable(prev => {
+  //       const next = prev === 15 ? 0 : prev + 1;
+  //       setTranslateXValue(`${windowWidth * next}px`);
+  //       return next;
+  //     });
+  //   }, 3000);
+
+  //   return () => clearInterval(interval);
+  // }, [windowWidth]);
+
+
+
   return (
     <>
       <section className="relative h-180 w-full bg-[#131313] ">
         {/* Background Image */}
-        <div class="absolute inset-0 z-1">
-          <img class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT9DnMABH-TPr4WuKd69jzc6HnXGeuR8cu4cGDiHmt-_mGg0gdHZJPBqmOs2h60UaJRbowM4DWbg75rGpbvS0wqQOYPPt9QmXJUSzQWMY3NsK5dejoS9jIrB-2bc8CaSeUKyr-oE9n2SpElcbups4-vPdYw_dzUDFyg-gTE538cwy-0IbzLlfCkBpuXiCD72SHpWJGlCHrxu83zKGJZSQA0b5gfG98wSuhUSthVnalwEFj1thFQuBZb_V4lKyJMW5Bb-z3j5Ttli0"/>
-          <div class="absolute inset-0 bg-linear-to-r from-[#131313] via-[#131313]/80 to-transparent z-1"></div>
+        <div className={`absolute inset-0 z-1 overflow-hidden`}>
+          <div
+            style={{
+              transform: `translateX(-${translateXValue}px)`,
+            }}  
+            className="size-full flex transition-transform duration-300">
+
+            <img ref={slideRef} className="size-full object-cover object-center shrink-0" src="headphones-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="keyboard-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="earbuds-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="monitor-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="headphones-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="keyboard-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="earbuds-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="monitor-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="headphones-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="keyboard-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="earbuds-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="monitor-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="headphones-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="keyboard-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="earbuds-product.jpg"/>
+            <img className="size-full object-cover object-center shrink-0" src="monitor-product.jpg"/>
+
+          </div>
+          <div className="absolute inset-0 bg-linear-to-r from-[#131313] via-[#131313]/80 to-transparent z-1"></div>
         </div>
 
         {/* Content */}

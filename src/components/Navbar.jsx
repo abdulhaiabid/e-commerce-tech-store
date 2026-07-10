@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Navbar() {
@@ -26,10 +27,10 @@ function Navbar() {
   // }, []);
 
   const navLinks = [
-    { id: 1, title: "Shop", href: "/", isActive: true },
-    { id: 2, title: "Innovation", href: "/", isActive: false },
-    { id: 3, title: "Support", href: "/", isActive: false },
-    { id: 4, title: "Account", href: "/", isActive: false },
+    { id: 2, title: "Home", path: "/", isActive: false },
+    { id: 1, title: "Shop", path: "shop", isActive: true },
+    { id: 3, title: "About", path: "about", isActive: false },
+    { id: 4, title: "Account", path: "/", isActive: false },
   ];
 
   function handleNavLinksButton() {
@@ -48,9 +49,9 @@ function Navbar() {
         <nav className="max-w-7xl mx-auto px-8 py-4 relative flex justify-between items-center gap-4 xs:gap-12">
 
           <div>
-            <a className="text-xl xs:text-2xl font-bold text-nowrap" href="/">
+            <Link className="text-xl xs:text-2xl text-[#adc6ff] font-bold text-nowrap" to="/">
               TECH STORE
-            </a>
+            </Link>
           </div>
 
           <ul className={`${mobileMenuOpen ? `scale-y-100` : `scale-y-0 md:scale-y-100 pointer-events-none`} w-full md:w-auto md:p-0 absolute top-full left-0 md:static flex-1 flex flex-col md:flex md:flex-row justify-around md:justify-start items-center md:gap-6 bg-[#131313] transition-transform duration-300 origin-top md:pointer-events-auto`}>            
@@ -58,7 +59,7 @@ function Navbar() {
               navLinks.map((link, index) => {
                 return (
                 <li key={link.id} className="w-full md:w-auto">
-                  <a className="py-6 md:p-0 w-full md:w-auto block md:inline text-lg text-center md:text-start transition-all md:hover:text-[#adc6ff] hover:bg-neutral-700 md:hover:bg-transparent" href={link.href}>{link.title}</a>
+                  <Link className="py-6 md:p-0 w-full md:w-auto block md:inline text-lg text-center md:text-start transition-all md:hover:text-[#adc6ff] hover:bg-neutral-700 md:hover:bg-transparent" to={link.path}>{link.title}</Link>
                 </li>
                 )
               })
@@ -72,7 +73,7 @@ function Navbar() {
                 <input className="size-full p-4 lg:p-0 lg:px-2 placeholder:text-[#393939]" type="text" placeholder="Search"/>
               </div>
               <button className="flex items-center" onClick={handleNavSearchButton}>
-                <span className="material-symbols-outlined px-1 text-2xl! lg:text-[#0e0e0e] lg:bg-[#292929] rounded-r cursor-pointer hover:text-[#adc6ff] lg:hover:text-black lg:hover:bg-[#292929]/3">search</span>
+                <span className="material-symbols-outlined px-1 text-2xl! lg:text-[#ffffff] lg:bg-[#292929] rounded-r cursor-pointer hover:text-[#adc6ff] lg:hover:text-[#adc6ff]  ">search</span>
               </button>
             </div>
 

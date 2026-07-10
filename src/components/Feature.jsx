@@ -24,7 +24,7 @@ function Feature() {
               <div className="group/bento-image-1 h-75 md:h-full w-full relative col-span-1 md:row-span-2 md:col-span-8 rounded-xl overflow-clip">
                 <div className="absolute inset-0">
                   <img className="w-full h-full object-cover object-center group-hover/bento-image-1:scale-110 transition-all duration-700" src="laptop-display-image.jpg" alt="" />
-                  <div class="absolute inset-0 bg-linear-to-t from-[#131313]/90 to-transparent z-1"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-[#131313]/90 to-transparent z-1"></div>
                 </div>
 
                 <div className="mb-3 ml-5 md:ml-8 absolute bottom-0 z-2">
@@ -44,7 +44,7 @@ function Feature() {
               <div className="group/bento-image-2 h-75 md:h-full w-full relative md:col-span-4 rounded-xl overflow-clip">
                 <div className="absolute inset-0">
                   <img className="w-full h-full object-cover object-center group-hover/bento-image-2:scale-110 transition-all duration-700" src="mic-display-image.jpg" alt="" />
-                  <div class="absolute inset-0 bg-linear-to-t from-[#131313]/90 to-transparent z-1"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-[#131313]/90 to-transparent z-1"></div>
                 </div>
 
                 <div className="mb-3 ml-5 absolute bottom-0 z-2">
@@ -61,7 +61,7 @@ function Feature() {
               <div className="group/bento-image-3 h-75 md:h-full w-full relative md:col-span-4 rounded-xl overflow-clip">
                 <div className="absolute inset-0">
                   <img className="w-full h-full object-cover object-center group-hover/bento-image-3:scale-110 transition-all duration-700" src="watch-display-image.jpg" alt="" />
-                  <div class="absolute inset-0 bg-linear-to-t from-[#131313]/90 to-transparent z-1"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-[#131313]/90 to-transparent z-1"></div>
                 </div>
 
                 <div className="mb-3 ml-5 absolute bottom-0 z-2">
