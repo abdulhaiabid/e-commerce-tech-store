@@ -133,7 +133,7 @@ function Product() {
           <div className="w-full grid grid-cols-1 sm:grid-cols-12 gap-6">
 
             {/* Image */}
-            <div className="col-span-1 sm:col-span-6 flex flex-col gap-6">
+            <div className="col-span-1 sm:col-span-6 flex flex-col gap-6 starting:opacity-0 opacity-100 transition-all duration-500 delay-500">
               {/* Display Image */}
               <div 
                 className="group/displayImage aspect-square relative rounded-2xl overflow-hidden">
@@ -182,17 +182,17 @@ function Product() {
             <div className="pt-4 col-span-1 sm:col-span-6 flex flex-col">
 
               {/* Heading */}
-              <h2 className="text-2xl sm:text-4xl font-medium">
+              <h2 className="text-2xl sm:text-4xl font-medium starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-200">
                 { product.title }
               </h2>
 
               {/* Description */}
-              <p className="mt-4 text-sm sm:text-lg text-[#c1c6d7]">
+              <p className="mt-4 text-sm sm:text-lg text-[#c1c6d7] starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-300">
                 { product.detailedDescription }
               </p>
 
               {/* Rating, wishlist and share */}
-              <div className="mt-4 flex justify-between items-center">
+              <div className="mt-4 flex justify-between items-center starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-400">
 
                 {/* Rating - Incomplete */}
                 <div className="flex-1 flex items-center">
@@ -240,7 +240,7 @@ function Product() {
               </div>
 
               {/* Price */}
-              <div className="mt-4 flex items-start gap-2">
+              <div className="mt-4 flex items-start gap-2 starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-400">
                 <span className="text-2xl text-[#adc6ff] font-semibold">
                   {`Rs.${ product.salePrice.toLocaleString('en-US') }`}
                 </span>
@@ -250,7 +250,7 @@ function Product() {
               </div>
 
               {/* Colors */}
-              <div className="mt-4 flex flex-col gap-2">
+              <div className="mt-4 flex flex-col gap-2 starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-500">
                 <span className="flex items-center gap-2 text-lg font-semibold">
                   Color: 
                   {
@@ -274,7 +274,7 @@ function Product() {
               </div>
 
               {/* Quantity */}
-              <div className="mt-4 flex items-center gap-3">
+              <div className="mt-4 flex items-center gap-3 starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-500">
                 <span className="text-lg font-semibold">
                   Quantity
                 </span>
@@ -301,7 +301,7 @@ function Product() {
               </div>
 
               {/* Buy and Add to Cart Buttons */}
-              <div className="mt-8 flex flex-col md:flex-row justify-center md:justify-start md:items-center gap-4">
+              <div className="mt-8 flex flex-col md:flex-row justify-center md:justify-start md:items-center gap-4 starting:opacity-0 opacity-100 transition-all duration-500 delay-600">
                 {/* Buy now button */}
                 <button className="px-4 py-3 font-semibold bg-[#007aff] rounded-lg transition-all cursor-pointer hover:bg-[#005bc1]">
                   Buy Now

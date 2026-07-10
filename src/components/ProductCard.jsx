@@ -43,7 +43,8 @@ function ProductCard({ product, handleWishButton }) {
           <p className="mb-2 flex-1 text-md text-[#bdc1d2]">
             { product.shortDescription }
           </p>
-
+          
+          {/* Price */}
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
               <span className="sm:text-xl font-semibold">
@@ -57,6 +58,8 @@ function ProductCard({ product, handleWishButton }) {
                 )
               }
             </div>
+
+            {/* Add to Cart Button */}
             <button className="px-3 aspect-square flex justify-center items-center bg-[#adc6ff] rounded-full transition-all duration-300 cursor-pointer hover:bg-[#adc6ff]/90">
               <span className="material-symbols-outlined text-lg! text-[#1e1e1e]">
                 add

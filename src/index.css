@@ -19,9 +19,9 @@
 }
 
 @layer utilities {
-  .center {
-    @apply flex justify-center items-center text-blue-500
-  }
+  .fade-up {
+    @apply starting:opacity-0 opacity-100 translate-y-0 transition-all duration-500
+  }  
 }
 
 
@@ -60,11 +60,11 @@
   .animate-fade-up {
       animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
-  .delay-100 { animation-delay: 100ms; }
+  /* .delay-100 { animation-delay: 100ms; }
   .delay-200 { animation-delay: 200ms; }
   .delay-300 { animation-delay: 300ms; }
   .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
+  .delay-500 { animation-delay: 500ms; } */
 
   /* Glassmorphism utilities */
   .glass-panel {

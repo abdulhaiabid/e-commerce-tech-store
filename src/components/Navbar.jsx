@@ -1,30 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import ShoppingCart from "./ShoppingCart";
 
 function Navbar() {
   const [searchInputOpen, setSearchInputOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // const [activeId, setActiveId] = useState("home");
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     entries => {
-  //       entries.forEach(entry => {
-  //         if (entry.isIntersecting) {
-  //           setActiveId(entry.target.id);
-  //         }
-  //       });
-  //     },
-  //     { threshold: 0.6 } // section is considered active when 60% visible
-  //   );
-
-  //   navLinks.forEach(link => {
-  //     const section = document.querySelector(link.href);
-  //     if (section) observer.observe(section);
-  //   });
-  //   return () => observer.disconnect();
-  // }, []);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const navLinks = [
     { id: 2, title: "Home", path: "/", isActive: false },
@@ -43,6 +24,14 @@ function Navbar() {
     setMobileMenuOpen(current => current ? !current : null);
   }
 
+  function handleCartOpenButton() {
+    setIsCartOpen(true);
+  }
+  
+  function handleCartCloseButton() {
+    setIsCartOpen(false);
+  }
+
   return (
     <>
       <header className="w-full fixed z-30 bg-[#131313] border-b border-b-[#414755]">
@@ -59,7 +48,7 @@ function Navbar() {
               navLinks.map((link, index) => {
                 return (
                 <li key={link.id} className="w-full md:w-auto">
-                  <Link className="py-6 md:p-0 w-full md:w-auto block md:inline text-lg text-center md:text-start transition-all md:hover:text-[#adc6ff] hover:bg-neutral-700 md:hover:bg-transparent" to={link.path}>{link.title}</Link>
+                  <NavLink className={({isActive}) => `py-6 md:p-0 w-full md:w-auto block md:inline text-lg text-center ${isActive ? "text-[#adc6ff]" : "text-inherit"} md:text-start transition-all md:hover:text-[#adc6ff] hover:bg-neutral-700 md:hover:bg-transparent`} to={link.path}>{link.title}</NavLink>
                 </li>
                 )
               })
@@ -77,8 +66,11 @@ function Navbar() {
               </button>
             </div>
 
+            {/* Cart Button */}
             <div className="relative flex items-center">
-              <button className="flex items-center">
+              <button 
+                className="flex items-center"
+                onClick={handleCartOpenButton}>
                 <span className="material-symbols-outlined text-2xl! transition-all cursor-pointer hover:text-[#adc6ff]">shopping_bag</span>
                 <span className="aspect-square px-1.25 absolute -right-1 -top-1 flex items-center text-[10px] text-black bg-[#adc6ff] rounded-full">2</span>
               </button>
@@ -91,11 +83,14 @@ function Navbar() {
                 </span>
               </button>
             </div>
-
           </div>
-
         </nav>
       </header>
+      {/* Shopping Cart */}
+      <ShoppingCart
+      isCartOpen={isCartOpen}
+        handleCartCloseButton={handleCartCloseButton} />
+
     </>
   );
 }

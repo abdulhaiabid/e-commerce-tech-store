@@ -1,55 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import products from "/src/data/products.json";
 import ProductCard from "../components/ProductCard";
+import Footer from "../components/Footer";
 
 function Shop() {
   const [trendingProducts, setTrendingProducts] = useState(products);
-  //   {
-  //     id: crypto.randomUUID(),
-  //     title: "Tactile Pro Keyboard",
-  //     description: "Low-profile mechanical perfection for the modern typist.",
-  //     listPrice: 3500,
-  //     salePrice: 3000,
-  //     imageURL: "keyboard-product.jpg",
-  //     tag: "New",
-  //     wishlist: false,
-  //   },
-  //   {
-  //     id: crypto.randomUUID(),
-  //     title: "Aero Buds Gen 2",
-  //     description: "Spatial audio with dynamic head tracking.",
-  //     listPrice: 3999,
-  //     salePrice: 1999,
-  //     imageURL: "earbuds-product.jpg",
-  //     tag: "",
-  //     wishlist: false,
-  //   },
-  //   {
-  //     id: crypto.randomUUID(),
-  //     title: "Horizon 34'' Ultrawide",
-  //     description: "Immersive curve, absolute color accuracy.",
-  //     listPrice: 120000,
-  //     salePrice: 110000,
-  //     imageURL: "monitor-product.jpg",
-  //     tag: "Sale",
-  //     wishlist: false,
-  //   },
-  //   {
-  //     id: crypto.randomUUID(),
-  //     title: "Omni Core Speaker",
-  //     description: "Room-filling sound in a sculptural design.",
-  //     listPrice: 6999,
-  //     salePrice: 5999,
-  //     imageURL: "ai-speaker-product.jpg",
-  //     tag: "Discounted",
-  //     wishlist: false,
-  //   },
-  // ]);
-
-  useEffect(() => {
-    
-  }, []);
-
+  
   // This function toggles wishlist button.
   function handleWishButton(id) {
     setTrendingProducts(current => current.map(product => product.id === id ? { ...product, wishlist: !product.wishlist } : product));
@@ -57,7 +13,8 @@ function Shop() {
 
   return (
     <>
-      <section className="min-h-180 w-full text-white bg-[#131313]">
+      <section
+        className="min-h-180 w-full text-white bg-[#131313]">
         {/* Main */}
 
         <div className="h-full max-w-7xl mx-auto px-8 grid grid-cols-[auto_1fr]">
@@ -66,12 +23,12 @@ function Shop() {
           <aside className="w-64 h-full px-6 py-24 col-span-1 flex flex-col text-[#e5e2e1] bg-[#1e1e1e] border-r border-r-[#333333]">
 
             {/* Heading */}
-            <h2 className="text-2xl text-[#e5e2e1] font-semibold">
+            <h2 className="text-2xl text-[#e5e2e1] font-semibold starting:opacity-0 opacity-100 transition-all duration-500 delay-200">
               Filter
             </h2>
 
             {/* Category */}
-            <div className="mt-8">
+            <div className="mt-8 starting:opacity-0 opacity-100 transition-all duration-500 delay-300">
               <h3 className="text-sm text-[#c1c6d7] tracking-wider font-medium uppercase">
                 Category
               </h3>
@@ -128,7 +85,7 @@ function Shop() {
             </div>
 
             {/* Price Range */}
-            <div className="mt-8">
+            <div className="mt-8 starting:opacity-0 opacity-100 transition-all duration-500 delay-400">
               <h3 className="text-sm text-[#c1c6d7] tracking-wider font-medium uppercase">
                 Price Range
               </h3>
@@ -149,7 +106,7 @@ function Shop() {
             </div>
 
             {/* Availability */}
-            <div className="mt-8">
+            <div className="mt-8 starting:opacity-0 opacity-100 transition-all duration-500 delay-500">
               <h3 className="text-sm text-[#c1c6d7] tracking-wider font-medium uppercase">
                 Availability
               </h3>
@@ -184,15 +141,15 @@ function Shop() {
             </div>
 
             {/* Clear Filter Button */}
-            <button className="w-full mt-8 py-2 text-sm font-medium bg-[#353534] rounded-lg transition-all duration-300 cursor-pointer hover:bg-[#393939]">
+            <button className="w-full mt-8 py-2 text-sm font-medium bg-[#353534] rounded-lg transition-all duration-500 cursor-pointer hover:bg-[#393939] starting:opacity-0 opacity-100 delay-700">
               Clear Filters
             </button>
           </aside>
 
-          <div className="size-full px-12 pt-24 col-span-1">
+          <div className="size-full px-12 py-24 col-span-1">
             
             {/* Main Heading and Sort */}
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-300">
               <h2 className="text-3xl text-[#e5e2e1] font-semibold">
                 Explore Tech
               </h2>
@@ -213,8 +170,7 @@ function Shop() {
             </div>
 
             {/* Products */}
-            {/* <div className="w-full mt-8 min-h-100 grid grid-rows-1 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-6"> */}
-            <div className="w-full mt-8 min-h-100 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-6">
+            <div className="w-full mt-8 min-h-100 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-6 starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-500">
 
               {/* Product - Cards */}
               {
@@ -223,7 +179,6 @@ function Shop() {
                     key={product.id}
                     product={product}
                     handleWishButton={handleWishButton} />
-
                 ))
               }
             </div>
@@ -231,6 +186,8 @@ function Shop() {
           </div>
         </div>
       </section>
+      {/* Footer */}
+      <Footer />
     </>
   );
 }

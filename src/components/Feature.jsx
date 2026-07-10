@@ -1,12 +1,41 @@
+import { useState, useRef, useEffect } from "react";
+
 function Feature() {
+  const [isVisible, setIsVisible] = useState(false);
+  const targetRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          console.log("observing... ")
+        }
+      }, { threshold: 0.4 }
+    );
+
+    if (targetRef.current) {
+      observer.observe(targetRef.current);
+    }
+
+    return () => {
+      if (targetRef.current) {
+        observer.unobserve(targetRef.current);
+      }
+    }
+  }, []);
+
   return (
     <>
-      <section className="min-h-180 w-full py-30 bg-[#131313]">
-        <div className="max-w-7xl mx-auto px-8">
+      <section 
+        ref={targetRef} 
+        className="min-h-180 w-full py-30 bg-[#131313]">
+        <div
+          className={`max-w-7xl mx-auto px-8 ${ isVisible ? "block" : "hidden" } `}>
 
-            <h1 className="mb-2 text-3xl font-semibold">Ecosystem</h1>
+            <h1 className="mb-2 text-3xl font-semibold starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-100">Ecosystem</h1>
 
-            <div className="mb-12 flex justify-between items-center">
+            <div className="mb-12 flex justify-between items-center starting:opacity-0 starting:translate-y-4 opacity-100 translate-y-0 transition-all duration-500 delay-200">
               <p className="text-[#c1c6d7] text-md font-medium">
                 Curated categories for the modern workspace.
               </p>
@@ -21,7 +50,7 @@ function Feature() {
             {/* Bento Grid */}
             <div className=" h-auto md:h-150 w-full grid grid-cols-1 md:grid-rows-2 md:grid-cols-12 gap-6">
 
-              <div className="group/bento-image-1 h-75 md:h-full w-full relative col-span-1 md:row-span-2 md:col-span-8 rounded-xl overflow-clip">
+              <div className="group/bento-image-1 h-75 md:h-full w-full relative col-span-1 md:row-span-2 md:col-span-8 rounded-xl overflow-clip starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-300">
                 <div className="absolute inset-0">
                   <img className="w-full h-full object-cover object-center group-hover/bento-image-1:scale-110 transition-all duration-700" src="laptop-display-image.jpg" alt="" />
                   <div className="absolute inset-0 bg-linear-to-t from-[#131313]/90 to-transparent z-1"></div>
@@ -41,7 +70,7 @@ function Feature() {
               
 
               
-              <div className="group/bento-image-2 h-75 md:h-full w-full relative md:col-span-4 rounded-xl overflow-clip">
+              <div className="group/bento-image-2 h-75 md:h-full w-full relative md:col-span-4 rounded-xl overflow-clip starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-500">
                 <div className="absolute inset-0">
                   <img className="w-full h-full object-cover object-center group-hover/bento-image-2:scale-110 transition-all duration-700" src="mic-display-image.jpg" alt="" />
                   <div className="absolute inset-0 bg-linear-to-t from-[#131313]/90 to-transparent z-1"></div>
@@ -58,7 +87,7 @@ function Feature() {
                 </div>
               </div>
 
-              <div className="group/bento-image-3 h-75 md:h-full w-full relative md:col-span-4 rounded-xl overflow-clip">
+              <div className="group/bento-image-3 h-75 md:h-full w-full relative md:col-span-4 rounded-xl overflow-clip starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-600">
                 <div className="absolute inset-0">
                   <img className="w-full h-full object-cover object-center group-hover/bento-image-3:scale-110 transition-all duration-700" src="watch-display-image.jpg" alt="" />
                   <div className="absolute inset-0 bg-linear-to-t from-[#131313]/90 to-transparent z-1"></div>

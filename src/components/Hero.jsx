@@ -113,16 +113,16 @@ useEffect(() => {
         {/* Content */}
         <div className="h-full max-w-7xl mx-auto px-8 grid grid-cols-12 gap-6 items-center">          
           <div className="relative z-1 col-span-12 sm:col-span-5 flex flex-col">
-            <p className="mb-4 text-xs text-[#adc6ff] tracking-widest font-medium animate-fade-up">
+            <p className="mb-4 text-xs text-[#adc6ff] tracking-widest font-medium starting:opacity-0 opacity-100 transition-all duration-500 delay-700">
               FLAGSHIP RELEASE
             </p>
-            <h2 className="mb-6 text-4xl md:text-6xl font-bold animate-fade-up">
+            <h2 className="mb-6 text-4xl md:text-6xl font-bold starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-200">
               Silence, <br /> Perfected.
             </h2>
-            <p className="mb-8 text-sm md:text-lg text-[#c1c6d7] animate-fade-up delay-200">
+            <p className="mb-8 text-sm md:text-lg text-[#c1c6d7] starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-400">
               Experience the next generation of acoustic engineering with our new Quantum Series headphones. Uncompromising sound, absolute isolation.
             </p>
-            <div className="flex flex-col sm:flex-row sm:items-stretch gap-4 sm:text-nowrap animate-fade-up delay-300">
+            <div className="flex flex-col sm:flex-row sm:items-stretch gap-4 sm:text-nowrap starting:opacity-0 opacity-100 transition-all duration-500 delay-600">
               <button className="group/button px-8 py-4 flex justify-center items-center gap-2 text-sm font-medium bg-[#007aff] rounded-lg transition-all cursor-pointer hover:bg-[#005bc1]">
                 Shop Quantum Series
                 <span className="material-symbols-outlined text-lg! relative transition-all duration-300 group-hover/button:translate-x-3">
