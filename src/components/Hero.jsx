@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 function Hero() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -123,15 +124,19 @@ useEffect(() => {
               Experience the next generation of acoustic engineering with our new Quantum Series headphones. Uncompromising sound, absolute isolation.
             </p>
             <div className="flex flex-col sm:flex-row sm:items-stretch gap-4 sm:text-nowrap starting:opacity-0 opacity-100 transition-all duration-500 delay-600">
-              <button className="group/button px-8 py-4 flex justify-center items-center gap-2 text-sm font-medium bg-[#007aff] rounded-lg transition-all cursor-pointer hover:bg-[#005bc1]">
+              <Link 
+                className="group/button px-8 py-4 flex justify-center items-center gap-2 text-sm font-medium bg-[#007aff] rounded-lg transition-all cursor-pointer hover:bg-[#005bc1]"
+                to="/shop">
                 Shop Quantum Series
                 <span className="material-symbols-outlined text-lg! relative transition-all duration-300 group-hover/button:translate-x-3">
                   arrow_forward
                 </span>
-              </button>
-              <button className="px-8 py-4 text-sm font-medium bg-[#201f1f] border border-[#414755] rounded-lg transition-all cursor-pointer hover:bg-[#353534]">
+              </Link>
+              <a 
+                className="px-8 py-5 text-sm font-medium bg-[#201f1f] border border-[#414755] rounded-lg transition-all cursor-pointer hover:bg-[#353534]"
+                href="#trending-products">
                 Check Product
-              </button>
+              </a>
             </div>
           </div>
         </div>

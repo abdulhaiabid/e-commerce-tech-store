@@ -1,9 +1,9 @@
 import { createBrowserRouter, Outlet, Link } from "react-router-dom";
+import NavLayout from "./components/NavLayout";
 import Home from "./pages/Home";
 import Store from "./pages/Store";
 import About from "./pages/About";
 import Product from "./pages/Product";
-import Navbar from "./components/Navbar";
 import Shop from "./pages/Shop";
 
 export const router = createBrowserRouter([
@@ -18,15 +18,6 @@ export const router = createBrowserRouter([
     ]
   },
 ]);
-
-function NavLayout() {
-  return (
-    <>
-      <Navbar />
-      <Outlet />
-    </>
-  );
-}
 
 function PageNotFound() {
   return (

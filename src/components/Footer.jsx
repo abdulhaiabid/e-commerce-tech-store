@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 function Footer() {
   // Footer Links
@@ -6,10 +7,10 @@ const footerLinkSections = [
       id: crypto.randomUUID(),
       title: "SITEMAP",
       links: [
-        { name: "Shop", href: "#home" },
-        { name: "Innovation", href: "#projects" },
-        { name: "Support", href: "#skills" },
-        { name: "Account", href: "#contact" },
+        { name: "Home", href: "/" },
+        { name: "Shop", href: "/shop" },
+        { name: "About", href: "/about" },
+        { name: "Account", href: "/account" },
       ],
     },
     {
@@ -70,7 +71,7 @@ const footerLinkSections = [
                       linkSection.links.map(link => {
                         return (
                         <li key={linkSection.id + "-" + link.name}>
-                          <a className="text-[#bbc6d7] transition-all duration-200 hover:text-primary cursor-pointer" href={link.href}>{link.name}</a>
+                          <Link className="text-[#bbc6d7] transition-all duration-200 hover:text-primary cursor-pointer" to={link.href}>{link.name}</Link>
                         </li>
                         )
                       })

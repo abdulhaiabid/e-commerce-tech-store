@@ -37,7 +37,8 @@ function Trend() {
     <>
       <section 
         ref={targetRef}
-        className="min-h-180 w-full py-30 bg-[#0e0e0e]">
+        id="trending-products"
+        className="min-h-180 w-full py-30 bg-[#0e0e0e] -scroll-mt-50">
         <div className={`max-w-7xl mx-auto px-8 ${ isVisible ? "flex" : "hidden" } flex flex-col items-center`}>
 
           <p className="mb-4 text-xs text-[#adc6ff] font-medium tracking-widest uppercase">
@@ -45,7 +46,8 @@ function Trend() {
           </p>
           
           {/* Heading */}
-          <h2 className="mb-16 text-3xl font-semibold tracking-wide starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500">
+          <h2
+            className="mb-16 text-3xl font-semibold tracking-wide starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500">
             Trending Now
           </h2>
 

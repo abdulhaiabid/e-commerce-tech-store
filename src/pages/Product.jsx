@@ -2,6 +2,7 @@ import { useState, useReducer, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import products from "/src/data/products.json";
 import { Link, useParams, useLocation } from "react-router-dom";
+import { useCart } from "../components/CartContext";
 
 function quantityReducer(state, action) {
   switch (action.type) {
@@ -26,15 +27,21 @@ function Product() {
   const [displayImageStyles, setDisplayImageStyles] = useState({
     transformOrigin: "center"
   });
+
+  
   const [quantity, quantityDispatch] = useReducer(quantityReducer, 1);
   const { pid } = useParams();
-
+  
   useEffect(() => {
     const currentProduct = products.find(product => product.id === pid);
     setProduct(currentProduct);
     setProductDisplayPicture(currentProduct.imageURL[0]);
     setLoading(false);
   }, [pid]);
+  
+  const { cartProducts, addToCart, removeFromCart } = useCart();
+
+
 
   // const location = useLocation();
   // const pathnames = location.pathname.split("/").filter(x => x);
@@ -254,7 +261,7 @@ function Product() {
                 <span className="flex items-center gap-2 text-lg font-semibold">
                   Color: 
                   {
-                    product.colors.map(color => ( color.isSelected ? <span className="text-lg text-[#c1c6d7] font-medium">{ color.name }</span> : null ))
+                    product.colors.map(color => ( color.isSelected ? <span key={color.name} className="text-lg text-[#c1c6d7] font-medium">{ color.name }</span> : null ))
                   }
                 </span>
                 <div className="flex items-center gap-2">
@@ -303,11 +310,15 @@ function Product() {
               {/* Buy and Add to Cart Buttons */}
               <div className="mt-8 flex flex-col md:flex-row justify-center md:justify-start md:items-center gap-4 starting:opacity-0 opacity-100 transition-all duration-500 delay-600">
                 {/* Buy now button */}
-                <button className="px-4 py-3 font-semibold bg-[#007aff] rounded-lg transition-all cursor-pointer hover:bg-[#005bc1]">
+                <Link 
+                  className="px-4 py-3 font-semibold bg-[#007aff] rounded-lg transition-all cursor-pointer hover:bg-[#005bc1]"
+                  to="/checkout">
                   Buy Now
-                </button>
+                </Link>
                 {/* Add to cart button */}
-                <button className="px-4 py-3 flex justify-center items-center gap-2 font-semibold bg-[#353534] rounded-lg transition-all cursor-pointer hover:bg-[#1e1e1e]">
+                <button 
+                  className="px-4 py-3 flex justify-center items-center gap-2 font-semibold bg-[#353534] rounded-lg transition-all cursor-pointer hover:bg-[#1e1e1e]"
+                  onClick={() => addToCart({...product, quantity: quantity})}>
                   Add To Cart
                   <span className="material-symbols-outlined text-lg!">
                   add_shopping_cart

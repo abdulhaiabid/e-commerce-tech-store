@@ -9,7 +9,6 @@ function Feature() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          console.log("observing... ")
         }
       }, { threshold: 0.4 }
     );

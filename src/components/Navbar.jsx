@@ -1,17 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import ShoppingCart from "./ShoppingCart";
+import { useCart } from "./CartContext";
 
 function Navbar() {
   const [searchInputOpen, setSearchInputOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  const { cartProducts } = useCart();
+
+  // const totalItems = cartProducts.reduce((sum, item) => sum + item.quantity, 0);
+
   const navLinks = [
     { id: 2, title: "Home", path: "/", isActive: false },
-    { id: 1, title: "Shop", path: "shop", isActive: true },
-    { id: 3, title: "About", path: "about", isActive: false },
-    { id: 4, title: "Account", path: "/", isActive: false },
+    { id: 1, title: "Shop", path: "/shop", isActive: true },
+    { id: 3, title: "About", path: "/about", isActive: false },
+    { id: 4, title: "Account", path: "/account", isActive: false },
   ];
 
   function handleNavLinksButton() {
@@ -72,7 +77,15 @@ function Navbar() {
                 className="flex items-center"
                 onClick={handleCartOpenButton}>
                 <span className="material-symbols-outlined text-2xl! transition-all cursor-pointer hover:text-[#adc6ff]">shopping_bag</span>
-                <span className="aspect-square px-1.25 absolute -right-1 -top-1 flex items-center text-[10px] text-black bg-[#adc6ff] rounded-full">2</span>
+                
+                {/* Cart Notification Indicator */}
+                {
+                  cartProducts.length > 0 ? (
+                    <span className="aspect-square px-1.25 absolute -right-1 -top-1 flex items-center text-[10px] text-black bg-[#adc6ff] rounded-full">
+                      { cartProducts.length }
+                    </span>
+                  ) : null
+                }
               </button>
             </div>
 

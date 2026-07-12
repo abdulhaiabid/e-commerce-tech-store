@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useCart } from "./CartContext";
 
 function ProductCard({ product, handleWishButton }) {
+
+  const { addToCart } = useCart();
+
   return (
     <>
       <Link 
@@ -36,7 +40,7 @@ function ProductCard({ product, handleWishButton }) {
         </div>
 
         {/* Content Section */}
-        <div className="p-4 sm:p-6 flex-1 flex flex-col bg-[#353534]">
+        <div className="px-4 py-2 sm:px-4 sm:py-4 flex-1 flex flex-col bg-[#353534]">
           <h3 className="mb-1 text-lg font-semibold">
             { product.title }
           </h3>
@@ -60,7 +64,12 @@ function ProductCard({ product, handleWishButton }) {
             </div>
 
             {/* Add to Cart Button */}
-            <button className="px-3 aspect-square flex justify-center items-center bg-[#adc6ff] rounded-full transition-all duration-300 cursor-pointer hover:bg-[#adc6ff]/90">
+            <button 
+              className="px-3 aspect-square flex justify-center items-center bg-[#adc6ff] rounded-full transition-all duration-300 cursor-pointer hover:bg-[#adc6ff]/90"
+              onClick={e => {
+                e.preventDefault();                
+                addToCart(product);
+              }}>
               <span className="material-symbols-outlined text-lg! text-[#1e1e1e]">
                 add
               </span>
