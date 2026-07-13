@@ -5,17 +5,31 @@ import Store from "./pages/Store";
 import About from "./pages/About";
 import Product from "./pages/Product";
 import Shop from "./pages/Shop";
+import CartCheckout from "./pages/CartCheckout";
+import ExpressCheckOut from "./pages/ExpressCheckout";
 
 export const router = createBrowserRouter([
-  { element: <NavLayout />, 
+  {
+    element: <NavLayout />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/shop", children: [
-        { index: true, element: <Shop /> }, 
-        { path: ":pid", element: <Product /> }
-      ]},
-      { path: "*", element: <PageNotFound /> }
-    ]
+      {
+        path: "/shop",
+        children: [
+          { index: true, element: <Shop /> },
+          { path: ":pid", element: <Product /> },
+        ],
+      },
+      {
+        path: "/checkout",
+        children: [
+          { path: "cart", element: <CartCheckout /> },
+          { path: "express", element: <ExpressCheckOut /> },
+        ]
+      },
+      // { path: "/checkout", element: <Checkout /> },
+      { path: "*", element: <PageNotFound /> },
+    ],
   },
 ]);
 
@@ -30,9 +44,10 @@ function PageNotFound() {
           <p className="mt-3 text-sm sm:text-lg text-[#c1c6d7] font-medium tracking-wide transition-all duration-500 opacity-100 translate-y-0 starting:opacity-0 starting:translate-y-6 delay-200">
             Page not found
           </p>
-          <Link 
+          <Link
             className="mt-8 px-4 py-2 xs:self-end flex justify-center items-center text-sm font-medium text-[#353534] bg-[#adc6ff] rounded-lg transition-all duration-500 cursor-pointer hover:bg-[#adc6ff]/80 opacity-100 translate-y-0 starting:opacity-0 delay-200"
-            to="/">
+            to="/"
+          >
             Go to Home
           </Link>
         </div>

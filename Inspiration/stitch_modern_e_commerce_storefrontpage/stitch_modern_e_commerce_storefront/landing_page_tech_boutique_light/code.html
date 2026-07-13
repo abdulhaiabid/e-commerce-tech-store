@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxe Tech Boutique</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#5b5c60",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "on-primary-fixed-variant": "#004493",
+                      "surface-variant": "#e2e2e4",
+                      "inverse-primary": "#adc6ff",
+                      "surface-dim": "#d9dadc",
+                      "on-secondary-container": "#656464",
+                      "on-tertiary-container": "#fefcff",
+                      "tertiary-container": "#747479",
+                      "background": "#f9f9fb",
+                      "error": "#ba1a1a",
+                      "on-background": "#1a1c1d",
+                      "on-surface-variant": "#414755",
+                      "on-tertiary-fixed": "#1a1b1f",
+                      "on-secondary-fixed-variant": "#474646",
+                      "on-error": "#ffffff",
+                      "inverse-on-surface": "#f0f0f2",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f3f3f5",
+                      "secondary-fixed": "#e5e2e1",
+                      "surface-container-highest": "#e2e2e4",
+                      "surface-container": "#eeeef0",
+                      "secondary-container": "#e5e2e1",
+                      "tertiary-fixed": "#e3e2e7",
+                      "outline-variant": "#c1c6d7",
+                      "primary-container": "#0070eb",
+                      "outline": "#717786",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed": "#d8e2ff",
+                      "tertiary-fixed-dim": "#c7c6cb",
+                      "on-primary-fixed": "#001a41",
+                      "surface-tint": "#005bc1",
+                      "surface-container-high": "#e8e8ea",
+                      "on-secondary": "#ffffff",
+                      "on-surface": "#1a1c1d",
+                      "primary-fixed-dim": "#adc6ff",
+                      "on-tertiary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-primary-container": "#fefcff",
+                      "secondary": "#5f5e5e",
+                      "primary": "#0058bc",
+                      "on-tertiary-fixed-variant": "#46464b",
+                      "surface": "#f9f9fb",
+                      "inverse-surface": "#2f3132",
+                      "surface-bright": "#f9f9fb",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed-dim": "#c8c6c5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "24px",
+                      "margin-desktop": "64px",
+                      "lg": "48px",
+                      "sm": "12px",
+                      "margin-mobile": "16px",
+                      "xs": "4px",
+                      "base": "8px",
+                      "xl": "80px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-xl": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9fb;
+            color: #1a1c1d;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-on-background/80 backdrop-blur-xl shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-screen-2xl mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-on-background dark:text-on-surface-variant">
+                LUXE TECH
+            </div>
+<div class="hidden md:flex space-x-lg items-center">
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 hover:opacity-70 transition-opacity" href="#">Shop</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:opacity-70 transition-opacity" href="#">Innovation</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:opacity-70 transition-opacity" href="#">Support</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:opacity-70 transition-opacity" href="#">Account</a>
+</div>
+<div class="flex space-x-md items-center text-primary dark:text-inverse-primary">
+<button class="hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-[100px] pb-xl">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-screen-2xl mx-auto mb-xl">
+<div class="relative w-full h-[600px] rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.04)] bg-surface flex items-center">
+<img class="absolute inset-0 w-full h-full object-cover opacity-90 z-0" data-alt="A sleek, highly detailed, photorealistic render of a futuristic laptop floating slightly above a pristine white surface. Soft, diffused, high-key studio lighting highlights the brushed metallic finish and razor-thin bezels. The background is a minimalist, airy white space with subtle gradients, embodying a premium, luminous, high-tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7K10WsnZbpr8O01pQ_TK8L-5jwt_2COpiQU_Uh62-WOUZPWPf98DHTyOtGO1vtaiX8HfDEKKlXCLiTwhW6nvQOA5E-n9UQfrk5zOhq3kevbhUKF4o6gIDVn3c1e4t1BhfoTCbhbVEPXqcEu5JqppcoKLQT9Ca4p17_Weh40TndzXRm7mEG24cJ21JWrdg74NLsyH5GHoVvUVvquhF6LDs5uHbsZMoZDRLDIZvrgyAfr7XpmE60K92ZLY0zpH6HUlavBqO-cxnoLs"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/80 to-transparent z-10"></div>
+<div class="relative z-20 w-full md:w-1/2 p-lg md:p-[80px]">
+<span class="inline-block px-sm py-xs bg-primary/10 text-primary font-label-sm text-label-sm rounded-full mb-md uppercase tracking-wider">New Release</span>
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-md">Quantum <br/>Compute Pro</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-md">Experience the next generation of processing power, encased in an impossibly thin aerospace-grade chassis. Luminous precision in every detail.</p>
+<button class="bg-primary text-on-primary px-[32px] py-[16px] rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity shadow-[0px_4px_12px_rgba(0,88,188,0.3)]">
+                        Explore Quantum
+                    </button>
+</div>
+</div>
+</section>
+<!-- Categories Bento Grid -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-screen-2xl mx-auto mb-xl">
+<h2 class="font-headline-lg md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-lg">Curated Ecosystem</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Large Category -->
+<div class="md:col-span-2 relative h-[400px] rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.04)] bg-surface group cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, high-end macro shot of a sleek smartwatch with a glowing OLED display on a clean, light grey background. The watch band is made of premium textured material. Bright, crisp, directional lighting casts soft shadows, emphasizing the metallic casing and the vibrant blue accents of the digital watch face. Minimalist tech styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABzbjVdp3yS9vD8miGMkeUrdmzpUiySGQ2x6pUxvUYhdXB2Ra24honWu7M6sq4K8Q6JSAR92XuP5ADwS0AgJXOdOPhMGdF5yt2PFVKM0a2q6tEXwds74_eG6afKhz6Z_1woQaWzAkR9eN12nYkC2b8EN_7wQlKJV3FVoL0-t1USvAewoblpm7LEJMB6Ws-fY2xWF_Gu90toPC1dysPsNqXQI95bM88xMvyolE6rc0_WwJ3rux3AgUKLEl9WdNk_8-gxngc5pqpmbk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg w-full flex justify-between items-end">
+<div>
+<h3 class="font-headline-md text-headline-md text-white mb-xs">Wearables</h3>
+<p class="font-body-md text-body-md text-white/80">Seamless integration, zero compromise.</p>
+</div>
+<div class="w-[48px] h-[48px] rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Smaller Categories Stacked -->
+<div class="flex flex-col gap-gutter h-[400px]">
+<div class="flex-1 relative rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.04)] bg-surface group cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High-resolution product photography of premium, noise-canceling over-ear headphones floating elegantly in mid-air against a pure white backdrop. The headphones feature brushed aluminum accents and soft, matte white ear cups. Studio lighting creates a luminous, ethereal feel, perfectly matching a clean, high-tech boutique aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgw8K69oK8kzvB0ZuGtdNp7BGGYud8kLK2DSnGnbis3ilMOS4wfkkk5hFXEWnv10TQCOQPwuaywvVM0-UPdsCSrP2no86CdlSMV4322gR5Po1Xtufqzb0vc6t0gr1kVdWnUo90D9EAVN0LjAhtqoY0IKgkmlwcHBh9ZMfghYacmvnGSGgF_HwKw7anKKb2pB0ri7m3uRsj6TlXyJ1YX7XL2Rc-xnH7Z4AwVfTv1UO92bfqPeJLWDzzbHg8uaIvRHnKfSTw8s3g9PQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md">
+<h3 class="font-headline-md text-headline-md text-white">Audio</h3>
+</div>
+</div>
+<div class="flex-1 relative rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.04)] bg-surface group cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist composition showing several beautifully designed, ultra-thin smartphones arranged in a subtle fan shape on a smooth, reflective white surface. The devices have metallic edges reflecting a bright, soft light source, emphasizing precision engineering. The overall tone is light, airy, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5NirD_jYU1x_898_ZTCi9M4UxrQOESFcwjnLCicz6oYHjPbKiP3dSe9BExeb5TSoKqljiq0fGUhy5Sa0hxkB1aKkXVqZrH4rj6g2YvlbLxG5pYDoeUi-T3Y-iBaCyumN7UNlUKUosBSGKDXn6Y2PINjgYIAlhbDfHkxVS8N5HLy0pjWfpiiHorKezqUTn_a66D6lfPcdoMJsChC8LvV3PcI4bdmtHXb15UCWIg_7fWWkWoPpWvgNXL2YAhNyL4a_IxOeXbfJNfjg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md">
+<h3 class="font-headline-md text-headline-md text-white">Compute</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Grid -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-screen-2xl mx-auto mb-xl">
+<div class="flex justify-between items-end mb-lg">
+<h2 class="font-headline-lg md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Trending Now</h2>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-xs" href="#">View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-surface rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] p-md flex flex-col group hover:shadow-[0px_12px_40px_rgba(0,0,0,0.08)] transition-shadow">
+<div class="aspect-square w-full rounded-lg overflow-hidden bg-surface-container-low mb-md relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 mix-blend-multiply" data-alt="A small, sleek, geometric wireless charging pad resting on a spotless white desk. A soft, ambient blue light emits from its base, indicating it's active. The lighting is bright and even, highlighting the minimalist design and premium matte finish. High-end tech lifestyle imagery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgdYkAUchSmIgOyEIRK7DoDBJzXYy--RtLoSEkNBZh0T392iYyPwQjlbQsJhqTsaYzDzGFLz0hUklmfVKLLYja-szXjLyZMAUvzM5uSRTeF7aeleDdfMz63js2xITRUSoIO4E_r-eju6hLiKnOJOHIE8d_h0xpgywL1pV_NGOic11gNHGNL7sH1RnrlqMZOESWEZIH_gZpUw3Fo2-JdSwGWhjiDl0dQ-1zMF-WmIBQxBDm3GP8Rrda9d_cSdJ6mwbZbEYvkQL7pWo"/>
+</div>
+<div class="flex-1">
+<h4 class="font-body-lg text-body-lg font-semibold text-on-background mb-xs">Aura Charge Pad</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">15W MagSafe Compatible</p>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-label-md text-label-md text-primary font-bold">$79.00</span>
+<button class="w-[36px] h-[36px] rounded-full bg-surface-container-low flex items-center justify-center text-on-background hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] p-md flex flex-col group hover:shadow-[0px_12px_40px_rgba(0,0,0,0.08)] transition-shadow">
+<div class="aspect-square w-full rounded-lg overflow-hidden bg-surface-container-low mb-md relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 mix-blend-multiply" data-alt="A pair of beautifully designed true wireless earbuds resting inside their open, brushed-metal charging case. The background is a soft, completely white studio setting. Crisp lighting accents the subtle curves and premium materials of the earbuds, emphasizing a luminous, high-quality product feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNpnD1ZE6gOk1XeQwLlq3IRDYQgpSov6l-hM9Ah5x18X6kvlsmYcB3KUmvgW4VH50bzfzHscjsZP2Omfd4VQs8zUwRb2m8uf2A9c9xoRgI8cX13kO4VKOb5lbQRLhIqAPgEoebDR5UFpv64nwblgh6mtORDdSS4ppXEnmhUSq1NU_yy73ZWAXt0TvyXBhwmKG2Fccx2qJ7moELI9gUdyNgIUevo3hRwEhjfSO2TbA3tpbhnKZ8loxzkfopWgFGWtx6161lcM5vWZk"/>
+</div>
+<div class="flex-1">
+<h4 class="font-body-lg text-body-lg font-semibold text-on-background mb-xs">Sonic Buds Pro</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">Active Noise Cancellation</p>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-label-md text-label-md text-primary font-bold">$249.00</span>
+<button class="w-[36px] h-[36px] rounded-full bg-surface-container-low flex items-center justify-center text-on-background hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] p-md flex flex-col group hover:shadow-[0px_12px_40px_rgba(0,0,0,0.08)] transition-shadow">
+<div class="aspect-square w-full rounded-lg overflow-hidden bg-surface-container-low mb-md relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 mix-blend-multiply" data-alt="A sleek, minimalist smart home display hub sitting on a light wooden table against a pure white wall. The screen shows a clean, modern interface with a subtle blue hue. The lighting is natural, soft, and high-key, conveying a sense of calm, premium technological integration into everyday life." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrXFiAUyWknCZpI5a7SZiOmzPy3uwFGmuWjFCGQ4IpTDwvtnEX4V0T9_ByhpcPVMqEZ-yjpYLYOzD6RHqSvLRNrvFAXijEnbMWqVSXRYlHqVYdacYBgo0vIQdLn4JHDch8nLpaRfXTfP9A8OnfTbyMh-lMK7QcSU4kMhCYJNy9COgLSLC_g60i1OXwwnaK0cQGSUlQsDXSBts9iJPgEw5lqaiMnKecMhxRnbr_b2JkQPCDP3YInCLwGMgDp07pZRzclbqZ44Un8Is"/>
+</div>
+<div class="flex-1">
+<h4 class="font-body-lg text-body-lg font-semibold text-on-background mb-xs">Nexus Hub</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">Smart Home Command</p>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-label-md text-label-md text-primary font-bold">$199.00</span>
+<button class="w-[36px] h-[36px] rounded-full bg-surface-container-low flex items-center justify-center text-on-background hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] p-md flex flex-col group hover:shadow-[0px_12px_40px_rgba(0,0,0,0.08)] transition-shadow">
+<div class="aspect-square w-full rounded-lg overflow-hidden bg-surface-container-low mb-md relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 mix-blend-multiply" data-alt="A slim, ergonomic mechanical keyboard with low-profile keys and an aluminum chassis, presented on a light grey background. Subtle, elegant white backlighting illuminates the keys. The shot is well-lit, precise, and sterile, showcasing the technical craftsmanship and minimalist design language of the peripheral." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo6OrflpQquaSUm1Rn5J7oljXhkhM-GXYPuGB0FZXIguXVMYuxRM-31Fui2DTPusBdT8b5xDNW4ezrftrBaGktV7eVTpM8b1WydUpxBU01XM38uV4eeWL5Bu1l3flSaThxK7YFtJn1m3RHt1eKZsPS0lBg_KmGBrIk4cu3QXQiS0-rUeobd986ViDRq8FLVJWu9dpLpId-jbiR7J8Si9TYB3M_icOt0x7Im6omXMEEgs0lc9TIdQJbxW8t_g_XPza1SRkEmcWKuE4"/>
+</div>
+<div class="flex-1">
+<h4 class="font-body-lg text-body-lg font-semibold text-on-background mb-xs">Tactile Flow Key</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">Low-Profile Mechanical</p>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-label-md text-label-md text-primary font-bold">$149.00</span>
+<button class="w-[36px] h-[36px] rounded-full bg-surface-container-low flex items-center justify-center text-on-background hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-xl bg-surface-container-highest dark:bg-on-background border-t border-outline-variant dark:border-on-secondary-fixed-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-lg max-w-screen-2xl mx-auto">
+<div class="font-headline-lg text-headline-lg font-black text-on-background mb-md md:mb-0">
+                LUXE TECH
+            </div>
+<div class="flex flex-wrap justify-center gap-md mb-md md:mb-0">
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-all opacity-100 hover:opacity-80" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-all opacity-100 hover:opacity-80" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-all opacity-100 hover:opacity-80" href="#">Cookie Settings</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:underline transition-all opacity-100 hover:opacity-80" href="#">Global Distribution</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface dark:text-on-surface-variant">
+                © 2024 LUXE TECH BOUTIQUE. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>

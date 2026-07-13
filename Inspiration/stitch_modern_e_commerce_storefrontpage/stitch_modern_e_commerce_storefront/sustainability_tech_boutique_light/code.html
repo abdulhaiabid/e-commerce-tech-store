@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sustainability - LUX TECH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "surface": "#f9f9fb",
+                        "on-surface-variant": "#414755",
+                        "surface-bright": "#f9f9fb",
+                        "outline-variant": "#c1c6d7",
+                        "on-secondary-container": "#656464",
+                        "outline": "#717786",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary-fixed": "#1a1b1f",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "inverse-surface": "#2f3132",
+                        "inverse-primary": "#adc6ff",
+                        "tertiary": "#5b5c60",
+                        "primary": "#0058bc",
+                        "on-tertiary-fixed-variant": "#46464b",
+                        "primary-container": "#0070eb",
+                        "surface-container-low": "#f3f3f5",
+                        "tertiary-fixed": "#e3e2e7",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#001a41",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#747479",
+                        "background": "#f9f9fb",
+                        "surface-tint": "#005bc1",
+                        "on-primary-container": "#fefcff",
+                        "secondary": "#5f5e5e",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e8e8ea",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#c7c6cb",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-variant": "#e2e2e4",
+                        "surface-container": "#eeeef0",
+                        "on-background": "#1a1c1d",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#e5e2e1",
+                        "inverse-on-surface": "#f0f0f2",
+                        "on-tertiary-container": "#fefcff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d9dadc",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e2e2e4",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-surface": "#1a1c1d",
+                        "on-primary-fixed-variant": "#004493",
+                        "primary-fixed-dim": "#adc6ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "xl": "80px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9fb; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #1a1c1d 0%, #414755 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="w-full sticky top-0 z-50 bg-surface-dim/80 dark:bg-surface-container-lowest/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<div class="font-headline-md text-headline-md tracking-tighter text-primary">LUX TECH</div>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/50 px-3 py-2 rounded-md" href="#">Shop</a>
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Sustainability</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/50 px-3 py-2 rounded-md" href="#">Innovation</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-variant/50 px-3 py-2 rounded-md" href="#">Support</a>
+</nav>
+<div class="flex gap-4 items-center">
+<button class="text-on-surface hover:text-primary active:scale-95 transition-transform"><span class="material-symbols-outlined">security</span></button>
+<button class="text-on-surface hover:text-primary active:scale-95 transition-transform"><span class="material-symbols-outlined">shopping_cart</span></button>
+<button class="text-on-surface hover:text-primary active:scale-95 transition-transform"><span class="material-symbols-outlined">person</span></button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center w-full">
+<!-- Hero Section -->
+<section class="w-full max-w-[1440px] px-margin-mobile md:px-margin-desktop py-xl flex flex-col md:flex-row items-center gap-lg">
+<div class="flex-1 space-y-6">
+<h1 class="font-headline-xl text-headline-xl text-gradient">Precision with Purpose.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    At LUX TECH, innovation isn't just about the next breakthrough in performance; it's about the footprint we leave behind. Our commitment to sustainability drives every design choice, material selection, and manufacturing process.
+                </p>
+</div>
+<div class="flex-1 w-full rounded-xl overflow-hidden shadow-sm glass-panel relative h-[400px]">
+<img class="w-full h-full object-cover absolute inset-0" data-alt="A macro photography shot of a pristine, translucent technological component resting on a bed of vibrant green moss. The lighting is soft and natural, emphasizing the contrast between sleek, modern engineering and organic life. A light-mode, minimalist aesthetic dominates with soft whites and deep greens, subtly communicating harmony between technology and nature without being overtly literal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD31eSz9vc91zvlU80jKEGQHsoYWTTcacNe1K4eJEAwrNpfgZZiFJR6vIY_gw8PcuBgI6mPF2hrPYqM9Ui0qYS3XVHZJU8zCPLma15XPVqtFg72VH1wYGw3ZNzNOX5ENQeP8uJv39VbNtPp-NZJ1SMYBxgaJCLmeqKSroMMNJS9i2gXoioHiINDusniarAIHoMpcjfVF0Dtdey70VyhmcqD-mArWZEuT4R4k1icbY5e5Yqim_guXNRbvVAEDiGBajWY7OM0SXs1w7o"/>
+</div>
+</section>
+<!-- Carbon Neutral Goals (Data Viz) -->
+<section class="w-full bg-surface-container-lowest py-xl">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop flex flex-col items-center">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-md text-center">Carbon Neutrality by 2030</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter w-full mt-lg">
+<!-- Metric 1 -->
+<div class="bg-surface p-md rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full border-4 border-surface-variant flex items-center justify-center mb-sm relative">
+<svg class="absolute inset-0 w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="#e2e2e4" stroke-width="8"></circle>
+<circle cx="50" cy="50" fill="none" r="45" stroke="#0070eb" stroke-dasharray="283" stroke-dashoffset="70" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<span class="font-headline-md text-headline-md text-primary-container z-10">75%</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold">Renewable Energy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Transitioned our global manufacturing facilities to clean power.</p>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface p-md rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full border-4 border-surface-variant flex items-center justify-center mb-sm relative">
+<svg class="absolute inset-0 w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="#e2e2e4" stroke-width="8"></circle>
+<circle cx="50" cy="50" fill="none" r="45" stroke="#0070eb" stroke-dasharray="283" stroke-dashoffset="141" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<span class="font-headline-md text-headline-md text-primary-container z-10">50%</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold">Emission Reduction</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Cut scope 1 and 2 emissions in half since our 2020 baseline.</p>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface p-md rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full border-4 border-surface-variant flex items-center justify-center mb-sm relative">
+<svg class="absolute inset-0 w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="#e2e2e4" stroke-width="8"></circle>
+<circle cx="50" cy="50" fill="none" r="45" stroke="#0070eb" stroke-dasharray="283" stroke-dashoffset="254" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<span class="font-headline-md text-headline-md text-primary-container z-10">10%</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold">Remaining Goal</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">On track to eliminate all carbon debt across our supply chain.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Circular Economy Bento -->
+<section class="w-full max-w-[1440px] px-margin-mobile md:px-margin-desktop py-xl">
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Circular Economy</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-sm max-w-3xl">We build hardware designed to last, and when its primary life ends, we ensure its materials live on. Our closed-loop recycling program recovers precious metals and rare earth elements.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-[600px]">
+<!-- Large Card -->
+<div class="md:col-span-8 rounded-xl overflow-hidden relative shadow-sm">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A pristine, light-drenched laboratory setting showing a high-tech automated sorting machine delicately handling disassembled smartphone components. The lighting is bright and clinical, using a minimalist color palette of brilliant white, brushed aluminum, and subtle electric blue glows from the machinery. The aesthetic feels premium, precise, and highly advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDap0lZU-vF6HtuXFdUgE05MPncFXaB093CybuQCUxBMqYX9rkGAjg6JQBXzGPU1d2t4Sqov1WNrJb3I3Azz6dehs-aw7FYfdtOV8afh94vXa63Ww0tEKxYZKtBJbKYNwNgA7KhzuaQMpwTPRS9EZDZBExHJlS_MM9iDyCQRp4w-6YaawfInRm_9UlwkcRS7vVQRAtnoNAiLDMQdQHHBNetcudB7Oz_G1ijAkQE06OhEPBBhRpE9hbOVsHC4bhGu0FrD-EXfaydOkk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg w-full">
+<h3 class="font-headline-md text-headline-md text-on-primary mb-xs">Advanced Material Recovery</h3>
+<p class="font-body-md text-body-md text-on-primary/80 max-w-lg">Our proprietary disassemblers recover up to 98% of usable materials from retired devices.</p>
+</div>
+</div>
+<!-- Small Cards -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="flex-1 bg-surface-container rounded-xl p-md flex flex-col justify-center items-start shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-sm" style="font-variation-settings: 'FILL' 1;">sync</span>
+<h4 class="font-label-md text-label-md text-on-surface font-semibold text-lg">Trade-In Program</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs text-sm">Upgrade responsibly. Send us your old tech for secure recycling and earn credit towards your next purchase.</p>
+</div>
+<div class="flex-1 bg-primary-container rounded-xl p-md flex flex-col justify-center items-start shadow-sm relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 opacity-20">
+<span class="material-symbols-outlined text-[150px]">eco</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-primary-container font-semibold text-lg relative z-10">Zero Waste to Landfill</h4>
+<p class="font-body-md text-body-md text-on-primary-container/80 mt-xs text-sm relative z-10">Our final assembly facilities have achieved 100% zero waste to landfill certification.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-lowest w-full py-12">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-4">LUX TECH</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 LUX TECH. Precision Engineered.</p>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap gap-x-8 gap-y-4 md:justify-end items-start">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-primary underline hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Sustainability Report</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Security Whitepaper</a>
+</div>
+</div>
+</footer>
+</body></html>

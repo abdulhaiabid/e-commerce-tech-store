@@ -14,7 +14,7 @@
 
 @theme {
     --breakpoint-xs: 425px;
-    --color-primary: #eaeaea;
+    /* --color-primary: #eaeaea; */
     --text-md: 1rem;
 }
 

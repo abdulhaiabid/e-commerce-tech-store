@@ -24,8 +24,8 @@ function ShoppingCart({ isCartOpen, handleCartCloseButton }) {
 
   const totalItems = () => {
     cartProducts.reduce(
-    (sum, item) => sum + item.quantity,
-    0
+      (sum, item) => sum + item.quantity,
+      0
     );
   }
 
@@ -34,12 +34,12 @@ function ShoppingCart({ isCartOpen, handleCartCloseButton }) {
   return (
     <>
       {/* Background Overlay */}
-      <div 
+      <div
         className={`fixed inset-0 z-30 bg-black/70 transition-opacity duration-300 ${isCartOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
         onClick={handleCartCloseButton}></div>
 
       {/* Main */}
-      <aside className={`h-dvh sm:w-100 fixed top-0 z-30 flex flex-col bg-[#1c1b1b] border-l border-l-[#333333] ${ isCartOpen ? "right-0" : "-right-full" } transition-all duration-500 origin-right`}>
+      <aside className={`h-dvh sm:w-100 fixed top-0 z-30 flex flex-col bg-[#1c1b1b] border-l border-l-[#333333] ${isCartOpen ? "right-0" : "-right-full"} transition-all duration-500 origin-right`}>
         {/* Heading and Close Button */}
         <div className="px-6 py-4 flex items-center justify-between">
           <h2 className="flex items-center gap-2 text-2xl font-semibold">
@@ -48,10 +48,10 @@ function ShoppingCart({ isCartOpen, handleCartCloseButton }) {
             </span>
             Your Cart
           </h2>
-          <button 
+          <button
             className="px-3 py-3 flex justify-center items-center font-semibold rounded-full transition-all cursor-pointer hover:bg-[#131313]"
             onClick={handleCartCloseButton}>
-            <span 
+            <span
               className="material-symbols-outlined [font-variation-settings:'FILL'_1]">
               close
             </span>
@@ -60,16 +60,16 @@ function ShoppingCart({ isCartOpen, handleCartCloseButton }) {
 
         {/* Cart Product */}
         <div className="flex-1 overflow-y-scroll scrollbar-none">
-        {
-          cartProducts.map(cartProduct => (
-            <CartProduct 
-              key={cartProduct.id}
-              product={cartProduct}
-              addToCart={addToCart}
-              removeFromCart={removeFromCart}
-              decreaseQuantity={decreaseQuantity} />
-          ))
-        }
+          {
+            cartProducts.map(cartProduct => (
+              <CartProduct
+                key={cartProduct.id}
+                product={cartProduct}
+                addToCart={addToCart}
+                removeFromCart={removeFromCart}
+                decreaseQuantity={decreaseQuantity} />
+            ))
+          }
         </div>
 
         {/* Checkout */}
@@ -79,12 +79,12 @@ function ShoppingCart({ isCartOpen, handleCartCloseButton }) {
             {/* Subtotal */}
             <div className="w-full px-6 flex justify-between items-center gap-3">
               <span className="text-[#c1c6d7]">Subtotal</span>
-              <span>{ subTotal.toLocaleString() }</span>
+              <span>{subTotal.toLocaleString()}</span>
             </div>
             {/* Shipping */}
             <div className="w-full px-6 flex justify-between items-center gap-3">
               <span className="text-[#c1c6d7]">Shipping</span>
-              <span>{ shippingFee }</span>
+              <span>{shippingFee}</span>
             </div>
           </div>
 
@@ -99,9 +99,10 @@ function ShoppingCart({ isCartOpen, handleCartCloseButton }) {
 
           {/* Checkout Button */}
           <div className="w-full px-6 py-4 flex items-center gap-3 border-b border-b-[#333333]">
-            <Link 
+            <Link
               className="group/button w-full px-4 py-3 flex justify-center items-center gap-2 font-semibold bg-[#007aff] rounded-lg transition-all cursor-pointer hover:bg-[#005bc1]"
-              to="/checkout">
+              to="/checkout/cart"
+              onClick={handleCartCloseButton}>
               Proceed to Checkout
               <span className="material-symbols-outlined text-lg! relative transition-all duration-300 group-hover/button:translate-x-2">
                 arrow_forward

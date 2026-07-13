@@ -1,0 +1,682 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Checkout | TECH_BOUTIQUE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #131313;
+        color: #e5e2e1;
+        -webkit-font-smoothing: antialiased;
+      }
+      .glass-panel {
+        background: rgba(30, 30, 30, 0.7);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(65, 71, 85, 0.5);
+      }
+      .input-focus-ring:focus {
+        outline: none;
+        border-color: #adc6ff;
+        box-shadow: 0 0 0 2px rgba(173, 198, 255, 0.2);
+      }
+      /* Custom scrollbar for better boutique feel */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #131313;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #353534;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #414755;
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              surface: "#131313",
+              "on-error-container": "#ffdad6",
+              "on-background": "#e5e2e1",
+              "secondary-fixed-dim": "#c8c6c5",
+              "surface-dim": "#131313",
+              "surface-container": "#201f1f",
+              "inverse-surface": "#e5e2e1",
+              primary: "#adc6ff",
+              "on-tertiary-fixed": "#351000",
+              "on-tertiary-container": "#4c1a00",
+              "on-surface-variant": "#c1c6d7",
+              "inverse-on-surface": "#313030",
+              "on-error": "#690005",
+              "tertiary-fixed": "#ffdbcc",
+              "on-secondary-fixed": "#1b1b1c",
+              "on-primary": "#002e69",
+              secondary: "#c8c6c5",
+              "secondary-container": "#474746",
+              "tertiary-fixed-dim": "#ffb595",
+              tertiary: "#ffb595",
+              "primary-fixed-dim": "#adc6ff",
+              "primary-fixed": "#d8e2ff",
+              "tertiary-container": "#ef6719",
+              outline: "#8b90a0",
+              "on-surface": "#e5e2e1",
+              "on-primary-fixed-variant": "#004493",
+              "outline-variant": "#414755",
+              "on-secondary-container": "#b7b5b4",
+              "surface-container-highest": "#353534",
+              "on-tertiary": "#571e00",
+              "on-tertiary-fixed-variant": "#7c2e00",
+              "surface-container-high": "#2a2a2a",
+              error: "#ffb4ab",
+              "on-primary-fixed": "#001a41",
+              background: "#131313",
+              "surface-bright": "#393939",
+              "surface-tint": "#adc6ff",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-low": "#1c1b1b",
+              "on-secondary-fixed-variant": "#474746",
+              "secondary-fixed": "#e5e2e1",
+              "surface-variant": "#353534",
+              "on-secondary": "#303030",
+              "inverse-primary": "#005bc1",
+              "on-primary-container": "#00285c",
+              "primary-container": "#4b8eff",
+              "error-container": "#93000a",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              base: "8px",
+              "margin-desktop": "64px",
+              gutter: "24px",
+              "margin-mobile": "20px",
+              "container-max-width": "1280px",
+            },
+            fontFamily: {
+              "headline-md": ["Inter"],
+              "body-lg": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-lg": ["Inter"],
+              "display-lg-mobile": ["Inter"],
+              "display-lg": ["Inter"],
+              "label-md": ["Inter"],
+              "body-md": ["Inter"],
+            },
+            fontSize: {
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-sm": ["12px", { lineHeight: "1.4", fontWeight: "600" }],
+              "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "600" }],
+              "display-lg-mobile": [
+                "40px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-lg": [
+                "64px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "1.4",
+                  letterSpacing: "0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background text-on-background min-h-screen">
+    <!-- Header / TopNavBar -->
+    <header
+      class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant shadow-sm h-20 px-margin-mobile md:px-margin-desktop flex justify-between items-center"
+    >
+      <div class="flex items-center gap-8">
+        <span
+          class="font-headline-md text-headline-md font-bold tracking-tight text-on-background"
+          >TECH_BOUTIQUE</span
+        >
+        <nav class="hidden md:flex gap-6">
+          <span
+            class="text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer font-body-md text-body-md"
+            >Shop</span
+          >
+          <span
+            class="text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer font-body-md text-body-md"
+            >Innovation</span
+          >
+          <span
+            class="text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer font-body-md text-body-md"
+            >Support</span
+          >
+        </nav>
+      </div>
+      <div class="flex items-center gap-6">
+        <button
+          class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all duration-300 active:scale-95"
+        >
+          search
+        </button>
+        <button
+          class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all duration-300 active:scale-95"
+        >
+          shopping_bag
+        </button>
+        <span
+          class="hidden md:block text-on-surface-variant font-body-md text-body-md"
+          >Account</span
+        >
+      </div>
+    </header>
+    <main
+      class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto"
+    >
+      <!-- Breadcrumb / Progress Indicator -->
+      <nav
+        class="flex items-center justify-center mb-16 space-x-4 md:space-x-8"
+      >
+        <div class="flex items-center group cursor-pointer">
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-sm"
+          >
+            1
+          </div>
+          <span class="ml-3 font-label-md text-label-md text-primary"
+            >Shipping</span
+          >
+        </div>
+        <div class="h-[1px] w-8 md:w-16 bg-outline-variant"></div>
+        <div class="flex items-center group opacity-50">
+          <div
+            class="w-8 h-8 rounded-full bg-surface-container-high border border-outline flex items-center justify-center text-on-surface-variant font-bold text-sm"
+          >
+            2
+          </div>
+          <span class="ml-3 font-label-md text-label-md">Payment</span>
+        </div>
+        <div class="h-[1px] w-8 md:w-16 bg-outline-variant"></div>
+        <div class="flex items-center group opacity-50">
+          <div
+            class="w-8 h-8 rounded-full bg-surface-container-high border border-outline flex items-center justify-center text-on-surface-variant font-bold text-sm"
+          >
+            3
+          </div>
+          <span class="ml-3 font-label-md text-label-md">Review</span>
+        </div>
+      </nav>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+        <!-- Left Side: Form Sections -->
+        <div class="lg:col-span-8 space-y-8">
+          <!-- Section 1: Shipping Address -->
+          <section
+            class="bg-surface-container rounded-xl p-8 shadow-md border border-outline-variant/30"
+          >
+            <div class="flex items-center gap-4 mb-8">
+              <span class="material-symbols-outlined text-primary"
+                >local_shipping</span
+              >
+              <h2 class="font-headline-lg text-headline-lg">
+                Shipping Address
+              </h2>
+            </div>
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex flex-col gap-2">
+                <label
+                  class="font-label-md text-label-md text-on-surface-variant"
+                  >First Name</label
+                >
+                <input
+                  class="bg-background border border-outline-variant rounded-lg px-4 py-3 text-on-surface font-body-md input-focus-ring transition-all"
+                  placeholder="e.g. Julian"
+                  type="text"
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label
+                  class="font-label-md text-label-md text-on-surface-variant"
+                  >Last Name</label
+                >
+                <input
+                  class="bg-background border border-outline-variant rounded-lg px-4 py-3 text-on-surface font-body-md input-focus-ring transition-all"
+                  placeholder="e.g. Vance"
+                  type="text"
+                />
+              </div>
+              <div class="md:col-span-2 flex flex-col gap-2">
+                <label
+                  class="font-label-md text-label-md text-on-surface-variant"
+                  >Street Address</label
+                >
+                <input
+                  class="bg-background border border-outline-variant rounded-lg px-4 py-3 text-on-surface font-body-md input-focus-ring transition-all"
+                  placeholder="123 Innovation Drive"
+                  type="text"
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label
+                  class="font-label-md text-label-md text-on-surface-variant"
+                  >City</label
+                >
+                <input
+                  class="bg-background border border-outline-variant rounded-lg px-4 py-3 text-on-surface font-body-md input-focus-ring transition-all"
+                  placeholder="San Francisco"
+                  type="text"
+                />
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="flex flex-col gap-2">
+                  <label
+                    class="font-label-md text-label-md text-on-surface-variant"
+                    >State</label
+                  >
+                  <input
+                    class="bg-background border border-outline-variant rounded-lg px-4 py-3 text-on-surface font-body-md input-focus-ring transition-all"
+                    placeholder="CA"
+                    type="text"
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label
+                    class="font-label-md text-label-md text-on-surface-variant"
+                    >ZIP</label
+                  >
+                  <input
+                    class="bg-background border border-outline-variant rounded-lg px-4 py-3 text-on-surface font-body-md input-focus-ring transition-all"
+                    placeholder="94103"
+                    type="text"
+                  />
+                </div>
+              </div>
+            </form>
+          </section>
+          <!-- Section 2: Delivery Method -->
+          <section
+            class="bg-surface-container rounded-xl p-8 shadow-md border border-outline-variant/30"
+          >
+            <div class="flex items-center gap-4 mb-8">
+              <span class="material-symbols-outlined text-primary">speed</span>
+              <h2 class="font-headline-lg text-headline-lg">Delivery Method</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <label
+                class="relative flex items-center p-4 border border-primary bg-primary/5 rounded-xl cursor-pointer group"
+              >
+                <input checked="" class="hidden" name="delivery" type="radio" />
+                <div class="flex-1">
+                  <p class="font-label-md text-label-md text-primary">
+                    Express Shipping
+                  </p>
+                  <p class="text-on-surface-variant text-sm mt-1">
+                    1-2 Business Days
+                  </p>
+                </div>
+                <span class="font-bold text-on-surface">$25.00</span>
+              </label>
+              <label
+                class="relative flex items-center p-4 border border-outline-variant hover:border-outline bg-transparent rounded-xl cursor-pointer group transition-all"
+              >
+                <input class="hidden" name="delivery" type="radio" />
+                <div class="flex-1">
+                  <p class="font-label-md text-label-md">Standard Ground</p>
+                  <p class="text-on-surface-variant text-sm mt-1">
+                    4-6 Business Days
+                  </p>
+                </div>
+                <span class="font-bold text-on-surface">Free</span>
+              </label>
+            </div>
+          </section>
+          <!-- Section 3: Payment Information -->
+          <section
+            class="bg-surface-container rounded-xl p-8 shadow-md border border-outline-variant/30"
+          >
+            <div class="flex items-center gap-4 mb-8">
+              <span class="material-symbols-outlined text-primary"
+                >payments</span
+              >
+              <h2 class="font-headline-lg text-headline-lg">Payment Details</h2>
+            </div>
+            <div class="flex gap-4 mb-8">
+              <button
+                class="flex-1 flex items-center justify-center gap-2 py-3 bg-white text-black rounded-lg font-bold hover:bg-neutral-200 transition-colors"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >apps</span
+                >
+                Apple Pay
+              </button>
+              <button
+                class="flex-1 flex items-center justify-center gap-2 py-3 bg-[#4285F4] text-white rounded-lg font-bold hover:bg-[#3367d6] transition-colors"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >google</span
+                >
+                Google Pay
+              </button>
+            </div>
+            <div class="relative flex items-center justify-center my-8">
+              <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-outline-variant"></div>
+              </div>
+              <span
+                class="relative bg-surface-container px-4 text-on-surface-variant text-xs uppercase tracking-widest"
+                >Or pay with card</span
+              >
+            </div>
+            <form class="space-y-6">
+              <div class="flex flex-col gap-2">
+                <label
+                  class="font-label-md text-label-md text-on-surface-variant"
+                  >Card Number</label
+                >
+                <div class="relative">
+                  <input
+                    class="w-full bg-background border border-outline-variant rounded-lg px-4 py-3 pr-12 text-on-surface font-body-md input-focus-ring transition-all"
+                    placeholder="0000 0000 0000 0000"
+                    type="text"
+                  />
+                  <span
+                    class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant"
+                    >credit_card</span
+                  >
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-6">
+                <div class="flex flex-col gap-2">
+                  <label
+                    class="font-label-md text-label-md text-on-surface-variant"
+                    >Expiry Date</label
+                  >
+                  <input
+                    class="bg-background border border-outline-variant rounded-lg px-4 py-3 text-on-surface font-body-md input-focus-ring transition-all"
+                    placeholder="MM / YY"
+                    type="text"
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label
+                    class="font-label-md text-label-md text-on-surface-variant"
+                    >CVV</label
+                  >
+                  <input
+                    class="bg-background border border-outline-variant rounded-lg px-4 py-3 text-on-surface font-body-md input-focus-ring transition-all"
+                    placeholder="•••"
+                    type="password"
+                  />
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+        <!-- Right Side: Order Summary -->
+        <aside class="lg:col-span-4 lg:sticky lg:top-28">
+          <div
+            class="bg-surface-container-high rounded-xl p-8 shadow-2xl border border-outline-variant/50"
+          >
+            <h3 class="font-headline-md text-headline-md mb-6">
+              Order Summary
+            </h3>
+            <!-- Product List -->
+            <div class="space-y-4 mb-8">
+              <div class="flex gap-4">
+                <div
+                  class="w-20 h-20 bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden shrink-0"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="Close-up professional product shot of a minimalist matte black titanium mechanical keyboard with subtle RGB underglow, set against a dark charcoal industrial background. Premium lighting highlights the texture of the PBT keycaps and the chamfered edges of the metal frame."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwslk3Ql_X8FMZkrwln53IemLAt9V2S7NW8mWdE4bhODylK66RMxtiJzo-vF_JcdCGfJjLBLXT4Nnw0YlWnX6pJzoBB2OKcsuW3Ik7k8b3xdnSF5a_CKIqkB00oSad9MJi63-djQUmGltgAeamq4uU8PExKCzzlFmY3yGSClPSptukQEe4xd245kLdjZivssrXOsA4vSnc_RPR-3H9aHUy-qoHOeVK3y7JDIYkO2lIWDSANXj8bos6_JreQxGfQPPauaegH-KXyEM"
+                  />
+                </div>
+                <div class="flex-1">
+                  <p
+                    class="font-label-md text-label-md text-on-surface line-clamp-1"
+                  >
+                    Titanium Mechanical Keyboard
+                  </p>
+                  <p class="text-on-surface-variant text-sm mt-1">
+                    Matte Black • 65%
+                  </p>
+                  <div class="flex justify-between items-end mt-2">
+                    <span class="text-sm text-on-surface-variant">Qty: 1</span>
+                    <span class="font-bold text-primary">$349.00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div
+                  class="w-20 h-20 bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden shrink-0"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="High-end studio photography of professional studio headphones featuring brushed aluminum housing and plush leather earpads. The headphones are floating in a dark, atmospheric void with a single dramatic spotlight revealing the precision engineering and carbon fiber accents. Cyberpunk aesthetic."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF-2HqF6QjETIroECtXysQxt7jUrwJ3Hx0clmTTSZAwNqtFDZ9LZagsMsqNAGHRUz6BrBo7bm8DBbdQnCO7uzPtqqnE-f0XgqzIuRSJ6aiINTm3vDEKiKqoKHp0j4eW3LUYHP4STV6_F7HFW6idf2ffGKr0W0eoA_8jOaYhTWmysp_EX-G0w1oUNZqogvShnyaKVZKf_dXxMqecp_eRmktq-PqZN_rodQf0ok-PkoZGHOjuVjtEcKJ-wmzAK0iM-pL2pZqh96Dfso"
+                  />
+                </div>
+                <div class="flex-1">
+                  <p
+                    class="font-label-md text-label-md text-on-surface line-clamp-1"
+                  >
+                    Reference Series Headphones
+                  </p>
+                  <p class="text-on-surface-variant text-sm mt-1">
+                    Aluminum • Carbon Fiber
+                  </p>
+                  <div class="flex justify-between items-end mt-2">
+                    <span class="text-sm text-on-surface-variant">Qty: 1</span>
+                    <span class="font-bold text-primary">$599.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="h-[1px] bg-outline-variant mb-6"></div>
+            <!-- Totals -->
+            <div class="space-y-4 mb-8">
+              <div class="flex justify-between font-body-md text-body-md">
+                <span class="text-on-surface-variant">Subtotal</span>
+                <span class="text-on-surface">$948.00</span>
+              </div>
+              <div class="flex justify-between font-body-md text-body-md">
+                <span class="text-on-surface-variant">Shipping</span>
+                <span class="text-on-surface">$25.00</span>
+              </div>
+              <div class="flex justify-between font-body-md text-body-md">
+                <span class="text-on-surface-variant">Taxes (Estimated)</span>
+                <span class="text-on-surface">$75.84</span>
+              </div>
+            </div>
+            <div class="flex justify-between items-center mb-10">
+              <span class="font-headline-md text-headline-md">Total</span>
+              <span class="font-headline-lg text-headline-lg text-primary"
+                >$1,048.84</span
+              >
+            </div>
+            <button
+              class="w-full bg-[#007AFF] hover:bg-[#0062cc] text-white rounded-xl py-4 font-bold text-lg shadow-lg hover:shadow-[#007AFF]/30 transition-all active:scale-[0.98] flex items-center justify-center gap-3 group"
+            >
+              Place Order
+              <span
+                class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+                >arrow_forward</span
+              >
+            </button>
+            <p class="text-center text-on-surface-variant text-xs mt-6 px-4">
+              By placing your order, you agree to TECH_BOUTIQUE's Terms of
+              Service and Privacy Policy.
+            </p>
+          </div>
+          <!-- Trust Badges -->
+          <div
+            class="mt-6 flex justify-center gap-6 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-default"
+          >
+            <span class="material-symbols-outlined text-4xl"
+              >verified_user</span
+            >
+            <span class="material-symbols-outlined text-4xl">shield</span>
+            <span class="material-symbols-outlined text-4xl">lock</span>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-surface-container-lowest border-t border-outline-variant w-full py-16"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max-width mx-auto"
+      >
+        <div class="col-span-1 md:col-span-1">
+          <span
+            class="font-headline-md text-headline-md text-on-surface font-bold"
+            >TECH_BOUTIQUE</span
+          >
+          <p class="mt-4 text-on-surface-variant font-body-md text-body-md">
+            Redefining high-performance hardware through minimalist design.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h4
+            class="font-label-md text-label-md text-primary uppercase tracking-widest"
+          >
+            Company
+          </h4>
+          <a
+            class="text-on-surface-variant hover:text-primary transition-all underline underline-offset-4 font-body-md text-body-md"
+            href="#"
+            >About Us</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-all underline underline-offset-4 font-body-md text-body-md"
+            href="#"
+            >Careers</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-all underline underline-offset-4 font-body-md text-body-md"
+            href="#"
+            >Sustainability</a
+          >
+        </div>
+        <div class="flex flex-col gap-4">
+          <h4
+            class="font-label-md text-label-md text-primary uppercase tracking-widest"
+          >
+            Support
+          </h4>
+          <a
+            class="text-on-surface-variant hover:text-primary transition-all underline underline-offset-4 font-body-md text-body-md"
+            href="#"
+            >Returns</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-all underline underline-offset-4 font-body-md text-body-md"
+            href="#"
+            >Shipping</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-all underline underline-offset-4 font-body-md text-body-md"
+            href="#"
+            >Contact</a
+          >
+        </div>
+        <div class="flex flex-col gap-4">
+          <h4
+            class="font-label-md text-label-md text-primary uppercase tracking-widest"
+          >
+            Legal
+          </h4>
+          <a
+            class="text-on-surface-variant hover:text-primary transition-all underline underline-offset-4 font-body-md text-body-md"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-all underline underline-offset-4 font-body-md text-body-md"
+            href="#"
+            >Terms of Service</a
+          >
+        </div>
+      </div>
+      <div class="mt-16 text-center border-t border-outline-variant pt-8">
+        <p class="text-on-surface-variant font-body-md text-body-md">
+          © 2024 TECH_BOUTIQUE. Engineered for Excellence.
+        </p>
+      </div>
+    </footer>
+    <script>
+      // Simple interactive micro-effects
+      document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+        radio.addEventListener("change", (e) => {
+          const labels = document.querySelectorAll(
+            'label[name="delivery-label"]',
+          );
+          // Force sibling highlights if needed, though Tailwind peer usually handles it.
+          // Added for manual visual consistency if radio structure is complex.
+        });
+      });
+
+      // Floating label / focused ring interaction simulation
+      const inputs = document.querySelectorAll("input");
+      inputs.forEach((input) => {
+        input.addEventListener("focus", () => {
+          input.parentElement
+            .querySelector("label")
+            ?.classList.add("text-primary");
+        });
+        input.addEventListener("blur", () => {
+          input.parentElement
+            .querySelector("label")
+            ?.classList.remove("text-primary");
+        });
+      });
+    </script>
+  </body>
+</html>

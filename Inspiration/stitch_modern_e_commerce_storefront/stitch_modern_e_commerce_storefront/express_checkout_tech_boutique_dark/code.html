@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Express Checkout | TECH_BOUTIQUE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .form-input-focus:focus {
+            border-color: #007AFF;
+            box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333333;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#131313",
+                      "on-error-container": "#ffdad6",
+                      "on-background": "#e5e2e1",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "surface-dim": "#131313",
+                      "surface-container": "#201f1f",
+                      "inverse-surface": "#e5e2e1",
+                      "primary": "#adc6ff",
+                      "on-tertiary-fixed": "#351000",
+                      "on-tertiary-container": "#4c1a00",
+                      "on-surface-variant": "#c1c6d7",
+                      "inverse-on-surface": "#313030",
+                      "on-error": "#690005",
+                      "tertiary-fixed": "#ffdbcc",
+                      "on-secondary-fixed": "#1b1b1c",
+                      "on-primary": "#002e69",
+                      "secondary": "#c8c6c5",
+                      "secondary-container": "#474746",
+                      "tertiary-fixed-dim": "#ffb595",
+                      "tertiary": "#ffb595",
+                      "primary-fixed-dim": "#adc6ff",
+                      "primary-fixed": "#d8e2ff",
+                      "tertiary-container": "#ef6719",
+                      "outline": "#8b90a0",
+                      "on-surface": "#e5e2e1",
+                      "on-primary-fixed-variant": "#004493",
+                      "outline-variant": "#414755",
+                      "on-secondary-container": "#b7b5b4",
+                      "surface-container-highest": "#353534",
+                      "on-tertiary": "#571e00",
+                      "on-tertiary-fixed-variant": "#7c2e00",
+                      "surface-container-high": "#2a2a2a",
+                      "error": "#ffb4ab",
+                      "on-primary-fixed": "#001a41",
+                      "background": "#131313",
+                      "surface-bright": "#393939",
+                      "surface-tint": "#adc6ff",
+                      "surface-container-lowest": "#0e0e0e",
+                      "surface-container-low": "#1c1b1b",
+                      "on-secondary-fixed-variant": "#474746",
+                      "secondary-fixed": "#e5e2e1",
+                      "surface-variant": "#353534",
+                      "on-secondary": "#303030",
+                      "inverse-primary": "#005bc1",
+                      "on-primary-container": "#00285c",
+                      "primary-container": "#4b8eff",
+                      "error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "container-max-width": "1280px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "display-lg-mobile": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- Header Navigation (Simplified for Transactional Focus) -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant h-20 flex justify-between items-center px-margin-mobile md:px-margin-desktop">
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-on-background">TECH_BOUTIQUE</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-all active:scale-95" onclick="window.history.back()">
+<span class="material-symbols-outlined">close</span>
+<span class="hidden md:inline font-label-md text-label-md">Cancel</span>
+</button>
+</div>
+</header>
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Checkout Forms -->
+<div class="lg:col-span-7 space-y-12">
+<!-- Express Checkout Section -->
+<section>
+<h2 class="font-headline-md text-headline-md mb-6">Express Checkout</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<button class="bg-[#000000] text-white py-4 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98] duration-200">
+<span class="font-bold text-xl">Apple Pay</span>
+</button>
+<button class="bg-white text-black py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors active:scale-[0.98] duration-200 border border-outline">
+<span class="font-bold text-xl">Google Pay</span>
+</button>
+</div>
+<div class="relative flex py-8 items-center">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-4 text-on-surface-variant font-label-md text-label-md">OR PAY WITH CARD</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+</section>
+<!-- Shipping Address Form -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-md text-headline-md">Shipping Address</h2>
+<span class="text-primary font-label-md text-label-md cursor-pointer hover:underline">Use saved address</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">First Name</label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:ring-0 focus:border-primary transition-colors outline-none" type="text" value="Alex"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Last Name</label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:ring-0 focus:border-primary transition-colors outline-none" type="text" value="Rivers"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Street Address</label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:ring-0 focus:border-primary transition-colors outline-none" placeholder="123 Innovation Drive" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">City</label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:ring-0 focus:border-primary transition-colors outline-none" placeholder="San Francisco" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">State</label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:ring-0 focus:border-primary transition-colors outline-none" placeholder="CA" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">ZIP Code</label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:ring-0 focus:border-primary transition-colors outline-none" placeholder="94103" type="text"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Payment Method Summary -->
+<section class="space-y-6">
+<h2 class="font-headline-md text-headline-md">Payment</h2>
+<div class="bg-surface-container-high border border-outline-variant rounded-xl p-6 flex items-center justify-between group cursor-pointer hover:border-primary transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-8 bg-surface-container-lowest rounded flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Visa ending in 4242</p>
+<p class="text-on-surface-variant text-sm">Expires 12/26</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">edit</span>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary (Sticky) -->
+<div class="lg:col-span-5">
+<div class="sticky top-32 space-y-6">
+<div class="bg-surface-container border border-outline-variant rounded-2xl overflow-hidden shadow-2xl">
+<!-- Product Reveal Card -->
+<div class="relative h-64 w-full">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A high-end product photography shot of the Quantum Sphere Headphones in a sleek matte charcoal finish. The headphones are floating mid-air against a dark, atmospheric studio background with sharp cyan and deep blue rim lighting that highlights their futuristic, ergonomic curves. The lighting creates a premium, innovative tech boutique aesthetic with deep shadows and vibrant contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMri1QDEtrgHRuxGyTO-2NxThJ5OnQQfl7LsfkoqkoLD8po8Edqb8QnMZMLwTPAghu4QNWilSTVJjLAiTk047WnDdu0FU2ldaXqx7mlx9BbT_pJjQQB15TE72PAc2xQETYzns9k1M7nkGgu6sAL8rtiJrHA9VK0NHTWW7An7V2JP74-h3HoDaAVBe9tI72h7avuTQwBv-p33S-YrwkgtjDdB8yRntYI67nLvN7oo5ZXDtqCgQcRJRNq7fpp_tkbrkw6Jtx7Ruy4fQ"/>
+<div class="absolute bottom-6 left-6 z-20">
+<span class="bg-primary text-on-primary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2 inline-block">Express Shipping</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Quantum Sphere</h3>
+</div>
+</div>
+<div class="p-8 space-y-6">
+<div class="flex justify-between items-center text-on-surface-variant font-body-md text-body-md">
+<span>Matte Charcoal / One Size</span>
+<span class="text-on-surface font-semibold">$449.00</span>
+</div>
+<hr class="border-outline-variant"/>
+<div class="space-y-3">
+<div class="flex justify-between font-label-md text-label-md text-on-surface-variant">
+<span>Subtotal</span>
+<span>$449.00</span>
+</div>
+<div class="flex justify-between font-label-md text-label-md text-on-surface-variant">
+<span>Shipping</span>
+<span class="text-primary font-bold">FREE</span>
+</div>
+<div class="flex justify-between font-label-md text-label-md text-on-surface-variant">
+<span>Estimated Tax</span>
+<span>$38.17</span>
+</div>
+</div>
+<hr class="border-outline-variant"/>
+<div class="flex justify-between items-end">
+<span class="font-headline-md text-headline-md">Total</span>
+<div class="text-right">
+<span class="text-xs text-on-surface-variant block">USD</span>
+<span class="font-headline-lg text-headline-lg text-primary">$487.17</span>
+</div>
+</div>
+<button class="w-full bg-[#007AFF] text-white py-5 rounded-xl font-bold text-lg hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-3 shadow-lg shadow-[#007AFF]/20" id="complete-purchase">
+<span id="button-text">Complete Purchase</span>
+<span class="material-symbols-outlined" id="button-icon">lock</span>
+<div class="hidden animate-spin h-5 w-5 border-2 border-white/30 border-t-white rounded-full" id="loading-spinner"></div>
+</button>
+<p class="text-center text-xs text-on-surface-variant px-4">
+                                By completing your purchase, you agree to TECH_BOUTIQUE's Terms of Service and Privacy Policy.
+                            </p>
+</div>
+</div>
+<!-- Security Badge -->
+<div class="flex items-center justify-center gap-6 text-on-surface-variant">
+<div class="flex items-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Secure SSL</span>
+</div>
+<div class="flex items-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Insured Delivery</span>
+</div>
+<div class="flex items-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-sm">history</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">30-Day Return</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Success Modal (Hidden by Default) -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center bg-background/95 backdrop-blur-sm px-margin-mobile" id="success-modal">
+<div class="max-w-md w-full bg-surface-container border border-outline-variant rounded-3xl p-10 text-center space-y-8 animate-in fade-in zoom-in duration-300">
+<div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="space-y-2">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Order Confirmed</h2>
+<p class="text-on-surface-variant font-body-md">Thank you, Alex. Your Quantum Sphere headphones will be shipped within 24 hours.</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center bg-surface-container-low p-4 rounded-xl border border-outline-variant">
+<span class="text-on-surface-variant text-sm">Order Number</span>
+<span class="font-mono text-on-surface font-bold">#TB-9284-QX</span>
+</div>
+<button class="w-full bg-surface-container-high text-on-surface py-4 rounded-xl font-bold hover:bg-surface-variant transition-colors border border-outline-variant" onclick="window.location.reload()">
+                    Track Order
+                </button>
+<button class="w-full text-primary font-bold py-2 hover:underline" onclick="window.location.reload()">
+                    Back to Shop
+                </button>
+</div>
+</div>
+</div>
+<!-- Footer (Simplified) -->
+<footer class="w-full py-12 bg-surface-container-lowest border-t border-outline-variant">
+<div class="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="font-headline-md text-headline-md text-on-surface font-bold">TECH_BOUTIQUE</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="#">Support</a>
+</div>
+<p class="text-on-surface-variant text-xs">© 2024 TECH_BOUTIQUE. Engineered for Excellence.</p>
+</div>
+</footer>
+<script>
+        document.getElementById('complete-purchase').addEventListener('click', function() {
+            const btn = this;
+            const text = document.getElementById('button-text');
+            const icon = document.getElementById('button-icon');
+            const spinner = document.getElementById('loading-spinner');
+            const modal = document.getElementById('success-modal');
+
+            // Start Loading State
+            btn.disabled = true;
+            text.classList.add('opacity-0');
+            icon.classList.add('hidden');
+            spinner.classList.remove('hidden');
+            btn.classList.add('brightness-75', 'cursor-not-allowed');
+
+            // Simulate Transaction
+            setTimeout(() => {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }, 2000);
+        });
+
+        // Add subtle hover lift to sections
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.classList.add('transition-transform', 'duration-500');
+        });
+
+        // Micro-interaction for inputs
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label')?.classList.add('text-primary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label')?.classList.remove('text-primary');
+            });
+        });
+    </script>
+</body></html>

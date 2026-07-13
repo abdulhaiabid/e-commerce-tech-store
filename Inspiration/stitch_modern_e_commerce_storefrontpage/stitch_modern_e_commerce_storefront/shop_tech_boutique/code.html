@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shop - TECH_BOUTIQUE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#303030",
+                        "inverse-primary": "#005bc1",
+                        "outline-variant": "#414755",
+                        "secondary-container": "#474746",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-bright": "#393939",
+                        "on-tertiary-fixed-variant": "#7c2e00",
+                        "on-tertiary-fixed": "#351000",
+                        "on-primary-fixed": "#001a41",
+                        "on-error": "#690005",
+                        "tertiary": "#ffb595",
+                        "on-secondary-fixed-variant": "#474746",
+                        "inverse-on-surface": "#313030",
+                        "on-surface": "#e5e2e1",
+                        "background": "#131313",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-fixed": "#1b1b1c",
+                        "primary-container": "#4b8eff",
+                        "on-secondary-container": "#b7b5b4",
+                        "tertiary-container": "#ef6719",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-variant": "#353534",
+                        "on-primary-fixed-variant": "#004493",
+                        "primary": "#adc6ff",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f1f",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary-container": "#00285c",
+                        "outline": "#8b90a0",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-dim": "#131313",
+                        "surface-container-highest": "#353534",
+                        "on-primary": "#002e69",
+                        "on-tertiary-container": "#4c1a00",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#d8e2ff",
+                        "on-surface-variant": "#c1c6d7",
+                        "surface-tint": "#adc6ff",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary": "#571e00",
+                        "error-container": "#93000a",
+                        "secondary": "#c8c6c5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface": "#131313",
+                        "tertiary-fixed-dim": "#ffb595",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed-dim": "#adc6ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #121212; color: #e5e2e1; }
+        .product-card { background-color: #1E1E1E; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .product-card:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
+        .btn-primary { background-color: #007AFF; color: #FFFFFF; border-radius: 12px; font-weight: bold; font-size: 16px; border: none; }
+        .btn-primary:hover { background-color: #005bb5; }
+        .filter-sidebar { background-color: #1E1E1E; border-right: 1px solid #333333; }
+        .custom-checkbox { accent-color: #007AFF; }
+    </style>
+</head>
+<body class="font-body-md text-body-md min-h-screen flex flex-col">
+<!-- TopNavBar (Hidden on Mobile, flex on Desktop) -->
+<nav class="hidden md:flex bg-background/80 backdrop-blur-xl fixed top-0 w-full bg-background/80 border-b border-outline-variant shadow-sm flex justify-between items-center h-20 px-margin-desktop w-full z-50">
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-on-background">
+            TECH_BOUTIQUE
+        </div>
+<ul class="flex gap-8">
+<li><a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md hover:text-primary transition-all duration-300 active:scale-95 duration-200" href="#">Shop</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:text-primary transition-all duration-300 active:scale-95 duration-200" href="#">Innovation</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:text-primary transition-all duration-300 active:scale-95 duration-200" href="#">Support</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:text-primary transition-all duration-300 active:scale-95 duration-200" href="#">Account</a></li>
+</ul>
+<div class="flex gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</nav>
+<!-- Mobile Top Header (Simplified) -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile py-4 bg-background/90 sticky top-0 z-40 border-b border-outline-variant">
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-on-background">TECH_BOUTIQUE</div>
+<button class="text-on-surface"><span class="material-symbols-outlined">menu</span></button>
+</header>
+<main class="flex-grow pt-0 md:pt-20 flex max-w-container-max-width mx-auto w-full">
+<!-- Sidebar Filtering (Desktop only for this simplified view, could add a drawer for mobile) -->
+<aside class="hidden lg:block w-64 flex-shrink-0 filter-sidebar p-6 min-h-[calc(100vh-80px)]">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Filters</h2>
+<div class="mb-8">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">Category</h3>
+<ul class="space-y-2">
+<li><label class="flex items-center gap-2 text-on-surface cursor-pointer hover:text-primary transition-colors"><input class="custom-checkbox rounded bg-surface border-outline-variant" type="checkbox"/> Audio</label></li>
+<li><label class="flex items-center gap-2 text-on-surface cursor-pointer hover:text-primary transition-colors"><input checked="" class="custom-checkbox rounded bg-surface border-outline-variant" type="checkbox"/> Wearables</label></li>
+<li><label class="flex items-center gap-2 text-on-surface cursor-pointer hover:text-primary transition-colors"><input class="custom-checkbox rounded bg-surface border-outline-variant" type="checkbox"/> Peripherals</label></li>
+<li><label class="flex items-center gap-2 text-on-surface cursor-pointer hover:text-primary transition-colors"><input class="custom-checkbox rounded bg-surface border-outline-variant" type="checkbox"/> Smart Home</label></li>
+</ul>
+</div>
+<div class="mb-8">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">Price Range</h3>
+<div class="flex items-center gap-2 mb-2">
+<input class="w-full bg-surface border border-outline-variant rounded p-2 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none" placeholder="Min" type="number"/>
+<span class="text-on-surface-variant">-</span>
+<input class="w-full bg-surface border border-outline-variant rounded p-2 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none" placeholder="Max" type="number"/>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">Availability</h3>
+<ul class="space-y-2">
+<li><label class="flex items-center gap-2 text-on-surface cursor-pointer hover:text-primary transition-colors"><input checked="" class="custom-checkbox rounded bg-surface border-outline-variant" type="checkbox"/> In Stock</label></li>
+<li><label class="flex items-center gap-2 text-on-surface cursor-pointer hover:text-primary transition-colors"><input class="custom-checkbox rounded bg-surface border-outline-variant" type="checkbox"/> Pre-order</label></li>
+</ul>
+</div>
+<button class="w-full bg-surface-variant text-on-surface py-2 rounded-lg hover:bg-surface-bright transition-colors font-label-md text-label-md">Clear Filters</button>
+</aside>
+<!-- Product Grid Area -->
+<section class="flex-grow p-margin-mobile md:p-margin-desktop bg-background">
+<!-- Sorting Header -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Explore Tech</h1>
+<div class="flex items-center gap-3">
+<span class="text-on-surface-variant font-label-md text-label-md">Sort by:</span>
+<select class="bg-surface border border-outline-variant text-on-surface rounded p-2 focus:border-primary focus:ring-1 focus:ring-primary outline-none font-label-md text-label-md appearance-none pr-8 relative">
+<option>Newest Arrivals</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Customer Rating</option>
+</select>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<article class="product-card rounded-xl overflow-hidden flex flex-col group">
+<div class="h-64 bg-surface-container flex items-center justify-center p-6 relative">
+<div class="absolute top-4 left-4 bg-[#2C2C2C] text-on-surface font-label-sm text-label-sm px-3 py-1 rounded-full z-10">New</div>
+<img class="object-contain w-full h-full mix-blend-screen opacity-90 group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, minimalist pair of over-ear wireless headphones in matte black, resting on a stark white pedestal against a dark grey background. Dramatic studio lighting highlights the premium metallic accents and soft ear cushions. Modern tech aesthetic, high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1lLWXBCvMqxgtx3M8Zw8H834M2oLyQqulrVP5oHco0p9DfKVC-MZMC5sxHwvVdDMgv7Zxfbruvk5gbdbQmzRI00dIxzmak0NpVFt23UOJetk6x29aIiZCt_Nq8xw8otiSDJqSRZvJPX5nQMzlptDGiyP4G5GTzaDYHELbzhRBVP0L6uKdmOUuoWpXKIxEFR7pVwCtg5Q3CJdcjRKBFiDEaZlciZBunSyVkfjZBctSqmYfg2epWs3H1LmtatqGfJFxj675J_5t8s8"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Auralith Pro Wireless</h2>
+<p class="text-on-surface-variant font-body-md mb-4 flex-grow">Studio-grade acoustic isolation with quantum driver technology.</p>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-headline-md text-headline-md text-primary">$349</span>
+<button aria-label="Add to cart" class="btn-primary w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#005bb5] transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="product-card rounded-xl overflow-hidden flex flex-col group">
+<div class="h-64 bg-surface-container flex items-center justify-center p-6 relative">
+<img class="object-contain w-full h-full mix-blend-screen opacity-90 group-hover:scale-105 transition-transform duration-500" data-alt="A futuristic smartwatch with a glowing circular OLED display showing a complex data dial. The watch has a dark titanium body and a textured black silicone strap. It floats slightly in a dark void with subtle blue rim lighting emphasizing its sleek, modern minimalist design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByXQt3AxGuPzid8hPxtBKcsHGAyjiUm0ETAhnisbgHjxgROEWOzkBqEZ-k3PQH22n1rLrSvO_9l9SowbXA7UDvCcWzGsZ8PKOf0O9Dal7lSIoN664O_pgVukyY2wc30RKBi5gOi1U_yQMxy4AboC7dez_5idO8FlJ7jUVoWkwdR7PIaoUVSLu8ml-cfepD80b1AyECpYAWVg8k9l3sHU-y6JmisyNX2d0HDSvx7FjclPJmsaXpJyIZR6YUPzaWAt9WCHTqeOfvxQQ"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Chronos Sync V2</h2>
+<p class="text-on-surface-variant font-body-md mb-4 flex-grow">Biometric tracking redefined with a seamless titanium unibody.</p>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-headline-md text-headline-md text-primary">$289</span>
+<button aria-label="Add to cart" class="btn-primary w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#005bb5] transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="product-card rounded-xl overflow-hidden flex flex-col group">
+<div class="h-64 bg-surface-container flex items-center justify-center p-6 relative">
+<div class="absolute top-4 left-4 bg-[#2C2C2C] text-on-surface font-label-sm text-label-sm px-3 py-1 rounded-full z-10">Low Stock</div>
+<img class="object-contain w-full h-full mix-blend-screen opacity-90 group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist mechanical keyboard featuring a compact 65% layout. The keycaps are a mix of dark graphite and vibrant blue accents. It sits on a dark, textured desk mat. Soft overhead lighting casts subtle shadows, emphasizing the high-end materials and precision engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0HBzElh62jSr6rIdwsi90QU8yCdwrB5fSjnen87jVkHZN9M2wf3OVkyF6onD9nZtYutVmTS0WrGgl5PlLl8_hbCVycD_cFEzA-nSnfcYgC0HPwhmKhLayMIJfNOlU9oT1G_D-D2FzyQORD8iVXXWlwTFS8M47ssnuP0bqLKV6aWU8SEdGMAMRtVRFYJA3g4_VU1dHZPxBK0cjFf6_Vrm5iz0UQAqoHRBpgJB4NRXH9iC0bxfaFRMY8_nATNc3obdnS3MtbHDBy_A"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Tactile Prime Board</h2>
+<p class="text-on-surface-variant font-body-md mb-4 flex-grow">Aerospace aluminum chassis with custom linear switches.</p>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-headline-md text-headline-md text-primary">$199</span>
+<button aria-label="Add to cart" class="btn-primary w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#005bb5] transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="bg-[#1E1E1E] text-on-surface border border-[#333333] px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-surface-bright transition-colors">Load More Products</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant w-full py-16 grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max-width mx-auto mt-auto">
+<div class="col-span-1 md:col-span-4 mb-8">
+<span class="font-headline-md text-headline-md text-on-surface">TECH_BOUTIQUE</span>
+</div>
+<div class="col-span-1">
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary underline underline-offset-4 transition-all duration-300" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary underline underline-offset-4 transition-all duration-300" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary underline underline-offset-4 transition-all duration-300" href="#">Shipping</a></li>
+<li><a class="hover:text-primary underline underline-offset-4 transition-all duration-300" href="#">Returns</a></li>
+<li><a class="hover:text-primary underline underline-offset-4 transition-all duration-300" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="col-span-1 md:col-span-2 flex justify-end items-end font-body-md text-body-md text-on-surface-variant mt-8 md:mt-0">
+            © 2024 TECH_BOUTIQUE. Engineered for Excellence.
+        </div>
+</footer>
+</body></html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Security Center - Lumina Tech</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-container": "#4c1a00",
+                        "secondary-container": "#474746",
+                        "inverse-on-surface": "#313030",
+                        "surface-container": "#201f1f",
+                        "on-background": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#004493",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-surface": "#e5e2e1",
+                        "on-error": "#690005",
+                        "surface-container-highest": "#353534",
+                        "surface-dim": "#131313",
+                        "secondary": "#c8c6c5",
+                        "on-tertiary": "#571e00",
+                        "on-primary-container": "#00285c",
+                        "tertiary-container": "#ef6719",
+                        "background": "#131313",
+                        "surface-tint": "#adc6ff",
+                        "on-secondary": "#303030",
+                        "surface-variant": "#353534",
+                        "tertiary-fixed-dim": "#ffb595",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#2a2a2a",
+                        "error": "#ffb4ab",
+                        "primary-container": "#4b8eff",
+                        "surface-container-low": "#1c1b1b",
+                        "primary": "#adc6ff",
+                        "on-tertiary-fixed-variant": "#7c2e00",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-primary": "#005bc1",
+                        "tertiary": "#ffb595",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#001a41",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-primary": "#002e69",
+                        "surface": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary-fixed": "#351000",
+                        "on-secondary-fixed": "#1b1b1c",
+                        "outline": "#8b90a0",
+                        "on-surface-variant": "#c1c6d7",
+                        "surface-bright": "#393939",
+                        "outline-variant": "#414755",
+                        "on-secondary-container": "#b7b5b4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "container-max-width": "1280px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #121212;
+            color: #e5e2e1;
+        }
+        /* Custom styles for toggles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #007AFF;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #007AFF;
+        }
+        /* Soft depth shadows */
+        .glass-panel {
+            background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col p-6 gap-2 h-full w-72 sticky top-0 bg-surface-container-low dark:bg-inverse-surface shadow-sm z-40">
+<div class="flex items-center gap-4 mb-8 px-2">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden shrink-0 border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a sleek, futuristic security icon or abstract secure element, featuring deep charcoal tones with electric blue highlights. The lighting is studio-quality, creating a premium, modern tech vibe. Rendered in high definition with a soft focus background to emphasize the precision of the design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9AP4LrUHLRCezaul7u4VDuAAZLSsXyedovMILhYyNBHG60Ias9yKIwqS-tdRhte1o6Ar_5C17eCd0JBucv6ClBHB7FHRWNlolWdU9zI4RWGk8MPDGFPufodTLxDf0bsDloLBPqH1u4pLUpIJtx38euXJGsBKrn2qP1d-ZbvWsZfk9fnIewOdT9_WvfT9uFeDJtRpPyane0Ccr47XzUuTFwLBusbv9v6QEdMaE--Ck1na8AJXgN2yyxv0W4SxuKbkwisxbqkf9Z3k"/>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-black text-primary dark:text-inverse-primary leading-tight">Security Center</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant mt-0.5">Verified Protection</p>
+</div>
+</div>
+<div class="flex-1 space-y-2">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all rounded-xl hover:surface-container-highest dark:hover:bg-surface-variant/30 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="lock">lock</span>
+                Privacy Hub
+            </a>
+<a class="font-label-md text-label-md bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl font-bold flex items-center gap-3 px-4 py-3 translate-x-1 duration-200 shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#007AFF]" data-icon="shield_with_heart" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+                Device Security
+            </a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all rounded-xl hover:surface-container-highest dark:hover:bg-surface-variant/30 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="history">history</span>
+                Access Logs
+            </a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all rounded-xl hover:surface-container-highest dark:hover:bg-surface-variant/30 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="eco">eco</span>
+                Sustainability Stats
+            </a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all rounded-xl hover:surface-container-highest dark:hover:bg-surface-variant/30 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors" data-icon="settings">settings</span>
+                Settings
+            </a>
+</div>
+<div class="mt-auto pt-4">
+<button class="w-full bg-[#1E1E1E] text-white border border-[#333333] hover:bg-surface-variant transition-colors py-3 px-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">security_update_good</span>
+                Request Audit
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto bg-[#121212] relative">
+<!-- Ambient Background glow -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#007AFF] opacity-[0.03] blur-[120px] rounded-full pointer-events-none"></div>
+<div class="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-12 lg:py-16 relative z-10 space-y-gutter">
+<!-- Header -->
+<header class="mb-10">
+<h1 class="font-headline-lg text-headline-lg md:font-display-lg md:text-display-lg text-on-surface tracking-tight mb-2">Device Security</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Manage your device protection protocols, monitor active sessions, and control your data privacy footprint.</p>
+</header>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column (Primary Tools) -->
+<div class="lg:col-span-8 space-y-gutter">
+<!-- 2FA Card -->
+<section class="glass-panel rounded-2xl p-6 lg:p-8">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8 border-b border-[#262626] pb-6">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px] text-[#007AFF]" style="font-variation-settings: 'FILL' 1;">passkey</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Two-Factor Authentication</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Add an extra layer of security to your Lumina account.</p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-3 bg-[#131313] py-2 px-4 rounded-lg border border-[#333333]">
+<div class="w-2 h-2 rounded-full bg-[#007AFF] shadow-[0_0_8px_#007AFF]"></div>
+<span class="font-label-sm text-label-sm text-on-surface">Active</span>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Authenticator App</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Use an app like Google Authenticator to generate codes.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform duration-200 ease-in-out border-[#007AFF] translate-x-6 z-10" id="toggle-app" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-[#007AFF] cursor-pointer shadow-inner" for="toggle-app"></label>
+</div>
+</div>
+<div class="h-px w-full bg-[#262626]"></div>
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">SMS Verification</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Receive codes via text message to +1 (***) ***-8921</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-surface-variant border-4 appearance-none cursor-pointer transition-transform duration-200 ease-in-out border-[#333333] z-10" id="toggle-sms" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-[#333333] cursor-pointer shadow-inner" for="toggle-sms"></label>
+</div>
+</div>
+</div>
+</section>
+<!-- Login Activity -->
+<section class="glass-panel rounded-2xl p-6 lg:p-8">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Login Activity</h3>
+<button class="font-label-sm text-label-sm text-[#007AFF] hover:underline">Revoke All</button>
+</div>
+<div class="space-y-4">
+<!-- Current Session -->
+<div class="bg-[#131313] border border-[#333333] rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px] text-on-surface">laptop_mac</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h4 class="font-label-md text-label-md text-on-surface">MacBook Pro 16"</h4>
+<span class="bg-[#2C2C2C] text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded-full">Current Session</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm flex items-center gap-1">
+                                            San Francisco, CA • Safari • Active now
+                                        </p>
+</div>
+</div>
+</div>
+<!-- Past Session -->
+<div class="bg-transparent border border-[#262626] rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group hover:border-[#333333] transition-colors">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">smartphone</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Lumina Phone 3</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                                            San Jose, CA • App • 2 hours ago
+                                        </p>
+</div>
+</div>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-error transition-colors sm:opacity-0 sm:group-hover:opacity-100">Revoke Access</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column (Contextual & Actions) -->
+<div class="lg:col-span-4 space-y-gutter">
+<!-- Security Checklist -->
+<section class="glass-panel rounded-2xl p-6 relative overflow-hidden">
+<!-- Graphic element -->
+<div class="absolute -right-6 -top-6 w-32 h-32 bg-[#007AFF] opacity-5 blur-[40px] rounded-full pointer-events-none"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 relative z-10">Security Score</h3>
+<!-- Score UI -->
+<div class="flex items-end gap-2 mb-8 relative z-10">
+<span class="font-display-lg text-[48px] font-bold text-on-surface leading-none">85</span>
+<span class="font-label-md text-label-md text-on-surface-variant pb-2">/ 100</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-[#262626] rounded-full h-2 mb-6 relative z-10 overflow-hidden">
+<div class="bg-[#007AFF] h-2 rounded-full" style="width: 85%"></div>
+</div>
+<ul class="space-y-4 relative z-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[18px] text-[#007AFF] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Enable 2FA</p>
+<p class="font-body-md text-sm text-on-surface-variant">Completed</p>
+</div>
+</li>
+<li class="flex items-start gap-3 opacity-60">
+<span class="material-symbols-outlined text-[18px] text-outline mt-0.5">radio_button_unchecked</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Review Login Devices</p>
+<p class="font-body-md text-sm text-on-surface-variant">Last reviewed 30 days ago</p>
+</div>
+</li>
+<li class="flex items-start gap-3 opacity-60">
+<span class="material-symbols-outlined text-[18px] text-outline mt-0.5">radio_button_unchecked</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Update Recovery Email</p>
+<p class="font-body-md text-sm text-on-surface-variant">Add a backup contact</p>
+</div>
+</li>
+</ul>
+</section>
+<!-- Data Privacy Controls -->
+<section class="bg-[#1E1E1E] rounded-2xl p-6 border border-[#262626]">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Data Privacy</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-6">Control how your personal data is handled across Lumina services.</p>
+<div class="space-y-3">
+<button class="w-full bg-[#131313] hover:bg-[#2C2C2C] border border-[#333333] transition-colors py-3 px-4 rounded-xl font-label-md text-label-md flex items-center justify-between group">
+<span class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary transition-colors">download</span>
+                                    Request Data Export
+                                </span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">chevron_right</span>
+</button>
+<button class="w-full bg-[#131313] hover:bg-error-container/20 border border-[#333333] hover:border-error/30 transition-colors py-3 px-4 rounded-xl font-label-md text-label-md flex items-center justify-between group">
+<span class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+                                    Delete Account
+                                </span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">chevron_right</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+</body></html>
