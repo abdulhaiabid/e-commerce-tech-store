@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 import { useCart } from "./CartContext";
 
-function ProductCard({ product, handleWishButton }) {
-
+function ProductCard({ product }) {
   const { addToCart } = useCart();
+
+  function handleWishButton(id) {
+    setProducts((current) =>
+      current.map((product) =>
+        product.id === id
+          ? { ...product, wishlist: !product.wishlist }
+          : product,
+      ),
+    );
+  }
 
   return (
     <>

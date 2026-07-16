@@ -1,29 +1,41 @@
 import { useState, useEffect } from "react";
 import { useCart } from "../components/CartContext";
 
+// temporary
+import products from "/src/data/products.json";
+import { useLocation, useParams, useSearchParams } from "react-router-dom";
+
+
+// React Router Hooks
+// useNavigate → Lets you move to another route programmatically (like redirect after login).  
+// useLocation → Gives details about the current URL (path, query, state).  
+// useParams → Reads dynamic values from the route (like `:id`).  
+// useSearchParams → Works with query strings (`?page=2`) easily.  
+// useRoutes → Lets you define routes using a config object instead of JSX.  
+// useMatch → Checks if the current URL matches a specific path pattern.  
+
 function ExpressCheckout() {
-  const [shippingFee, setShippingFee] = useState(0);
-  const [subTotal, setSubTotal] = useState(0);
-  const [taxes, setTaxes] = useState(0);
-  const [total, setTotal] = useState(0);
-  const { cartProducts } = useCart();
+  const location = useLocation();
+  const { pid, quantity, color } = location.state;
+  const [shippingFee, setShippingFee] = useState(149);
+  const [taxes, setTaxes] = useState(9);
 
-  // Calculate Sub Total
-  useEffect(() => {
-    setSubTotal(cartProducts.reduce((sum, item) => sum + (item.salePrice * item.quantity), 0));
-  }, [cartProducts]);
+  // Initialize Current Product
+  const [currentProduct, setCurrentProduct] = useState(() => {
+    const fetchedProduct = products.find(product => product.id === pid);
 
-  // Calculate Total
-  useEffect(() => {
-    setTotal(subTotal + shippingFee);
-  }, [subTotal, shippingFee]);
+    const subTotal = fetchedProduct.salePrice * quantity;
+    const total = subTotal + shippingFee + taxes;
+
+    return { ...fetchedProduct, quantity: quantity, color: color, subTotal: subTotal, total: total };
+  });
 
   return (
     <>
       <section className="min-h-dvh w-full bg-[#131313]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-30 grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-6">
           {/* Right Side */}
-          <div className="col-span-1 sm:col-span-7 flex flex-col">
+          <div className="col-span-1 sm:col-span-8 flex flex-col">
             {/* Forms */}
             <div className="flex flex-col gap-6">
 
@@ -222,7 +234,7 @@ function ExpressCheckout() {
                           id="card-number"
                           type="text"
                           placeholder="0000 0000 0000 0000" />
-                        <span class="material-symbols-outlined absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-md! sm:text-xl! text-[#c1c6d7]">
+                        <span className="material-symbols-outlined absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-md! sm:text-xl! text-[#c1c6d7]">
                           credit_card
                         </span>
                       </div>
@@ -260,7 +272,7 @@ function ExpressCheckout() {
           </div>
 
           {/* Left Side */}
-          <div className="col-span-1 sm:col-span-5 flex flex-col">
+          <div className="col-span-1 sm:col-span-4 flex flex-col">
             {/* Forms */}
             <div className="flex flex-col gap-6">
 
@@ -278,34 +290,36 @@ function ExpressCheckout() {
                 {/* Summary Products Container */}
                 <div className="mt-2 flex flex-col">
                   {/* Summary Product */}
-                  {
-                    cartProducts?.map(cartProduct => (
-                      <div className="w-full py-2 flex items-start gap-2 sm:gap-3">
 
-                        {/* Image */}
-                        <div className="size-16 sm:size-20 aspect-square rounded-lg sm:rounded-xl overflow-hidden">
-                          <img
-                            className="size-full aspect-square object-cover object-center"
-                            src={cartProduct.imageURL[0]}
-                            alt="" />
-                        </div>
+                  <div className="w-full py-2 flex items-start gap-2 sm:gap-3">
 
-                        {/* Content */}
+                    {/* Image */}
+                    <div className="size-16 sm:size-20 aspect-square rounded-lg sm:rounded-xl overflow-hidden">
+                      <img
+                        className="size-full aspect-square object-cover object-center"
+                        src={currentProduct.imageURL[0]}
+                        alt="" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 flex flex-col">
+                      <h3 className="text-sm sm:text-md line-clamp-1 font-semibold">
+                        {currentProduct.title}
+                      </h3>
+                      <p className="mt-1 flex-1 text-xs text-[#c1c6d7] line-clamp-2 font-medium">
+                        {currentProduct.shortDescription}
+                      </p>
+                      <div className="mt-2 flex justify-between items-center">
                         <div className="flex-1 flex flex-col">
-                          <h3 className="text-sm sm:text-md line-clamp-1 font-semibold">
-                            {cartProduct.title}
-                          </h3>
-                          <p className="mt-1 flex-1 text-xs text-[#c1c6d7] line-clamp-2 font-medium">
-                            {cartProduct.shortDescription}
-                          </p>
-                          <div className="mt-2 flex justify-between items-center">
-                            <span className="text-xs sm:text-sm text-[#c1c6d7] font-medium">Qty: {cartProduct.quantity}</span>
-                            <span className="text-md sm:text-lg text-[#c1c6d7] font-bold">Rs.{(cartProduct.salePrice * cartProduct.quantity).toLocaleString()}</span>
-                          </div>
+                          <span className="text-xs sm:text-sm text-[#c1c6d7] font-medium">{currentProduct.color.name}</span>
+                          <span className="text-xs sm:text-sm text-[#c1c6d7] font-medium">{"Qty: " + currentProduct.quantity}</span>
+
                         </div>
+                        <span className="text-md sm:text-lg text-[#c1c6d7] font-bold">Rs.{currentProduct.salePrice.toLocaleString()}</span>
                       </div>
-                    ))
-                  }
+                    </div>
+                  </div>
+
                 </div>
 
                 {/* Line */}
@@ -315,7 +329,7 @@ function ExpressCheckout() {
                 <div className="py-2 flex flex-col">
                   <div className="py-1 flex justify-between items-center">
                     <span className="text-sm sm:text-md text-[#c1c6d7] font-medium">Subtotal</span>
-                    <span className="text-sm sm:text-md font-medium">{subTotal.toLocaleString()}</span>
+                    <span className="text-sm sm:text-md font-medium">{currentProduct.subTotal.toLocaleString()}</span>
                   </div>
                   <div className="py-1 flex justify-between items-center">
                     <span className="text-sm sm:text-md text-[#c1c6d7] font-medium">Shipping</span>
@@ -333,7 +347,7 @@ function ExpressCheckout() {
 
                 <div className="pt-1 pb-3 flex justify-between items-center">
                   <span className="text text-[#c1c6d7] font-medium">Total</span>
-                  <span className="text-xl text-[#adc6ff] font-semibold">{total.toLocaleString()}</span>
+                  <span className="text-xl text-[#adc6ff] font-semibold">{currentProduct.total.toLocaleString()}</span>
                 </div>
 
                 <div className="py-2 flex items-center gap-3">

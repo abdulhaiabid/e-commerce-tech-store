@@ -7,6 +7,7 @@ import Product from "./pages/Product";
 import Shop from "./pages/Shop";
 import CartCheckout from "./pages/CartCheckout";
 import ExpressCheckOut from "./pages/ExpressCheckout";
+import SearchPage from "./pages/SearchPage";
 
 export const router = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
           { path: "express", element: <ExpressCheckOut /> },
         ]
       },
-      // { path: "/checkout", element: <Checkout /> },
+      { path: "/search", element: <SearchPage /> },
       { path: "*", element: <PageNotFound /> },
     ],
   },

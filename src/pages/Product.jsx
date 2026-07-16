@@ -1,7 +1,7 @@
 import { useState, useReducer, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import products from "/src/data/products.json";
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Link, useParams, useLocation, useNavigate } from "react-router-dom";
 import { useCart } from "../components/CartContext";
 
 function quantityReducer(state, action) {
@@ -21,34 +21,39 @@ function quantityReducer(state, action) {
 
 function Product() {
   const [loading, setLoading] = useState(true);
-  const [product, setProduct] = useState(null);
+  const { pid } = useParams();
+  const [product, setProduct] = useState(() => {
+    const fetchedProduct = products.find(product => product.id === pid);
+    return fetchedProduct;
+  });
   const [productDisplayPicture, setProductDisplayPicture] = useState();
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
   const [displayImageStyles, setDisplayImageStyles] = useState({
     transformOrigin: "center"
   });
 
-  
+
   const [quantity, quantityDispatch] = useReducer(quantityReducer, 1);
-  const { pid } = useParams();
-  
+
   useEffect(() => {
-    const currentProduct = products.find(product => product.id === pid);
-    setProduct(currentProduct);
-    setProductDisplayPicture(currentProduct.imageURL[0]);
+    setProductDisplayPicture(product.imageURL[0]);
     setLoading(false);
   }, [pid]);
-  
+
   const { cartProducts, addToCart, removeFromCart } = useCart();
+  const [productColors, setProductColors] = useState({});
+
+  const navigate = useNavigate();
+
+  const [selectedColor, setSelectedColor] = useState(() => {
+    const foundColor = product.colors.find(color => color.isSelected);
+    return foundColor;
+  });
 
 
 
   // const location = useLocation();
   // const pathnames = location.pathname.split("/").filter(x => x);
-
-
-
-  
 
   // Fetch product data
   // useEffect(() => {
@@ -84,11 +89,23 @@ function Product() {
     setDisplayImageStyles(styles);
   }
 
+
   function handleColorSelect(colorName) {
     const updatedColors = product.colors.map(color => color.name === colorName ? { ...color, isSelected: true } : { ...color, isSelected: false });
 
-    console.log(updatedColors);
+    setSelectedColor(updatedColors.find(color => color.isSelected));
     setProduct(currentProduct => ({ ...currentProduct, colors: updatedColors }));
+  }
+
+  // Buy now button
+  function handleBuyNowButton() {
+    navigate("/checkout/express", {
+      state: {
+        pid: pid,
+        quantity: quantity,
+        color: selectedColor
+      }
+    });
   }
 
   if (loading) {
@@ -104,7 +121,7 @@ function Product() {
       <section className="min-h-180 w-full text-white bg-[#131313]">
 
         <div className="h-full max-w-7xl mx-auto px-8 py-30">
-          
+
           {/* Navigation address */}
           <div className="mb-8 hidden sm:flex sm:items-center sm:gap-2">
             {
@@ -142,27 +159,27 @@ function Product() {
             {/* Image */}
             <div className="col-span-1 sm:col-span-6 flex flex-col gap-6 starting:opacity-0 opacity-100 transition-all duration-500 delay-500">
               {/* Display Image */}
-              <div 
+              <div
                 className="group/displayImage aspect-square relative rounded-2xl overflow-hidden">
-                <img 
+                <img
                   style={displayImageStyles}
                   className="size-full object-contain object-center transition-transform duration-300 cursor-crosshair group-hover/displayImage:scale-200"
-                  src={productDisplayPicture} 
+                  src={productDisplayPicture}
                   alt="keyboard-product"
                   onMouseMove={handleMouseMoveOnDisplayImage} />
-                
+
                 {/* Display Image Tag */}
                 <div className="px-4 absolute left-0 top-4 flex items-center gap-2">
-                {
-                  product.tag !== undefined ? (
-                  product.tag.map(tag => (
-                    <span
-                      key={product.id + "-" + tag} 
-                      className="px-3 py-1 text-sm text-[#adc6ff] font-medium bg-[#adc6ff]/10 backdrop-blur-md border-[0.5px] border-[#adc6ff]/20 rounded-lg">
-                        {tag}
-                    </span>
-                  ))) : null
-                }
+                  {
+                    product.tag !== undefined ? (
+                      product.tag.map(tag => (
+                        <span
+                          key={product.id + "-" + tag}
+                          className="px-3 py-1 text-sm text-[#adc6ff] font-medium bg-[#adc6ff]/10 backdrop-blur-md border-[0.5px] border-[#adc6ff]/20 rounded-lg">
+                          {tag}
+                        </span>
+                      ))) : null
+                  }
                 </div>
               </div>
 
@@ -170,13 +187,13 @@ function Product() {
               <div className="max-h-25 w-full flex justify-start items-start gap-4">
                 {
                   product.imageURL.map(image => (
-                    <button 
+                    <button
                       key={product.id + "-" + image}
                       className="h-full aspect-square rounded-2xl cursor-pointer overflow-hidden"
                       onClick={() => handleDisplayImage(image)} >
-                      <img 
+                      <img
                         className="size-full object-contain object-center"
-                        src={image} 
+                        src={image}
                         alt="" />
                     </button>
                   ))
@@ -190,12 +207,12 @@ function Product() {
 
               {/* Heading */}
               <h2 className="text-2xl sm:text-4xl font-medium starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-200">
-                { product.title }
+                {product.title}
               </h2>
 
               {/* Description */}
               <p className="mt-4 text-sm sm:text-lg text-[#c1c6d7] starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-300">
-                { product.detailedDescription }
+                {product.detailedDescription}
               </p>
 
               {/* Rating, wishlist and share */}
@@ -205,19 +222,19 @@ function Product() {
                 <div className="flex-1 flex items-center">
                   <div className="flex items-center">
                     <span className="material-symbols-outlined text-lg! text-yellow-300 [font-variation-settings:'FILL'_1]">
-                        star
+                      star
                     </span>
                     <span className="material-symbols-outlined text-lg! text-yellow-300 [font-variation-settings:'FILL'_1]">
-                        star
+                      star
                     </span>
                     <span className="material-symbols-outlined text-lg! text-yellow-300 [font-variation-settings:'FILL'_1]">
-                        star
+                      star
                     </span>
                     <span className="material-symbols-outlined text-lg! text-yellow-300 [font-variation-settings:'FILL'_1]">
-                        star
+                      star
                     </span>
                     <span className="material-symbols-outlined text-lg! text-gray-300 [font-variation-settings:'FILL'_1]">
-                        star
+                      star
                     </span>
                   </div>
                   <span className="ml-2 text-[#c1c6d7]">
@@ -234,12 +251,12 @@ function Product() {
                   </button>
 
                   {/* Wishlist Icon */}
-                  <button 
+                  <button
                     className={`px-3 py-3 flex justify-center items-center font-semibold rounded-full transition-all cursor-pointer hover:bg-[#1e1e1e]`}
                     onClick={() => handleWishButton()}>
-                    <span 
+                    <span
                       className={`material-symbols-outlined text-[#adc6ff] transition-colors duration-300
-                      ${ product.wishlist ? "[font-variation-settings:'FILL'_1]" : "[font-variation-settings:'FILL'_0]" }`}>
+                      ${product.wishlist ? "[font-variation-settings:'FILL'_1]" : "[font-variation-settings:'FILL'_0]"}`}>
                       favorite
                     </span>
                   </button>
@@ -249,34 +266,34 @@ function Product() {
               {/* Price */}
               <div className="mt-4 flex items-start gap-2 starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-400">
                 <span className="text-2xl text-[#adc6ff] font-semibold">
-                  {`Rs.${ product.salePrice.toLocaleString('en-US') }`}
+                  {`Rs.${product.salePrice.toLocaleString('en-US')}`}
                 </span>
                 <span className="text-[#c1c6d7] line-through font-semibold">
-                  {`Rs.${ product.listPrice.toLocaleString() }`}
+                  {`Rs.${product.listPrice.toLocaleString()}`}
                 </span>
               </div>
 
               {/* Colors */}
               <div className="mt-4 flex flex-col gap-2 starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500 delay-500">
                 <span className="flex items-center gap-2 text-lg font-semibold">
-                  Color: 
+                  Color:
                   {
-                    product.colors.map(color => ( color.isSelected ? <span key={color.name} className="text-lg text-[#c1c6d7] font-medium">{ color.name }</span> : null ))
+                    product.colors.map(color => (color.isSelected ? <span key={color.name} className="text-lg text-[#c1c6d7] font-medium">{color.name}</span> : null))
                   }
                 </span>
                 <div className="flex items-center gap-2">
-                {
-                  product.colors.map(color => (
-                    <button
-                      key={color.name}
-                      style={{
-                        backgroundColor: color.hex
-                      }} 
-                      className={`size-8 aspect-square ${ color.isSelected ? "ring-3 ring-[#adc6ff]" : "ring-none" } rounded-full cursor-pointer`}
-                      onClick={() => handleColorSelect(color.name)}
+                  {
+                    product.colors.map(color => (
+                      <button
+                        key={color.name}
+                        style={{
+                          backgroundColor: color.hex
+                        }}
+                        className={`size-8 aspect-square ${color.isSelected ? "ring-3 ring-[#adc6ff]" : "ring-none"} rounded-full cursor-pointer`}
+                        onClick={() => handleColorSelect(color.name)}
                       ></button>
-                  ))
-                }
+                    ))
+                  }
                 </div>
               </div>
 
@@ -286,20 +303,20 @@ function Product() {
                   Quantity
                 </span>
                 <div className="flex items-center">
-                  <button 
+                  <button
                     className="pl-3 pr-2 py-2 bg-[#1e1e1e] border border-[#414755] rounded-l-full leading-0! cursor-pointer"
-                    onClick={() => {quantityDispatch({type: "DECREMENT"})}}>
+                    onClick={() => { quantityDispatch({ type: "DECREMENT" }) }}>
                     <span className="material-symbols-outlined">
                       remove
                     </span>
                   </button>
 
                   <span className="px-4 py-2 self-stretch bg-[#1e1e1e] border border-[#414755]">
-                    { quantity }
+                    {quantity}
                   </span>
 
                   <button className="pr-3 pl-2 py-2 bg-[#1e1e1e] border border-[#414755] rounded-r-full leading-0! cursor-pointer"
-                    onClick={() => {quantityDispatch({type: "INCREAMENT"})}}>
+                    onClick={() => { quantityDispatch({ type: "INCREAMENT" }) }}>
                     <span className="material-symbols-outlined">
                       add
                     </span>
@@ -310,18 +327,18 @@ function Product() {
               {/* Buy and Add to Cart Buttons */}
               <div className="mt-8 flex flex-col md:flex-row justify-center md:justify-start md:items-center gap-4 starting:opacity-0 opacity-100 transition-all duration-500 delay-600">
                 {/* Buy now button */}
-                <Link 
+                <button
                   className="px-4 py-3 font-semibold bg-[#007aff] rounded-lg transition-all cursor-pointer hover:bg-[#005bc1]"
-                  to="/checkout">
+                  onClick={handleBuyNowButton}>
                   Buy Now
-                </Link>
+                </button>
                 {/* Add to cart button */}
-                <button 
+                <button
                   className="px-4 py-3 flex justify-center items-center gap-2 font-semibold bg-[#353534] rounded-lg transition-all cursor-pointer hover:bg-[#1e1e1e]"
-                  onClick={() => addToCart({...product, quantity: quantity})}>
+                  onClick={() => addToCart({ ...product, quantity: quantity })}>
                   Add To Cart
                   <span className="material-symbols-outlined text-lg!">
-                  add_shopping_cart
+                    add_shopping_cart
                   </span>
                 </button>
               </div>

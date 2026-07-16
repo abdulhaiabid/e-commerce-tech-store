@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ShoppingCart from "./ShoppingCart";
 import { useCart } from "./CartContext";
@@ -9,6 +9,8 @@ function Navbar() {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const { cartProducts } = useCart();
+
+  const navigate = useNavigate();
 
   // const totalItems = cartProducts.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -32,9 +34,13 @@ function Navbar() {
   function handleCartOpenButton() {
     setIsCartOpen(true);
   }
-  
+
   function handleCartCloseButton() {
     setIsCartOpen(false);
+  }
+
+  function handleSearchButton() {
+    navigate("/search");
   }
 
   return (
@@ -48,13 +54,13 @@ function Navbar() {
             </Link>
           </div>
 
-          <ul className={`${mobileMenuOpen ? `scale-y-100` : `scale-y-0 md:scale-y-100 pointer-events-none`} w-full md:w-auto md:p-0 absolute top-full left-0 md:static flex-1 flex flex-col md:flex md:flex-row justify-around md:justify-start items-center md:gap-6 bg-[#131313] transition-transform duration-300 origin-top md:pointer-events-auto`}>            
+          <ul className={`${mobileMenuOpen ? `scale-y-100` : `scale-y-0 md:scale-y-100 pointer-events-none`} w-full md:w-auto md:p-0 absolute top-full left-0 md:static flex-1 flex flex-col md:flex md:flex-row justify-around md:justify-start items-center md:gap-6 bg-[#131313] transition-transform duration-300 origin-top md:pointer-events-auto`}>
             {
               navLinks.map((link, index) => {
                 return (
-                <li key={link.id} className="w-full md:w-auto">
-                  <NavLink className={({isActive}) => `py-6 md:p-0 w-full md:w-auto block md:inline text-lg text-center ${isActive ? "text-[#adc6ff]" : "text-inherit"} md:text-start transition-all md:hover:text-[#adc6ff] hover:bg-neutral-700 md:hover:bg-transparent`} to={link.path}>{link.title}</NavLink>
-                </li>
+                  <li key={link.id} className="w-full md:w-auto">
+                    <NavLink className={({ isActive }) => `py-6 md:p-0 w-full md:w-auto block md:inline text-lg text-center ${isActive ? "text-[#adc6ff]" : "text-inherit"} md:text-start transition-all md:hover:text-[#adc6ff] hover:bg-neutral-700 md:hover:bg-transparent`} to={link.path}>{link.title}</NavLink>
+                  </li>
                 )
               })
             }
@@ -62,27 +68,36 @@ function Navbar() {
 
           <div className="flex items-center gap-6">
 
-            <div className="flex items-stretch">
+            {/* Search Button */}
+            <button
+              onClick={handleSearchButton}
+              className="flex justify-center items-center transition-all duration-300 outline-0">
+              <span className="material-symbols-outlined transition-all duration-300 cursor-pointer hover:text-[#adc6ff]">
+                search
+              </span>
+            </button>
+
+            {/* <div className="flex items-stretch">
               <div className={`${searchInputOpen ? `scale-y-100` : `scale-y-0 lg:scale-y-100 pointer-events-none`} w-full lg:w-auto lg:m-0 lg:static absolute top-full right-0 flex justify-stretch text-sm text-black bg-[#0e0e0e] shadow-xl lg:shadow-none rounded-l transition-transform duration-300 origin-top lg:pointer-events-auto`} >
-                <input className="size-full p-4 lg:p-0 lg:px-2 placeholder:text-[#393939]" type="text" placeholder="Search"/>
+                <input className="size-full p-4 lg:p-0 lg:px-2 placeholder:text-[#393939]" type="text" placeholder="Search" />
               </div>
               <button className="flex items-center" onClick={handleNavSearchButton}>
                 <span className="material-symbols-outlined px-1 text-2xl! lg:text-[#ffffff] lg:bg-[#292929] rounded-r cursor-pointer hover:text-[#adc6ff] lg:hover:text-[#adc6ff]  ">search</span>
               </button>
-            </div>
+            </div> */}
 
             {/* Cart Button */}
             <div className="relative flex items-center">
-              <button 
+              <button
                 className="flex items-center"
                 onClick={handleCartOpenButton}>
                 <span className="material-symbols-outlined text-2xl! transition-all cursor-pointer hover:text-[#adc6ff]">shopping_bag</span>
-                
+
                 {/* Cart Notification Indicator */}
                 {
                   cartProducts.length > 0 ? (
                     <span className="aspect-square px-1.25 absolute -right-1 -top-1 flex items-center text-[10px] text-black bg-[#adc6ff] rounded-full">
-                      { cartProducts.length }
+                      {cartProducts.length}
                     </span>
                   ) : null
                 }
@@ -101,7 +116,7 @@ function Navbar() {
       </header>
       {/* Shopping Cart */}
       <ShoppingCart
-      isCartOpen={isCartOpen}
+        isCartOpen={isCartOpen}
         handleCartCloseButton={handleCartCloseButton} />
 
     </>
