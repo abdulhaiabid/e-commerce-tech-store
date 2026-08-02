@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import ProductCard from "./ProductCard";
 import Products from "/src/data/products.json";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Trend() {
   const [trendingProducts, setTrendingProducts] = useState(Products);
+  const navigate = useNavigate();
 
   // Reveal Animation
   const [isVisible, setIsVisible] = useState(false);
@@ -30,21 +31,26 @@ function Trend() {
   }, [])
 
   function handleWishButton(id) {
-    setTrendingProducts(currentProducts => currentProducts.map(product => product.id === id ? {...product, wishlist: !product.wishlist} : product));
+    setTrendingProducts(currentProducts => currentProducts.map(product => product.id === id ? { ...product, wishlist: !product.wishlist } : product));
+  }
+
+  function handleShowAllProductsButton() {
+    navigate("/shop");
+    window.scrollTo(0, 0);
   }
 
   return (
     <>
-      <section 
+      <section
         ref={targetRef}
         id="trending-products"
-        className="min-h-180 w-full py-30 bg-[#0e0e0e] -scroll-mt-50">
-        <div className={`max-w-7xl mx-auto px-8 ${ isVisible ? "flex" : "hidden" } flex flex-col items-center`}>
+        className="min-h-180 w-full py-30 bg-[#0e0e0e] scroll-m-0">
+        <div className={`max-w-7xl mx-auto px-8 ${isVisible ? "flex" : "hidden"} flex flex-col items-center`}>
 
           <p className="mb-4 text-xs text-[#adc6ff] font-medium tracking-widest uppercase">
             Highly Coveted
           </p>
-          
+
           {/* Heading */}
           <h2
             className="mb-16 text-3xl font-semibold tracking-wide starting:opacity-0 starting:translate-y-6 opacity-100 translate-y-0 transition-all duration-500">
@@ -56,7 +62,7 @@ function Trend() {
 
             {/* Product - Cards */}
             {
-              trendingProducts.map(trendingProduct => {
+              trendingProducts.slice(6, 10).map(trendingProduct => {
                 return (
                   <ProductCard
                     key={trendingProduct.id}
@@ -68,9 +74,11 @@ function Trend() {
           </div>
 
           {/* Show Products - Button */}
-          <Link className="mt-16 py-3 px-8 bg-[#1e1e1e] border border-[#333333] rounded-lg transition-all duration-300 cursor-pointer hover:bg-[#353534]" to="shop">
+          <button
+            onClick={handleShowAllProductsButton}
+            className="mt-16 py-3 px-8 bg-[#1e1e1e] border border-[#333333] rounded-lg transition-all duration-300 cursor-pointer hover:bg-[#353534]">
             View All Products
-          </Link>
+          </button>
         </div>
       </section>
     </>

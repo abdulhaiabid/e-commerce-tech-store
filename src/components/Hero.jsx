@@ -75,6 +75,13 @@ function Hero() {
   //   return () => clearInterval(interval);
   // }, [windowWidth]);
 
+  function handleCheckProductsButton() {
+    const trendingProducts = document.getElementById("trending-products");
+    if (trendingProducts) {
+      trendingProducts.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
   return (
     <>
       <section className="relative h-180 w-full bg-[#131313] ">
@@ -89,67 +96,63 @@ function Hero() {
             <img
               ref={slideRef}
               className="size-full object-cover object-center shrink-0"
-              src="headphones-product.jpg"
+              src="/products/product-1/product-1-image-1.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="keyboard-product.jpg"
+              src="/products/product-2/product-2-image-3.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="earbuds-product.jpg"
+              src="/products/product-5/product-5-image-2.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="monitor-product.jpg"
+              src="/products/product-4/product-4-image-2.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="headphones-product.jpg"
+              src="/products/product-9/product-9-image-1.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="keyboard-product.jpg"
+              src="/products/product-1/product-1-image-1.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="earbuds-product.jpg"
+              src="/products/product-2/product-2-image-3.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="monitor-product.jpg"
+              src="/products/product-5/product-5-image-2.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="headphones-product.jpg"
+              src="/products/product-4/product-4-image-2.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="keyboard-product.jpg"
+              src="/products/product-9/product-9-image-1.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="earbuds-product.jpg"
+              src="/products/product-1/product-1-image-1.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="monitor-product.jpg"
+              src="/products/product-2/product-2-image-3.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="headphones-product.jpg"
+              src="/products/product-5/product-5-image-2.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="keyboard-product.jpg"
+              src="/products/product-4/product-4-image-2.jpeg"
             />
             <img
               className="size-full object-cover object-center shrink-0"
-              src="earbuds-product.jpg"
-            />
-            <img
-              className="size-full object-cover object-center shrink-0"
-              src="monitor-product.jpg"
+              src="/products/product-9/product-9-image-1.jpeg"
             />
           </div>
           <div className="absolute inset-0 bg-linear-to-r from-[#131313] via-[#131313]/80 to-transparent z-1"></div>
@@ -180,12 +183,13 @@ function Hero() {
                   arrow_forward
                 </span>
               </Link>
-              <a
-                className="px-8 py-5 text-sm font-medium bg-[#201f1f] border border-[#414755] rounded-lg transition-all cursor-pointer hover:bg-[#353534]"
+              <button
+                onClick={handleCheckProductsButton}
                 href="#trending-products"
+                className="px-8 py-5 flex justify-center items-center text-sm font-medium bg-[#201f1f] border border-[#414755] rounded-lg transition-all cursor-pointer hover:bg-[#353534]"
               >
-                Check Product
-              </a>
+                Check Products
+              </button>
             </div>
           </div>
         </div>

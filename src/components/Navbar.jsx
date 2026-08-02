@@ -15,10 +15,9 @@ function Navbar() {
   // const totalItems = cartProducts.reduce((sum, item) => sum + item.quantity, 0);
 
   const navLinks = [
-    { id: 2, title: "Home", path: "/", isActive: false },
-    { id: 1, title: "Shop", path: "/shop", isActive: true },
-    { id: 3, title: "About", path: "/about", isActive: false },
-    { id: 4, title: "Account", path: "/account", isActive: false },
+    { id: 1, title: "Home", path: "/", isActive: false },
+    { id: 2, title: "Shop", path: "/shop", isActive: true },
+    // { id: 3, title: "About", path: "/about", isActive: false },
   ];
 
   function handleNavLinksButton() {
@@ -41,6 +40,10 @@ function Navbar() {
 
   function handleSearchButton() {
     navigate("/search");
+  }
+
+  function toggleDarkTheme() {
+    document.documentElement.classList.toggle("dark");
   }
 
   return (
@@ -101,6 +104,17 @@ function Navbar() {
                     </span>
                   ) : null
                 }
+              </button>
+            </div>
+
+            {/* Theme change button */}
+            <div className="flex items-center">
+              <button
+                onClick={toggleDarkTheme}
+                className="flex items-center cursor-pointer">
+                <span className="material-symbols-outlined transition-all duration-200 hover:text-[#adc6ff]">
+                  dark_mode
+                </span>
               </button>
             </div>
 
