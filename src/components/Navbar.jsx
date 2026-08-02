@@ -108,7 +108,7 @@ function Navbar() {
             </div>
 
             {/* Theme change button */}
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <button
                 onClick={toggleDarkTheme}
                 className="flex items-center cursor-pointer">
@@ -116,7 +116,7 @@ function Navbar() {
                   dark_mode
                 </span>
               </button>
-            </div>
+            </div> */}
 
             <div className="flex md:hidden justify-center items-center">
               <button className="flex items-center" onClick={handleNavLinksButton}>

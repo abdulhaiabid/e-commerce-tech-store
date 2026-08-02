@@ -39,7 +39,7 @@ function ShoppingCart({ isCartOpen, handleCartCloseButton }) {
         onClick={handleCartCloseButton}></div>
 
       {/* Main */}
-      <aside className={`h-dvh sm:w-100 fixed top-0 z-30 flex flex-col bg-[#1c1b1b] border-l border-l-[#333333] ${isCartOpen ? "right-0" : "-right-full"} transition-all duration-500 origin-right`}>
+      <aside className={`h-dvh w-full sm:w-100 fixed top-0 z-30 flex flex-col bg-[#1c1b1b] border-l border-l-[#333333] ${isCartOpen ? "right-0" : "-right-full"} transition-all duration-500 origin-right`}>
         {/* Heading and Close Button */}
         <div className="px-6 py-4 flex items-center justify-between">
           <h2 className="flex items-center gap-2 text-2xl font-semibold">

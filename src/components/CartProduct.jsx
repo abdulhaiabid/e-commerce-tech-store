@@ -6,7 +6,7 @@ function CartProduct({ product, addToCart, removeFromCart, decreaseQuantity }) {
       <div className="w-full px-6 py-4 flex gap-3 bg-[#1e1e1e] border-y border-y-[#333333]">
 
         {/* Image */}
-        <div className="h-20 w-20 aspect-square rounded-xl overflow-hidden">
+        <div className="size-14 sm:size-20 aspect-square rounded-xl overflow-hidden">
           <img
             className="size-full aspect-square object-cover object-center"
             src={product.imageURL[0]}
@@ -18,7 +18,7 @@ function CartProduct({ product, addToCart, removeFromCart, decreaseQuantity }) {
 
           {/* Heading and Delete Button */}
           <div className="flex items-start justify-between">
-            <h3 className="pt-1 text-md font-semibold">
+            <h3 className="pt-1 text-md font-semibold line-clamp-1">
               {product.title}
             </h3>
             <button
@@ -32,7 +32,7 @@ function CartProduct({ product, addToCart, removeFromCart, decreaseQuantity }) {
           </div>
 
           {/* Description */}
-          <p className="flex-1 text-xs text-[#c1c6d7] font-medium">
+          <p className="flex-1 text-xs text-[#c1c6d7] font-medium line-clamp-2">
             {product.shortDescription}
           </p>
 
